@@ -22,7 +22,7 @@
                     <th>Mobile</th>
                     <th>Type</th>
                     <th>Edit</th>
-                    <th>Delete</th>
+                    <th>Deactivate</th>
                 </tr>
             </thead>
                 <tfoot>
