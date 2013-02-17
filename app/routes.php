@@ -53,7 +53,7 @@ Route::get('admin/users/{id}/edit', array('as' => 'edit_user', 'uses' => 'UsersC
 
 Route::put('admin/users/update', array('uses'=>'UsersController@update'));
 
-Route::put('admin/users/deactivate', array('as'=>'deactivate_user','uses' => 'UsersController@deactivateAccount'));
+//Route::put('admin/users/deactivate', array('as'=>'deactivate_user','uses' => 'UsersController@deactivateAccount'));
 
 
 
