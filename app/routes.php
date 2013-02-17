@@ -9,7 +9,7 @@
 */
 
 Route::get('/', function(){
-	return '<h1> Welcome to Blood Bank Africa </h1>';
+	return View::make('frontend.base');
 });
 
 
