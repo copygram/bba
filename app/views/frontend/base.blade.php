@@ -30,16 +30,16 @@
 				<div class="container top">
 						<div class="row">
 							<ul class="menu" id="menuLeft">
-								<li><a href="/home" id="home" class="menuItem">Home</a></li>
-								<li><a href="/about" id="about" class="menuItem">About</a></li>
-								<li><a href="/contact" id="contact" class="menuItem">Contact</a></li>
+								<li><a href="#" id="home" class="menuItem">Home</a></li>
+								<li><a href="#" id="about" class="menuItem">About</a></li>
+								<li><a href="#" id="contact" class="menuItem">Contact</a></li>
 							</ul>
 							
 								<span id="logo">THE BLOOD BANK of AFRICA</span>
 					
 							<ul class="menu" id="menuRight">
-								<li class="firstItem"><a href="/create" id="create" class="menuItem">Create account</a></li>
-								<li><a href="/login" id="login" class="menuItem">Login</a></li>
+								<li class="firstItem"><a href="#" id="create" class="menuItem">Create account</a></li>
+								<li><a href="#" id="login" class="menuItem">Login</a></li>
 							</ul>
 						</div>
 				</div>
