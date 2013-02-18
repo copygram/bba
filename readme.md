@@ -1,4 +1,3 @@
-
 ### Blood Bank Africa
 
 To get up and running with BBA project.
@@ -18,7 +17,8 @@ If you have to add detect_unicode = Off to the php.ini you can try this:
 
 sudo sh -c 'echo "detect_unicode = Off" >> /private/etc/php.ini'
 You can always change the text in the echo to something else if there's another error.
- ###GIT
+ 
+####GIT
 Install GIT: http://git-scm.com/download/mac
 If this is the first time you are runnning this you'll want to do: sudo nano /etc/hosts and paste this in at the bottom:
 
