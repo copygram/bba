@@ -20,14 +20,18 @@ You can always change the text in the echo to something else if there's another 
  
 ####GIT
 Install GIT: http://git-scm.com/download/mac
-If this is the first time you are runnning this you'll want to do: sudo nano /etc/hosts and paste this in at the bottom:
+If this is the first time you are runnning this you'll want to do.
+
+
+###Setting local server environment
+sudo nano /etc/hosts and paste this in at the bottom:
 
 127.0.0.1 bba.local
 
 Install Vagrant : http://downloads.vagrantup.com/tags/v1.0.6
 Install Oracle Virtual Box: https://www.virtualbox.org/wiki/Downloads
 
-Download the setup.sh to the same folder and run it: ./setup.sh
+Download the setup.sh (https://dl.dropbox.com/u/21316108/setup.sh) and copygram box (https://dl.dropbox.com/u/21316108/copygram.box) to the same folder where cloned bba repo and run it: ./setup.sh
 
 This will run a series of vagrant commands to set up the environment.
 
@@ -41,6 +45,8 @@ You'll end up with:
   setup.sh
   Vagrantfile
 Settings:
+
+Clone the bba repo ( https://github.com/copygram/bba.git ) to ../Sites/bba which was created after running the setup.sh file
 
 MySQL root user has no password
 Once it is done you can try it out with:
