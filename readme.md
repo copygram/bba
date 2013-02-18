@@ -9,7 +9,7 @@ How to set up you local devenv is covered here: [Copygram Devenv][2]
 
 #### Project setup
 If you are (and you should) using the local devenv:
-* Clone the bba repo to ```../Sites/bba``` which was created after running the ```setup.sh``` file.
+* Clone the bba repo to ```./Sites/bba``` which was created after running the ```setup.sh``` file.
 * ```composer install```
 * ```chmod -R o+w app/storage```
 * ```./db_drop_create_load.sh```
@@ -21,8 +21,10 @@ http://bba.local:8080/
 
 
 ###BBA database setup:
-If changes are made to the database they can be exported with: ```./db_export.sh```
-This will create/overwrite the file ```bba.sql``` in the ../Sites/bba/ folder. You can then commit and push this file so that it's possible to pull and sync with ```./db_drop_create_load.sh```
+If changes are made to the database they can be exported with: ```./db_export.sh```.
+This will create/overwrite the file ```./Sites/bba/bba.sql```.
+
+You can then commit and push this file so that it's possible to pull and then import it with: ```./db_drop_create_load.sh```
 
 [1]: http://getcomposer.org/
 [2]: https://github.com/copygram/vagrant/blob/master/README.md
