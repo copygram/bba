@@ -31,7 +31,6 @@ class smsController extends BaseController {
 
 	            // the number we are sending -donor's number
 	            $number,
-	 
 	            // the sms body
 	            $messageBody
 	            
