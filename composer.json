@@ -2,7 +2,8 @@
 	"require": {
 		"laravel/framework": "4.0.*",
 		"laravelbook/ardent": "dev-master",
-		"laravelbook/laravel4-powerpack": "dev-master"
+		"laravelbook/laravel4-powerpack": "dev-master",
+		"twilio/sdk": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
