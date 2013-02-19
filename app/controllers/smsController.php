@@ -7,6 +7,8 @@ class smsController extends BaseController {
 	 *
 	 * @return Response
 	 */
+
+	// FOR NOW I HAVE HARD CODED THE VARIABLES BUT THEY ARE SUPPOSED TO COME FROM DONOR SEARCH RESULT SET
 	public function sendSMS($recipientNumber='+46725504592', $recipientName='Otis', $messageBody='Hey buddy')
 	{
 		
@@ -14,7 +16,7 @@ class smsController extends BaseController {
 	    $AccountSid = "ACe8fddabb94827cc5c73bcfb50acb08b5";
 	    $AuthToken = "462d7dd89fb5bb82a9c4c1acc9f7edfb";
 	 
-	    // Instantiate a new Twilio Rest Client
+	    // Instanting a new Twilio Rest Client
 	    $client = new Services_Twilio($AccountSid, $AuthToken);
 	 
 	    
@@ -27,7 +29,7 @@ class smsController extends BaseController {
 	 		
 	        $sms = $client->account->sms_messages->create("657-999-5090", 
 
-	            // the number we are sending to - Any phone number
+	            // the number we are sending -donor's number
 	            $number,
 	 
 	            // the sms body
