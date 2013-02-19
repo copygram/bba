@@ -58,6 +58,45 @@
         
         
         
+    <!-- FORM MODULE --> 
+    
+    <div class="container">
+    <div class="row">
+    			    <form>
+    			    <div class="threecol">
+	        		<p>
+	        		<label for="firstname">Name:</label><br />
+	        		<input type="text" name="firstname" value="">
+	        		</p>
+        			</div>
+	        		
+	        		<div class="threecol">
+	        		<p>
+	        		<label for="lastname">Lastname:</label><br />
+	        		<input type="text" name="lastname" value="">
+	        		</p>
+	        		</div>
+	        		
+	        		<div class="threecol">
+	        		<p>
+	        		<label for="email">Email:</label><br />
+	        		<input type="email" name="email" value="">
+	        		</p>
+	        		</div>
+	        		
+	        		<div class="threecol last">
+	        		<p>
+	        		<label for="username">Username</label><br />
+	        		<input type="text" name="username" value="">
+	        		</p>
+	        		</div>
+    			    </form>
+    </div>
+    </div>
+	
+	<!-- END of FORM MODULE --> 
+        
+        
         
          <script src="{{ asset('assets/js/jquery.v1.8.3.min.js') }}"></script>
         
