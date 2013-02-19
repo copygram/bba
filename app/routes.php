@@ -21,7 +21,7 @@ Route::get('/', function(){
 |
 */
 
-
+Route::get('admin/donors/search/sendSMS', array('as'=>'sms','uses'=>'smsController@sendSMS'));
 
 Route::get('/admin',array('as'=>'home','uses'=>'HomeController@dashboard'))->before('auth');
 
