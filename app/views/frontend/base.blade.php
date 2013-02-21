@@ -33,6 +33,7 @@
 								<li><a href="#" id="home" class="menuItem">Home</a></li>
 								<li><a href="#" id="about" class="menuItem">About</a></li>
 								<li><a href="#" id="contact" class="menuItem">Contact</a></li>
+								
 							</ul>
 							
 								<span id="logo">THE BLOOD BANK of AFRICA</span>
@@ -149,6 +150,8 @@
     			    </form>
     </div>
     </div>
+
+    
 	
 	<!-- END of FORM MODULE --> 
         

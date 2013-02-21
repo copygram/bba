@@ -12,7 +12,7 @@ Route::get('/', function(){
 	return View::make('frontend.base');
 });
 
-
+Route::get('/template', array('as'=>'template','uses'=>'smsController@index'));
 /*
 |--------------------------------------------------------------------------
                           BACK END  AUTHENTICATION

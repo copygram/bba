@@ -110,6 +110,7 @@ return array(
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
 		'LaravelBook\Laravel4Powerpack\Providers\PowerpackServiceProvider',
+		'TwigBridge\TwigServiceProvider'
 		
 
 	),
