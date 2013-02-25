@@ -43,7 +43,7 @@ class smsController extends BaseController {
 
 	public function index()
 	{
-		return View::make('frontend.index');
+		return View::make('frontend.donorForm');
 	}
 
 
