@@ -12,7 +12,12 @@ Route::get('/', function(){
 	return View::make('frontend.base');
 });
 
-Route::get('/template', array('as'=>'template','uses'=>'smsController@index'));
+// donor Resource
+
+
+Route::resource('donors','donorsController');
+
+
 /*
 |--------------------------------------------------------------------------
                           BACK END  AUTHENTICATION

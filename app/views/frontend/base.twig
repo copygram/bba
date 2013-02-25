@@ -39,7 +39,7 @@
 						<div class="row">
 							{% block menubar %}
 								<ul class="menu" id="menuLeft">
-									<li><a href="#" id="home" class="menuItem">Home</a></li>
+									<li><a href="{{ url('/') }}" id="home" class="menuItem">Home</a></li>
 									<li><a href="#" id="about" class="menuItem">About</a></li>
 									<li><a href="#" id="contact" class="menuItem">Contact</a></li>
 									
@@ -49,8 +49,8 @@
 								<span id="logo">THE BLOOD BANK of AFRICA</span>
 					
 							<ul class="menu" id="menuRight">
-								<li class="firstItem"><a href="#" id="create" class="menuItem">Create account</a></li>
-								<li><a href="#" id="login" class="menuItem">Login</a></li>
+								<li class="firstItem"><a href="{{ url('donors/create') }}" id="create" class="menuItem">Create account</a></li>
+								<li><a href="{{ url('admin') }}" id="login" class="menuItem">Login</a></li>
 							</ul>
 						</div>
 				</div>
