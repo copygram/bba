@@ -22,6 +22,11 @@ body {
 	font-family: "Lucida Grande", Times, serif;
     font-size: 1em;
     line-height: 1.4;
+    
+    -webkit-font-smoothing: antialiased;
+    -moz-font-smoothing: antialiased;
+    -o-font-smoothing: antialiased;
+    font-smoothing: antialiased;
 }
 
 /*
@@ -78,6 +83,46 @@ fieldset {
 textarea {
     resize: vertical;
 }
+
+/* ==========================================================================
+   Font standards 
+   ========================================================================== */
+
+h1 {
+	font-family: serif;
+	font-size: 54px;
+	font-weight: 100;
+	font-style: italic;
+	padding: 2px 20px 5px 20px;
+	margin: 0px;
+}
+
+h2 {
+	font-family: serif;
+	font-size: 44px;
+	font-weight: 100;
+	font-style: normal;
+	padding: 2px 20px 5px 20px;
+	margin: 0px;
+	color: #a63939;
+}
+
+h3 {
+	font-family: serif;
+	font-size: 26px;
+	font-weight: 100;
+	font-style: italic;
+	margin: 0px;
+	color: #555555;
+	text-transform: uppercase;
+	
+	border-bottom: solid 1px #ddd;
+}
+
+a {
+	color: #000;
+}
+
 
 /* ==========================================================================
    Chrome Frame prompt
@@ -176,20 +221,17 @@ textarea {
 
 #bigPhoto {
 	height: 860px;
-	background-image: url(../images/bigphoto.jpg);
+	background-image: url(../img/bigphoto.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
 }
 
 #forHumanity {
-	background-color: #222;
-	border-bottom: 3px solid #8a0b0b;
-	color: #fff;
-	margin-top: 460px;
+	padding-top: 460px;
 	display: block;
-	float: left;
-	margin-left: 36%;
+	margin: 0 auto;
+	text-align: center;
 }
 
 #forHumanity h1 {
@@ -197,15 +239,83 @@ textarea {
 	font-size: 54px;
 	font-weight: 100;
 	font-style: italic;
-	margin: 2px 20px 5px 20px;
+	padding: 2px 20px 5px 20px;
+	background-color: #222;
+	border-bottom: 3px solid #8a0b0b;
+	color: #fff;
+	width: 650px;
+	margin: 0 auto;
+}
+
+#whatwedo, #areyoudonor, #areyouhospital {
+	border-bottom: solid 1px #ddd;
+	padding-bottom: 50px;
+}
+
+#whatwedo p, #areyoudonor p, #areyouhospital p {
+	font-size: 14px;
+	line-height: 23px;
+}
+
+.center {
+	text-align: center;
+	margin-top: 100px;
+}
+
+.lead {
+	display: block;
+	font-family: serif;
+	text-transform: uppercase;
+	color: #c2c2c2;	
+}
+
+.line {
+	max-width: 140px;
+	background-color: #c2c2c2;
+	height: 3px;
+	display: block;
+	
+	margin: 0 auto;
+	margin-top: 10px;
+	margin-bottom: 50px;
 }
 
 
 
 
 
+#footer {
+	min-height: 360px;
+	background-color: #555555;
+	color: #b9b9b9;
+	padding-top: 60px;
+	margin-top: 140px;
+}
 
+#footer ul {
+	list-style: none;
+	list-style-type: none;
+	margin: 0px;
+	padding: 0px;
+}
 
+#footer ul li {
+	display: inline-block;
+}
+
+#footer strong {
+	color: #fff;
+}
+
+#footer a {
+	color: #b9b9b9;
+	text-decoration: none;
+}
+
+#footer a:hover {
+	color: #fff;
+	text-decoration: none;
+}
 
 
 
