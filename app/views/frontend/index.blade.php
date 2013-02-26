@@ -17,7 +17,7 @@
         <link rel="stylesheet" href="../assets/css/main.css">
         <link rel="stylesheet" href="../assets/css/lib/1140.css">
         
-        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+        <script src="../assets/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -37,8 +37,8 @@
 								<span id="logo">THE BLOOD BANK of AFRICA</span>
 					
 							<ul class="menu" id="menuRight">
-								<li class="firstItem"><a href="/create" id="create" class="menuItem">Create account</a></li>
-								<li><a href="/login" id="login" class="menuItem">Login</a></li>
+								<!-- <li class="firstItem"><a href="/create" id="create" class="menuItem">Create account</a></li> -->
+								<li class="firstItem"><a href="/login" id="login" class="menuItem">Login</a></li>
 							</ul>
 						</div>
 				</div>
@@ -51,6 +51,7 @@
 			<div class="row">     
         		<div id="forHumanity">
         		<h1>Are you ready to safe a Life? </h1>
+        		<a href="#" class="bigbtn">start by register as a Donor</a>
         		</div>
         	</div>
 		</div>
@@ -160,7 +161,7 @@
 				</div>
 				
 				<div class="twelvecol center">
-					<p><small>&copy; {{ date('Y') }}, BloodBankAfrica.com.  All Rights Reserved. <a href="#">Privacy Policy</a> - <a href="#">Terms of Service</a> - <a href="#">Partnership Guidelines</a> - <a href="#">Developers</a></small></p>
+					<p><small>© 2013, BloodBankAfrica.com.  All Rights Reserved. <a href="#">Privacy Policy</a> - <a href="#">Terms of Service</a> - <a href="#">Partnership Guidelines</a> - <a href="#">Developers</a></small></p>
 				</div>
 				
 			</div>
@@ -172,8 +173,8 @@
         <!-- End of site JS and other mambo Jambo here -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-        <script src="js/plugins.js"></script>
-        <script src="js/main.js"></script>
+        <script src="../assets/js/plugins.js"></script>
+        <script src="../assets/js/main.js"></script>
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
