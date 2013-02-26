@@ -220,7 +220,7 @@ a {
 }
 
 #bigPhoto {
-	height: 860px;
+	height: 660px;
 	background-image: url(../img/bigphoto.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
@@ -228,7 +228,7 @@ a {
 }
 
 #forHumanity {
-	padding-top: 460px;
+	padding-top: 390px;
 	display: block;
 	margin: 0 auto;
 	text-align: center;
@@ -245,6 +245,36 @@ a {
 	color: #fff;
 	width: 650px;
 	margin: 0 auto;
+}
+
+.bigbtn {
+	background-color: #6fae5b;
+	padding: 12px 10px 12px 10px;
+	display: block;
+	width: 280px;
+	text-decoration: none;
+	text-transform: uppercase;
+	margin: 0 auto;
+	margin-top: 160px;
+	margin-bottom: 10px;
+	color: #fff;
+	
+	text-shadow: 1px 1px rgba(0,0,0, 0.3);
+	
+	-moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
+	-webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.15);
+	
+	-webkit-transition: background-color 0.120s ease-out;
+	-moz-transition: background-color 0.120s ease-out;
+}
+
+.bigbtn:hover {
+	background-color: #629f4f;
+	
+	-moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.35);
+	-webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.35);
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.35);
 }
 
 #whatwedo, #areyoudonor, #areyouhospital {
