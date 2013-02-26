@@ -9,7 +9,7 @@
 */
 
 Route::get('/', function(){
-	return View::make('frontend.base');
+	return View::make('frontend.index');
 });
 
 // donor Resource

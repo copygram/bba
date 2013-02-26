@@ -220,8 +220,13 @@ a {
 }
 
 #bigPhoto {
-	height: 660px;
+<<<<<<< HEAD
+	
 	background-image: url(../img/bigphoto.jpg);
+=======
+	height: 660px;
+	background-image: url(../images/bigphoto.jpg);
+>>>>>>> 70538b8f744191d30425b586214ea2454e396779
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
