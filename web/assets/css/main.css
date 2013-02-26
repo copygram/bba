@@ -221,7 +221,7 @@ a {
 
 #bigPhoto {
 	height: 860px;
-	background-image: url(../img/bigphoto.jpg);
+	background-image: url(../images/bigphoto.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
