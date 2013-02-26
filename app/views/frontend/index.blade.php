@@ -160,7 +160,7 @@
 				</div>
 				
 				<div class="twelvecol center">
-					<p><small>© 2013, BloodBankAfrica.com.  All Rights Reserved. <a href="#">Privacy Policy</a> - <a href="#">Terms of Service</a> - <a href="#">Partnership Guidelines</a> - <a href="#">Developers</a></small></p>
+					<p><small>&copy; {{ date('Y') }}, BloodBankAfrica.com.  All Rights Reserved. <a href="#">Privacy Policy</a> - <a href="#">Terms of Service</a> - <a href="#">Partnership Guidelines</a> - <a href="#">Developers</a></small></p>
 				</div>
 				
 			</div>
