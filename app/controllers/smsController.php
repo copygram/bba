@@ -9,10 +9,10 @@ class smsController extends BaseController {
 	 */
 
 	// FOR NOW I HAVE HARD CODED THE VARIABLES BUT THEY ARE SUPPOSED TO COME FROM DONOR SEARCH RESULT SET
-	public function sendSMS($recipientNumber='+46725504592', $recipientName='Otis', $messageBody='Hey buddy')
+	public static function sendSMS($recipientNumber, $recipientName, $messageBody)
 	{
 		
-			 // AccountSid and AuthToken from www.twilio.com/user/account
+		// AccountSid and AuthToken from www.twilio.com/user/account
 	    $AccountSid = "ACe8fddabb94827cc5c73bcfb50acb08b5";
 	    $AuthToken = "462d7dd89fb5bb82a9c4c1acc9f7edfb";
 	 
@@ -36,7 +36,7 @@ class smsController extends BaseController {
 	            
 	        );
 
-	        echo "Sent message to $name" ;
+	       return Redirect::to('donors/create');
 	    }
 
 	}
