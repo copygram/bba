@@ -1,4 +1,4 @@
-var input = document.getElementById('geo');
+var input = document.getElementById('location');
 if(input) {
     var autocomplete = new google.maps.places.Autocomplete(input);
     

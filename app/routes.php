@@ -20,9 +20,7 @@ Route::get('contact', function(){
 	return View::make('frontend.contact');
 });
 
-Route::get('register', function(){
-	return View::make('frontend.register');
-});
+
 
 // donor Resource
 

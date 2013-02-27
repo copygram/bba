@@ -29,7 +29,7 @@
 				<div class="container top">
 						<div class="row">
 							<ul class="menu" id="menuLeft">
-								<li><a href="/home" id="home" class="menuItem">Home</a></li>
+								<li><a href="/" id="home" class="menuItem">Home</a></li>
 								<li><a href="/about" id="about" class="menuItem">About</a></li>
 								<li><a href="/contact" id="contact" class="menuItem">Contact</a></li>
 							</ul>
@@ -61,14 +61,14 @@
 			<div class="row">
 
 			<div class="center formcanvas">
-				<form action="#" method="POST">
+				<form action="/donors" method="POST">
 				<p>
 	        		<label for="firstname">First name:</label><br />
-	        		<input type="text"   required  name="firstname" value="">
+	        		<input type="text"   required  name="fname" value="">
 	        	</p>
 	        	<p>
 	        		<label for="lastname">Last name:</label><br />
-	        		<input type="text"   required  name="lastname" value="">
+	        		<input type="text"   required  name="lname" value="">
 	        	</p>
 	        	<p>
 	        		<label for="email">Email:</label><br />
@@ -80,28 +80,31 @@
 	        	</p>
 	        	<p>
 	        		<label for="location">Location: <em>( Residential area )</em></label><br />
-	        		<input type="text" required name="location" value="">
+	        		<input type="text" required name="area" id="location" value="">
+	        		<input type="hidden" id="lat" name="lat"/>
+					<input type="hidden" id="lng" name="lng"/>
+
 	        	</p>
 	        	<p>
 	        		<label for="gender">Gender:</label><br />
 	        		<select name="gender">
-	        			<option value="">Choose one.</option>
-	        			<option value="1">Female</option>
-	        			<option value="2">Male</option>
+	        			<option value="0">Choose one.</option>
+	        			<option value="Female">Female</option>
+	        			<option value="Male">Male</option>
 	        		</select>	
 	        	</p>
 	        	<p>
 	        		<label for="bloodtype">Blood Type:</label><br />
 	        		<select name="bloodtype">
-	        			<option value="">Choose one.</option>
-	        			<option value="1">A+</option>
-	        			<option value="2">A-</option>
-	        			<option value="3">B+</option>
-	        			<option value="4">B-</option>
-	        			<option value="5">AB+</option>
-	        			<option value="6">AB-</option>
-	        			<option value="7">O+</option>
-	        			<option value="7">O-</option>
+	        			<option value="0">Choose one.</option>
+	        			<option value="A" >A</option>
+	        			<option value="A+" >A+-</option>
+	        			<option value="B+">B+</option>
+	        			<option value="B-">B-</option>
+	        			<option value="AB">AB</option>
+	        			<option value="O+">O+</option>
+	        			<option value="O-">O-</option>
+	        			<option value="Unknown">Unknown</option>
 	        		</select>
 	        	</p>
 	        	<p>
@@ -169,5 +172,7 @@
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        <script src="../assets/js/geo.js"></script>
     </body>
 </html>

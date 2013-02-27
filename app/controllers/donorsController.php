@@ -15,6 +15,8 @@ class donorsController extends BaseController {
 
 	public function store()
 	{
+	
+
 		$validation = Donor::validate(Input::all());
 		
 		if($validation->passes()){
@@ -29,9 +31,9 @@ class donorsController extends BaseController {
 			'mobile'	=>	Input::get('mobile'),
 			'email'		=>	Input::get('email'),
 			'bloodtype'	=>	Input::get('bloodtype'),
-			'gender'	=>	Input::get('inlineRadios'),
+			'gender'	=>	Input::get('gender'),
 		));
-		  return Redirect::to('donors/create');
+		  return Redirect::to('donors/create')->with('success','Thank you. You have successfully registered to BBA');
 		
 		}else{
 			return Redirect::to('donors/create')->withErrors($validation)->withInput();
