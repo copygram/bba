@@ -51,7 +51,7 @@
 			<div class="row">     
         		<div id="forHumanity">
         		<h1>Are you ready to safe a Life? </h1>
-        		<a href="/donar/registration" class="bigbtn">start by register as a Donor</a>
+        		<a href="/donor/registration" class="bigbtn">start by register as a Donor</a>
         		</div>
         	</div>
 		</div>
