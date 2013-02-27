@@ -12,6 +12,18 @@ Route::get('/', function(){
 	return View::make('frontend.index');
 });
 
+Route::get('about', function(){
+	return View::make('frontend.about');
+});
+
+Route::get('contact', function(){
+	return View::make('frontend.contact');
+});
+
+Route::get('register', function(){
+	return View::make('frontend.register');
+});
+
 // donor Resource
 
 
