@@ -15,11 +15,6 @@ class donorsController extends BaseController {
 
 	public function store()
 	{
-	
-		
-
-		
-
 		$validation = Donor::validate(Input::all());
 		
 		if($validation->passes()){

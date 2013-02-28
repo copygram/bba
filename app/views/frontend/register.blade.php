@@ -61,35 +61,35 @@
 			<div class="row">
 
 			<div class="center formcanvas">
-				<form action="/donors" method="POST">
+				<form action="/donors" method="POST" class="donorForm">
 				<p>
 	        		<label for="firstname">First name:</label><br />
-	        		<input type="text"   required  name="fname" value="">
+	        		<input type="text"   class="required"  name="fname" value="">
 	        	</p>
 	        	<p>
 	        		<label for="lastname">Last name:</label><br />
-	        		<input type="text"   required  name="lname" value="">
+	        		<input type="text"   class="required"  name="lname" value="">
 	        	</p>
 	        	<p>
 	        		<label for="email">Email:</label><br />
-	        		<input type="email"   required name="email" value="">
+	        		<input type="email"   class="required email" name="email" value="">
 	        	</p>
 	           	<p>
 	           	<label for="mobile">Country code:</label><br />
 	        		<input type="text"  required name="countrycode" value="">
-	        		<label for="mobile">Mobile:</label><br />
-	        		<input type="text"  required name="mobile" value="">
+	        		<label for="code">Mobile:</label><br />
+	        		<input type="text"  class="required" name="code" value="">
 	        	</p>
 	        	<p>
 	        		<label for="location">Location: <em>( Residential area )</em></label><br />
-	        		<input type="text" required name="area" id="location" value="">
+	        		<input type="text" class="required" name="area" id="location" value="">
 	        		<input type="hidden" id="lat" name="lat"/>
 					<input type="hidden" id="lng" name="lng"/>
 
 	        	</p>
 	        	<p>
 	        		<label for="gender">Gender:</label><br />
-	        		<select name="gender">
+	        		<select name="gender" >
 	        			<option value="0">Choose one.</option>
 	        			<option value="Female">Female</option>
 	        			<option value="Male">Male</option>
@@ -97,7 +97,7 @@
 	        	</p>
 	        	<p>
 	        		<label for="bloodtype">Blood Type:</label><br />
-	        		<select name="bloodtype">
+	        		<select name="bloodtype" >
 	        			<option value="0">Choose one.</option>
 	        			<option value="A" >A</option>
 	        			<option value="A+" >A+-</option>
@@ -176,5 +176,18 @@
         </script>
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
         <script src="../assets/js/geo.js"></script>
+
+        <!-- include Validation plugin-->
+		<script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
+		
+		<!--hook it up-->
+		<script type="text/javascript">
+		$(document).ready(function() {
+		
+			//validation plugin
+			$('.donorForm').validate();
+				
+		});		
+		</script>
     </body>
 </html>
