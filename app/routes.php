@@ -78,6 +78,8 @@ Route::get('admin/donors/search', array('as'=>'donorSearch','uses'=>'DonorSearch
 
 Route::post('admin/donors/search','DonorSearchController@searchDonors');
 
+Route::post('admin/donors/mapview','DonorSearchController@searchDonorsOnMap');
+
 Route::get('admin/donor/{id}',array('as'=>'view_donor','uses'=>'DonorSearchController@show'));
 
 
