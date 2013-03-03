@@ -10,7 +10,7 @@
         <h2>Donor section</h2>
         
             <ul>
-                <li><?php echo HTML::route('donorSearch','Search Donor'); ?></li>
+                <li>{{{ HTML::route('donorSearch','Search Donor') }}}</li>
                 <li><a href="#" >New donor</a></li>
                 <li><a href="#">List of donors</a></li>
                 <li><a href="#">View on map</a></li>

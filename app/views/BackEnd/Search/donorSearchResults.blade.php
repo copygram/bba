@@ -19,7 +19,6 @@
 						<tbody>
 							
 							@foreach($results as $donor)
-								 
 								<tr class="odd">
 									<td>{{ $donor->fname }}</td>
 									<td>{{ $donor->lname }}</td>
@@ -27,18 +26,17 @@
 									<td>{{ $donor->mobile }}</td>
 									<td>{{ $donor->email }}</td>
 									<td>{{ $donor->bloodtype }}</td>
-									<td>{{ HTML::route('view_donor','View details',array('id'=>$donor->id)) }}</td>
+									<td><a href="{{URL::route('view_donor',array('id'=>$donor->id))}}">View donor</a></td>
 								</tr>
 							@endforeach
 							
 						</tbody>
 				</table>
 				<p>
-					{{ HTML::route('donorSearch','Back to search form') }}
+					<a href="{{ URL::route('donorSearch') }}">Back to search form</a>
 				</p>
 
 	@else
-		<h1>No donor found</h1>
-		{{{ HTML::route('donorSearch','Back to search form') }}}
+		<h1>No donor found</h1><a href="{{URL::route('donorSearch')}}">Back to search form</a>
 	@endif
 @stop
