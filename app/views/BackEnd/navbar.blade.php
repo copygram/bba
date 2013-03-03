@@ -13,7 +13,7 @@
                 <li><a href="{{ URL::route('donorSearch') }}">Search Donor</a></li>
                 <li><a href="#" >New donor</a></li>
                 <li><a href="#">List of donors</a></li>
-                <li><a href="{{ URL::route('donorSearch') }}">View on map</a></li>
+                <li><a href="{{ URL::route('donorSearchOnMap') }}">View on map</a></li>
                 
             </ul>
             
