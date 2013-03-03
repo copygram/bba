@@ -55,7 +55,7 @@
 	          		 <input type="submit" class="form_submit" value="Save details" />
 	            </div> 
 
-	            {{{ Form::hidden('id',$user->id )}}}
+	            {{ Form::hidden('id',$user->id )}}
 
 	            <div class="clear"></div>
 	     </div>

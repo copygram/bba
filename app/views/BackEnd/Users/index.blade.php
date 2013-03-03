@@ -45,7 +45,7 @@
                             <td>{{ $user->lname }}</td>
                             <td>{{ $user->mobile }}</td>
                             <td> {{ $role->name }}</td>
-                            <td>{{{ HTML::route('edit_user','Edit',array('id'=>$user->id)) }}}</td>
+                            <td>{{ HTML::route('edit_user','Edit',array('id'=>$user->id)) }}</td>
                             <td>Deactivate</td>
                     
 
