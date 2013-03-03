@@ -8,6 +8,8 @@
     
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
     <link href="{{ asset('assets/css/bootstrap.mini.css') }}" rel="stylesheet">
+    @section('scripts')
+    @stop
 </head>
 
 <body>
