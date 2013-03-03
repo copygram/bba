@@ -27,14 +27,14 @@
 									<td>{{ $donor->mobile }}</td>
 									<td>{{ $donor->email }}</td>
 									<td>{{ $donor->bloodtype }}</td>
-									<td>{{{ HTML::route('view_donor','View details',array('id'=>$donor->id)) }}}</td>
+									<td>{{ HTML::route('view_donor','View details',array('id'=>$donor->id)) }}</td>
 								</tr>
 							@endforeach
 							
 						</tbody>
 				</table>
 				<p>
-					{{{ HTML::route('donorSearch','Back to search form') }}}
+					{{ HTML::route('donorSearch','Back to search form') }}
 				</p>
 
 	@else

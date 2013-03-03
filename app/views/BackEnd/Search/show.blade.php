@@ -45,7 +45,7 @@
 			<div class="form_row">
                 <p>
                 	<a href="javascript:history.back()" class="form_submit">Cancel</a>
-                	{{{ HTML::to('donorSearch','Contact donor',array('class'=>'form_submit')) }}}
+                	{{ HTML::to('donorSearch','Contact donor',array('class'=>'form_submit')) }}
                 </p>
 	          	
 	        </div> 
