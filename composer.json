@@ -1,6 +1,6 @@
 {
 	"require": {
-		"laravel/framework": "4.0.*",
+		"laravel/framework": "dev-master",
 		"laravelbook/ardent": "dev-master",
 		"laravelbook/laravel4-powerpack": "dev-master",
 		"twilio/sdk": "dev-master",
@@ -17,5 +17,6 @@
 			"app/tests/TestCase.php"
 		]
 	},
-	"minimum-stability": "dev"
+	"minimum-stability": "dev",
+	"provide": { "ext-mcrypt": "*" }
 }
