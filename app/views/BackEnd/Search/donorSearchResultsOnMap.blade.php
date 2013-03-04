@@ -35,10 +35,7 @@
                 map: map,
                 title: data.fname,
             });
-            console.log(data.lat);
         }
-
-
     }
 </script>
 <script type="text/javascript">
