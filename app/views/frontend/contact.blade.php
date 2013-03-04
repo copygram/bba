@@ -38,7 +38,7 @@
 					
 							<ul class="menu" id="menuRight">
 								<!-- <li class="firstItem"><a href="/create" id="create" class="menuItem">Create account</a></li> -->
-								<li class="firstItem"><a href="/login" id="login" class="menuItem">Login</a></li>
+								<li class="firstItem"><a href="admin/login" id="login" class="menuItem">Login</a></li>
 							</ul>
 						</div>
 				</div>
