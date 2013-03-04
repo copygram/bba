@@ -36,7 +36,7 @@ Route::resource('donors','donorsController');
 |
 */
 
-Route::get('admin/donors/search/sendSMS', array('as'=>'sms','uses'=>'smsController@sendSMS'));
+
 
 Route::get('/admin',array('as'=>'home','uses'=>'HomeController@dashboard'))->before('auth');
 
@@ -81,6 +81,10 @@ Route::post('admin/donors/search','DonorSearchController@searchDonors');
 Route::get('admin/donors/mapview', array('as'=>'donorSearchOnMap','uses'=>'DonorSearchController@searchDonorsOnMap'))->before('auth');
 
 Route::get('admin/donor/{id}',array('as'=>'view_donor','uses'=>'DonorSearchController@show'));
+
+Route::get('admin/donors/search/sms/create', array('as'=>'smsDonor','uses'=>'smsController@smsForm'));
+
+Route::post('admin/donors/search/sms','smsController@sendSMS');
 
 
 

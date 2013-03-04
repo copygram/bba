@@ -4,7 +4,7 @@
 	<h2><?php echo $donor->fname .' '.$donor->lname ;?> details</h2>
 
 	<div class="form">
-		<?php echo Form::open(); ?>
+		<?php echo Form::open('/','GET'); ?>
 
 			<div class="form_row">
 			<?php
@@ -44,14 +44,15 @@
 
 			<div class="form_row">
                 <p>
-                	<a href="javascript:history.back()" class="form_submit">Cancel</a>
-                	{{ HTML::to('donorSearch','Contact donor',array('class'=>'form_submit')) }}
+                	<a href="javascript:history.back()" >Cancel</a>
+                	{{ HTML::route('smsDonor','Contact donor') }}
                 </p>
 	          	
 	        </div> 
 
 
 		<?php echo Form::close(); ?>
+
 	</div>
 
 

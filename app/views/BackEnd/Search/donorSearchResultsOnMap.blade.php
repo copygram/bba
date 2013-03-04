@@ -27,7 +27,7 @@
         var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
         var donors =  {{$donors}};
-        console.log(donors);
+        
         for (var key in donors) {
             var data = donors[key];
             var marker = new google.maps.Marker({

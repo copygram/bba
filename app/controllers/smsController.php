@@ -8,16 +8,28 @@ class smsController extends BaseController {
 	 * @return Response
 	 */
 
-	// FOR NOW I HAVE HARD CODED THE VARIABLES BUT THEY ARE SUPPOSED TO COME FROM DONOR SEARCH RESULT SET
-	public static function sendSMS($recipientNumber, $recipientName, $messageBody)
+
+
+	public function smsForm()
 	{
-		
+		return View::make('BackEnd.Search.smsForm');
+	}
+	
+	public static function sendSMS()
+	{
+
 		// AccountSid and AuthToken from www.twilio.com/user/account
 	    $AccountSid = "ACe8fddabb94827cc5c73bcfb50acb08b5";
 	    $AuthToken = "462d7dd89fb5bb82a9c4c1acc9f7edfb";
 	 
 	    // Instanting a new Twilio Rest Client
 	    $client = new Services_Twilio($AccountSid, $AuthToken);
+
+	    $recipientNumber  = Input::get('mobile');
+
+	    $recipientName  = 'Otis';
+	  
+	    $messageBody = Input::get('message');
 	 
 	    
 	    $donor = array(
@@ -36,7 +48,7 @@ class smsController extends BaseController {
 	            
 	        );
 
-	       return Redirect::to('donors/create');
+	       return 'Message sent';
 	    }
 
 	}

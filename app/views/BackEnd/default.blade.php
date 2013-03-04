@@ -7,7 +7,7 @@
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
     
     <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
-    <link href="{{ asset('assets/css/bootstrap.mini.css') }}" rel="stylesheet">
+   
     @yield('header')
 </head>
 
@@ -46,7 +46,9 @@
     <!-- Javascripts
         ================================================== -->
         <script src="{{ asset('assets/js/jquery.v1.8.3.min.js') }}"></script>
-        <script src="{{ asset('assets/js/bootstrap-2.2.2/bootstrap.min.js') }}"></script>
+        
         @yield('scripts')
+
+
 </body>
 </html>
