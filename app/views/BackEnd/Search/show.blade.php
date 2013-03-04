@@ -45,7 +45,7 @@
 			<div class="form_row">
                 <p>
                 	<a href="javascript:history.back()" >Cancel</a>
-                	{{ HTML::route('smsDonor','Contact donor') }}
+                	{{ URL::route('smsDonor','Contact donor') }}
                 </p>
 	          	
 	        </div> 
