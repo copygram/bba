@@ -9,11 +9,8 @@ How to set up you local devenv is covered here: [Copygram Devenv][2]
 
 #### Project setup
 If you are (and you should) using the local devenv:
-* Clone the bba repo to ```./Sites/bba``` which was created after running the ```setup.sh``` file.
+* Clone the bba repo to ```./sites/bba```.
 * ```composer install```
-* ```chmod -R 777 app/storage```
-*  ```chmod -R 777 app/storage/logs``` to confirm the rights  will be enforced on logs folder
-*  ```chmod -R 777 app/storage/views``` to confirm the rights  will be enforced on views folder
 * ```./db_drop_create_load.sh```
   * You might need to do ```chmod +x db_drop_create_load.sh``` before you can run it.
 
