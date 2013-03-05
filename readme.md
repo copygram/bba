@@ -1,4 +1,4 @@
-### Blood Bank Africa
+### BBA
 
 To get up and running with BBA project you just need to clone this repo and use [composer][1] to install all dependencies.
 
