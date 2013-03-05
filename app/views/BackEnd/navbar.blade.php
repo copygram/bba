@@ -2,7 +2,7 @@
         <h2>Dashboard</h2>
         
             <ul>
-                <li><?php echo HTML::route('home','Dashboard'); ?></li>
+                <li><a href="{{ URL::route('home') }}">Dashboard</a></li>
                 <li><a href="#">Messages</a></li>
                 
             </ul>
