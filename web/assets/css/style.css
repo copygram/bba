@@ -343,3 +343,4 @@ input.loginform_submit{
     border-radius: 4px;
 }
 /*-------------------------------------maps section-------------------------------------*/
+#map_canvas { height: 600px; width: 100%;}
