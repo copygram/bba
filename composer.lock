@@ -1,5 +1,9 @@
 {
+<<<<<<< HEAD
     "hash": "b547cf78d61ce46a8d8d3cee60297c52",
+=======
+    "hash": "b245ea7b6e5cd0a629c60c1a0ef601a6",
+>>>>>>> d4e5abefd618a40d778dd9aa26d3cab9fd61e1c0
     "packages": [
         {
             "name": "ircmaxell/password-compat",
