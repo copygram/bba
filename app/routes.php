@@ -8,6 +8,10 @@
 |
 */
 
+Route::get('/base', function(){
+	return View::make('frontend.base');
+});
+
 Route::get('/', function(){
 	return View::make('frontend.index');
 });
