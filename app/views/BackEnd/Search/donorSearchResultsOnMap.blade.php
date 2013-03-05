@@ -1,7 +1,7 @@
 @extends('BackEnd.default')
 @section('header')
     <style type="text/css">
-        #map_canvas { height: 600px; width: 100%;}
+
     </style>
 @stop
 @section('content')
