@@ -5,7 +5,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
     <title>Blood Bank Africa</title>
     <meta name="viewport" content="width=device-width,initial-scale=1, maximum-scale=1">
-    <link href="{{ Asset::add('styles', 'assets/css/style.css') }}" rel="stylesheet">
+    <link href="{{ asset('assets/css/style.css') }}" rel="stylesheet">
    
     @yield('header')
 </head>

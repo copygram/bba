@@ -1,9 +1,5 @@
 {
-<<<<<<< HEAD
-    "hash": "b547cf78d61ce46a8d8d3cee60297c52",
-=======
     "hash": "b245ea7b6e5cd0a629c60c1a0ef601a6",
->>>>>>> d4e5abefd618a40d778dd9aa26d3cab9fd61e1c0
     "packages": [
         {
             "name": "ircmaxell/password-compat",
@@ -19,7 +15,6 @@
                 "reference": "v1.0.0",
                 "shasum": ""
             },
-            "time": "2013-01-14 16:49:31",
             "type": "library",
             "autoload": {
                 "files": [
@@ -42,7 +37,8 @@
             "keywords": [
                 "hashing",
                 "password"
-            ]
+            ],
+            "time": "2013-01-14 16:49:31"
         },
         {
             "name": "laravel/framework",
@@ -110,7 +106,6 @@
                 "classpreloader/classpreloader": "dev-master",
                 "mockery/mockery": "0.7.2"
             },
-            "time": "2013-03-05 05:22:59",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -142,7 +137,8 @@
             "keywords": [
                 "framework",
                 "laravel"
-            ]
+            ],
+            "time": "2013-03-05 05:22:59"
         },
         {
             "name": "laravelbook/ardent",
@@ -163,7 +159,6 @@
                 "illuminate/support": "4.0.x",
                 "php": ">=5.3.0"
             },
-            "time": "2013-02-28 06:27:11",
             "type": "library",
             "autoload": {
                 "files": [
@@ -195,7 +190,8 @@
                 "orm",
                 "sql",
                 "validation"
-            ]
+            ],
+            "time": "2013-02-28 06:27:11"
         },
         {
             "name": "laravelbook/laravel4-powerpack",
@@ -217,7 +213,6 @@
                 "php": ">=5.3.0",
                 "raveren/kint": "dev-master"
             },
-            "time": "2013-02-27 10:15:26",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -245,7 +240,8 @@
                 "laravel",
                 "string",
                 "support"
-            ]
+            ],
+            "time": "2013-02-27 10:15:26"
         },
         {
             "name": "monolog/monolog",
@@ -277,7 +273,6 @@
                 "mlehner/gelf-php": "Allow sending log messages to a GrayLog2 server",
                 "raven/raven": "Allow sending log messages to a Sentry server"
             },
-            "time": "2013-01-11 10:23:20",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -307,7 +302,8 @@
                 "log",
                 "logging",
                 "psr-3"
-            ]
+            ],
+            "time": "2013-01-11 10:23:20"
         },
         {
             "name": "patchwork/utf8",
@@ -326,7 +322,6 @@
             "require": {
                 "php": ">=5.3.0"
             },
-            "time": "2012-12-13 08:48:39",
             "type": "library",
             "autoload": {
                 "files": [
@@ -351,7 +346,8 @@
                 "unicode",
                 "utf-8",
                 "utf8"
-            ]
+            ],
+            "time": "2012-12-13 08:48:39"
         },
         {
             "name": "psr/log",
@@ -367,7 +363,6 @@
                 "reference": "1.0.0",
                 "shasum": ""
             },
-            "time": "2012-12-21 11:40:51",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -389,7 +384,8 @@
                 "log",
                 "psr",
                 "psr-3"
-            ]
+            ],
+            "time": "2012-12-21 11:40:51"
         },
         {
             "name": "raveren/kint",
@@ -408,7 +404,6 @@
             "require": {
                 "php": ">=5.2.0"
             },
-            "time": "2013-02-22 08:09:27",
             "type": "library",
             "autoload": {
                 "files": [
@@ -435,7 +430,8 @@
                 "debug",
                 "kint",
                 "php"
-            ]
+            ],
+            "time": "2013-02-22 08:09:27"
         },
         {
             "name": "rcrowe/twigbridge",
@@ -466,7 +462,6 @@
                 "meido/html": "1.1.*",
                 "twig/extensions": "1.0.*"
             },
-            "time": "2013-02-21 09:37:44",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -488,7 +483,8 @@
             "keywords": [
                 "laravel",
                 "twig"
-            ]
+            ],
+            "time": "2013-02-21 09:37:44"
         },
         {
             "name": "swiftmailer/swiftmailer",
@@ -507,7 +503,6 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-02-04 10:09:01",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -537,7 +532,8 @@
             "keywords": [
                 "mail",
                 "mailer"
-            ]
+            ],
+            "time": "2013-02-04 10:09:01"
         },
         {
             "name": "symfony/browser-kit",
@@ -565,7 +561,6 @@
             "suggest": {
                 "symfony/process": "2.2.*"
             },
-            "time": "2013-02-23 06:46:07",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -592,7 +587,8 @@
                 }
             ],
             "description": "Symfony BrowserKit Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-23 06:46:07"
         },
         {
             "name": "symfony/console",
@@ -612,7 +608,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-03-01 14:42:44",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -639,7 +634,8 @@
                 }
             ],
             "description": "Symfony Console Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-01 14:42:44"
         },
         {
             "name": "symfony/css-selector",
@@ -659,7 +655,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-01-17 15:25:59",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -686,7 +681,8 @@
                 }
             ],
             "description": "Symfony CssSelector Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-01-17 15:25:59"
         },
         {
             "name": "symfony/dom-crawler",
@@ -712,7 +708,6 @@
             "suggest": {
                 "symfony/css-selector": "2.2.*"
             },
-            "time": "2013-03-01 06:43:14",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -739,7 +734,8 @@
                 }
             ],
             "description": "Symfony DomCrawler Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-01 06:43:14"
         },
         {
             "name": "symfony/event-dispatcher",
@@ -766,7 +762,6 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/http-kernel": "2.2.*"
             },
-            "time": "2013-02-11 11:26:43",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -793,7 +788,8 @@
                 }
             ],
             "description": "Symfony EventDispatcher Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-11 11:26:43"
         },
         {
             "name": "symfony/finder",
@@ -813,7 +809,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-02-28 14:06:36",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -840,7 +835,8 @@
                 }
             ],
             "description": "Symfony Finder Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-28 14:06:36"
         },
         {
             "name": "symfony/http-foundation",
@@ -860,7 +856,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-03-01 10:42:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -890,7 +885,8 @@
                 }
             ],
             "description": "Symfony HttpFoundation Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-01 10:42:10"
         },
         {
             "name": "symfony/http-kernel",
@@ -932,7 +928,6 @@
                 "symfony/dependency-injection": "2.2.*",
                 "symfony/finder": "2.2.*"
             },
-            "time": "2013-03-01 10:42:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -959,7 +954,8 @@
                 }
             ],
             "description": "Symfony HttpKernel Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-03-01 10:42:10"
         },
         {
             "name": "symfony/process",
@@ -979,7 +975,6 @@
             "require": {
                 "php": ">=5.3.3"
             },
-            "time": "2013-02-18 21:28:10",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1006,7 +1001,8 @@
                 }
             ],
             "description": "Symfony Process Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-18 21:28:10"
         },
         {
             "name": "symfony/routing",
@@ -1037,7 +1033,6 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2013-02-11 11:24:47",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1064,7 +1059,8 @@
                 }
             ],
             "description": "Symfony Routing Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-11 11:24:47"
         },
         {
             "name": "symfony/translation",
@@ -1092,7 +1088,6 @@
                 "symfony/config": "2.2.*",
                 "symfony/yaml": "2.2.*"
             },
-            "time": "2013-02-08 16:10:57",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1119,7 +1114,8 @@
                 }
             ],
             "description": "Symfony Translation Component",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-08 16:10:57"
         },
         {
             "name": "symfony/twig-bridge",
@@ -1156,7 +1152,6 @@
                 "symfony/translation": "2.1.*",
                 "symfony/yaml": "2.1.*"
             },
-            "time": "2013-02-28 14:09:18",
             "type": "symfony-bridge",
             "autoload": {
                 "psr-0": {
@@ -1178,7 +1173,8 @@
                 }
             ],
             "description": "Symfony Twig Bridge",
-            "homepage": "http://symfony.com"
+            "homepage": "http://symfony.com",
+            "time": "2013-02-28 14:09:18"
         },
         {
             "name": "twig/twig",
@@ -1197,7 +1193,6 @@
             "require": {
                 "php": ">=5.2.4"
             },
-            "time": "2013-02-28 14:08:49",
             "type": "library",
             "extra": {
                 "branch-alias": {
@@ -1227,7 +1222,8 @@
             "homepage": "http://twig.sensiolabs.org",
             "keywords": [
                 "templating"
-            ]
+            ],
+            "time": "2013-02-28 14:08:49"
         },
         {
             "name": "twilio/sdk",
@@ -1249,7 +1245,6 @@
             "require-dev": {
                 "mockery/mockery": ">=0.7.2"
             },
-            "time": "2013-02-02 20:12:20",
             "type": "library",
             "autoload": {
                 "psr-0": {
@@ -1276,7 +1271,8 @@
                 "api",
                 "sms",
                 "twilio"
-            ]
+            ],
+            "time": "2013-02-02 20:12:20"
         }
     ],
     "packages-dev": null,
@@ -1289,5 +1285,11 @@
         "laravelbook/ardent": 20,
         "laravelbook/laravel4-powerpack": 20,
         "twilio/sdk": 20
-    }
+    },
+    "platform": [
+
+    ],
+    "platform-dev": [
+
+    ]
 }
