@@ -4,3 +4,4 @@ composer.lock
 .DS_Store
 /app/views/frontend/about.html
 *.idea
+*.log
