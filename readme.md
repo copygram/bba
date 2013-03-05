@@ -26,4 +26,4 @@ This will create/overwrite the file ```./Sites/bba/bba.sql```.
 You can then commit and push this file so that it's possible to pull and then import it with: ```./db_drop_create_load.sh```
 
 [1]: http://getcomposer.org/
-[2]: https://github.com/copygram/vagrant/blob/master/README.md
+[2]: https://github.com/copygram/devenv/blob/master/README.md
