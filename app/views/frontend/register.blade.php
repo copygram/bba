@@ -75,10 +75,11 @@
 	        		<input type="email"   class="required email" name="email" value="">
 	        	</p>
 	           	<p>
-	           	<label for="mobile">Country code:</label><br />
+	            	<label for="countrycode">Country code:</label><br />
 	        		<input type="text"  required name="countrycode" value="">
-	        		<label for="code">Mobile:</label><br />
-	        		<input type="text"  class="required" name="code" value="">
+	        		
+	        		<label for="mobile">Mobile:</label><br />
+	        		<input type="text"  class="required" name="mobile" value="">
 	        	</p>
 	        	<p>
 	        		<label for="location">Location: <em>( Residential area )</em></label><br />

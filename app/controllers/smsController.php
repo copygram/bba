@@ -27,9 +27,9 @@ class smsController extends BaseController {
 
 	    $recipientNumber  = Input::get('mobile');
 
-	    $recipientName  = 'Otis';
+	    $recipientName  = Input::get('fname');
 	  
-	    $messageBody = Input::get('message');
+	    $messageBody = "Thank you $recipientName for registering to Blood Bank Africa";
 	 
 	    
 	    $donor = array(
