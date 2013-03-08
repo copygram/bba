@@ -52,7 +52,7 @@
 	        		<select name="bloodtype" >
 	        			<option value="0">Choose one.</option>
 	        			<option value="A" >A</option>
-	        			<option value="A+" >A+-</option>
+	        			<option value="A+" >A+</option>
 	        			<option value="B+">B+</option>
 	        			<option value="B-">B-</option>
 	        			<option value="AB">AB</option>
@@ -61,6 +61,12 @@
 	        			<option value="Unknown">Unknown</option>
 	        		</select>
 	        	</p>
+
+	        	<p>
+	        		<label for="donateDate">Last date donated:</label><br />
+	        		<input type="donateDate"  name="email" value="">
+	        	</p>
+
 	        	<p>
 	        		<button type="submit" class="bigbtn">Register</button>
 	        	</p>

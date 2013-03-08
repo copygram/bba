@@ -12,7 +12,7 @@ class hospitalController extends BaseController {
 	public function create()
 	{
 
-		return View::make('frontend.hosptialSignup');
+		return View::make('frontend.hospitalSignup');
 	}
 
 	/**
@@ -22,7 +22,8 @@ class hospitalController extends BaseController {
 	 */
 	public function store()
 	{
-		return 'save hospital details';
+		$inputs = Input::all();
+		var_dump($inputs);
 	}
 
 	

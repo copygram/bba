@@ -13,11 +13,13 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="../assets/css/normalize.css">
-        <link rel="stylesheet" href="../assets/css/main.css">
-        <link rel="stylesheet" href="../assets/css/lib/1140.css">
+        {{ HTML::style('/assets/css/normalize.css') }}
+        {{ HTML::style('/assets/css/main.css') }}
+        {{ HTML::style('/assets/css/lib/1140.css') }}
         
-        <script src="../assets/js/vendor/modernizr-2.6.2.min.js"></script>
+        {{ HTML::script('/assets/js/vendor/modernizr-2.6.2.min.js') }}
+        
+       
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -29,16 +31,16 @@
 				<div class="container top">
 						<div class="row">
 							<ul class="menu" id="menuLeft">
-								<li><a href="/home" id="home" class="menuItem">Home</a></li>
-								<li><a href="/about" id="about" class="menuItem">About</a></li>
-								<li><a href="/contact" id="contact" class="menuItem">Contact</a></li>
+								<li><a href="{{ URL::to('/') }}" id="home" class="menuItem">Home</a></li>
+								<li><a href="{{ URL::to('about') }}" id="about" class="menuItem">About</a></li>
+								<li><a href="{{ URL::to('contact') }}" id="contact" class="menuItem">Contact</a></li>
 							</ul>
 							
 								<span id="logo">THE BLOOD BANK of AFRICA</span>
 					
 							<ul class="menu" id="menuRight">
 								<!-- <li class="firstItem"><a href="/create" id="create" class="menuItem">Create account</a></li> -->
-								<li class="firstItem"><a href="admin/login" id="login" class="menuItem">Login</a></li>
+								<li class="firstItem"><a href="{{ URL::to('admin/login') }}" id="login" class="menuItem">Login</a></li>
 							</ul>
 						</div>
 				</div>
@@ -81,10 +83,10 @@
 				</div>
 				<div class="threecol">
 					<p><strong>Are you a donor?</strong><br />
-					<a href="#">sign up today</a></p>
+					<a href="{{ URL::to('donors/create') }}">sign up today</a></p>
 
 					<p><strong>Hospitals or clinic?</strong><br />
-					<a href="#">sign up today</a></p>
+					<a href="{{ URL::to('hospitals/create') }}">sign up today</a></p>
 					
 					<p><strong>Contact us</strong><br />
 					<a href="#">help</a> - <a href="#">press</a> - <a href="#">legal</a></p>
@@ -118,12 +120,16 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
 
+       
+        {{ HTML::script('/assets/js/geo.js') }}
+
         <!-- include Validation plugin-->
-		<script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
+        {{ HTML::script('/assets/js/jquery.validate.js') }}
+		
        <!--hook it up-->
 		<script type="text/javascript">
-		$(document).ready(function() {
-		
+		$(document).ready(function(e) {
+			e.preventDefault();
 			//validation plugin
 			$('.donorForm').validate();
 				
