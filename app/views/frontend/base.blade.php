@@ -120,7 +120,7 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
 
-       
+       	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
         {{ HTML::script('/assets/js/geo.js') }}
 
         <!-- include Validation plugin-->
@@ -128,8 +128,8 @@
 		
        <!--hook it up-->
 		<script type="text/javascript">
-		$(document).ready(function(e) {
-			e.preventDefault();
+		$(document).ready(function() {
+			
 			//validation plugin
 			$('.donorForm').validate();
 				
