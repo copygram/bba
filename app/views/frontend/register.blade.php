@@ -13,6 +13,7 @@
 
 			<div class="center formcanvas">
 				<form action="/donors" method="POST" class="donorForm">
+					
 				<p>
 	        		<label for="firstname">First name:</label><br />
 	        		<input type="text"   class="required"  name="fname" value="">
@@ -64,7 +65,7 @@
 
 	        	<p>
 	        		<label for="donateDate">Last date donated:</label><br />
-	        		<input type="donateDate"  name="email" value="">
+	        		<input type="donateDate"  name="donateDate" value="" id="datepicker">
 	        	</p>
 
 	        	<p>

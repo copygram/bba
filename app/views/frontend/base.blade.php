@@ -123,17 +123,27 @@
        	<script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
         {{ HTML::script('/assets/js/geo.js') }}
 
+
+
+        <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.1/themes/base/jquery-ui.css" />
+  		<script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+  		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
         <!-- include Validation plugin-->
         {{ HTML::script('/assets/js/jquery.validate.js') }}
-		
+
+
+  
        <!--hook it up-->
 		<script type="text/javascript">
 		$(document).ready(function() {
 			
 			//validation plugin
 			$('.donorForm').validate();
+
+			$( "#datepicker" ).datepicker();
 				
 		});		
 		</script>
+
     </body>
 </html>

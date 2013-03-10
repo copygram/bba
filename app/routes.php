@@ -9,7 +9,14 @@
 */
 
 Route::get('/base', function(){
-	return View::make('frontend.base');
+	
+	$code = '+254';
+	
+	$mob = substr("0725504592", 1);
+
+	$number = $code.$mob;
+
+	return $number;
 });
 
 Route::get('/', function(){

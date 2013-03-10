@@ -22,8 +22,31 @@ class hospitalController extends BaseController {
 	 */
 	public function store()
 	{
-		$inputs = Input::all();
-		var_dump($inputs);
+		$hospital = Hospital::create(array(
+
+			'name' 			=> Input::get('name'),
+			'pincode' 		=> Input::get('licence'),
+			'area'    		=> Input::get('area'),
+			'countrycode' 	=> Input::get('countrycode'),
+			'mobile' 		=> Input::get('mobile'),
+			'email' 		=> Input::get('email'),
+			'lat'			=> Input::get('lat'),
+			'lng'			=> Input::get('lng')
+		));
+
+		$user = User::create(array(
+			'hospital_id' => $hospital->id,
+			'email' => $hospital->email,
+			'fname' => 'Null',
+			'lname' =>  'Null',
+			'mobile' => 'Null',
+			'role'  => 1,
+			'status' => 1,
+			'password' => Hash::make('123456')
+		));
+
+		return 'Done';
+
 	}
 
 	
