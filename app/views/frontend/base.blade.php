@@ -141,9 +141,13 @@
 			$('.donorForm').validate();
 
 			$( "#datepicker" ).datepicker();
-				
-		});		
+
+		});	
+
+
 		</script>
+
+
 
     </body>
 </html>

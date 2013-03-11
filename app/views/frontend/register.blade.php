@@ -51,15 +51,13 @@
 	        	<p>
 	        		<label for="bloodtype">Blood Type:</label><br />
 	        		<select name="bloodtype" >
-	        			<option value="0">Choose one.</option>
-	        			<option value="A" >A</option>
-	        			<option value="A+" >A+</option>
-	        			<option value="B+">B+</option>
-	        			<option value="B-">B-</option>
-	        			<option value="AB">AB</option>
-	        			<option value="O+">O+</option>
-	        			<option value="O-">O-</option>
-	        			<option value="Unknown">Unknown</option>
+	        			<?php
+	        				foreach ($bloodtype as $blood) {
+	        					echo "<option value='$blood->id'>$blood->bloodtype</option>";
+	        				}
+	        				
+	        			 ?>
+	        			
 	        		</select>
 	        	</p>
 

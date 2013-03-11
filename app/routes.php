@@ -10,13 +10,9 @@
 
 Route::get('/base', function(){
 	
-	$code = '+254';
 	
-	$mob = substr("0725504592", 1);
 
-	$number = $code.$mob;
-
-	return $number;
+	
 });
 
 Route::get('/', function(){
