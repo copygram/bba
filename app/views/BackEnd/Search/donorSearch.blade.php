@@ -1,5 +1,7 @@
 @extends('BackEnd.default')
 
+
+
 @section('content')
 	<h2>Search for donors</h2>
 	
@@ -24,7 +26,6 @@
 			 	<?php echo Form::submit('Search',array('id'=>'searchbutton')) ;?>	
 			</p>           
 		</div>
-
 
 	<?php echo Form::close();?>
 

@@ -18,6 +18,8 @@
         {{ HTML::style('/assets/css/lib/1140.css') }}
         
         {{ HTML::script('/assets/js/vendor/modernizr-2.6.2.min.js') }}
+
+        @yield('header')
         
        
     </head>
@@ -130,7 +132,6 @@
   		<script src="http://code.jquery.com/ui/1.10.1/jquery-ui.js"></script>
         <!-- include Validation plugin-->
         {{ HTML::script('/assets/js/jquery.validate.js') }}
-
 
   
        <!--hook it up-->

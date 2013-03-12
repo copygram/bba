@@ -15,6 +15,10 @@ class donorsController extends BaseController {
 
 	public function store()
 	{
+		
+		
+
+
 		$validation = Donor::validate(Input::all());
 
 		$code = Input::get('countrycode');
@@ -49,18 +53,14 @@ class donorsController extends BaseController {
 		|--------------------------------------------------------------------------
 		                          SMS PART
 		|--------------------------------------------------------------------------
-		|$recipientNumber = Input::get('mobile');
-		 $recipientName = Input::get('fname').' '.Input::get('lname');
-		 $messageBody = "Thanks for saving a life.";
-
-		  $sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
-		|
-		*/
-		$recipientNumber = $donor->mobile;
+		|$recipientNumber = $donor->mobile;
 		$recipientName = $donor->fname;
 		$messageBody = "Hi $recipientName. Welcome to Blood Bank Africa.";
 
 		$sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
+		|
+		*/
+		
 
 		return Redirect::to('donors/create')->with('success','Thank you. You have successfully registered to BBA');
 		
