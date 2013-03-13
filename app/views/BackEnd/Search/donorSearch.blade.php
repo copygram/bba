@@ -5,7 +5,7 @@
 @section('content')
 	<h2>Search for donors</h2>
 	
-	<?php echo Form::open(); ?>
+	<?php echo Form::open('#'); ?>
 	   <div class="form_row">
 	   	@if(Session::has('flash_notice'))
 	   		
