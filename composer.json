@@ -19,5 +19,4 @@
 	},
 	"minimum-stability": "dev",
 	"provide": { "ext-mcrypt": "*" }
-
 }
