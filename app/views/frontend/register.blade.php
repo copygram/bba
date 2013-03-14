@@ -99,12 +99,8 @@
 	        	<p>
 	        		<label for="bloodtype">Blood Type:</label><br />
 	        		<select name="bloodtype" >
-	        			<?php
-	        				foreach ($bloodtype as $blood) {
-	        					echo "<option value='$blood->id'>$blood->bloodtype</option>";
-	        				}
-	        				
-	        			 ?>
+
+	        			
 	        			
 	        		</select>
 	        	</p>
