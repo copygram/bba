@@ -9,12 +9,7 @@
 */
 
 Route::get('/base', function(){
-	
-
-
-	
-
-	
+	return View::make('frontend.base');
 });
 
 Route::get('/', function(){
@@ -30,24 +25,11 @@ Route::get('contact', function(){
 });
 
 
-/*
-|--------------------------------------------------------------------------
-                          Donor resource
-|--------------------------------------------------------------------------
-*/
+
+// donor Resource
+
 
 Route::resource('donors','donorsController');
-
-/*
-|--------------------------------------------------------------------------
-                          BACK END  AUTHENTICATION
-|--------------------------------------------------------------------------
-*/
-
-Route::resource('hospitals','hospitalController');
-
-
-
 
 
 /*

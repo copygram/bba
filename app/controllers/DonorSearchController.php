@@ -9,7 +9,7 @@ class DonorSearchController extends BaseController {
 	 */
 	public function index()
 	{
-		return View::make('BackEnd.Search.donorSearch')->with('donors',self::getDonorsList());
+		return View::make('BackEnd.Search.donorSearch');
 	}
 
     private static function getDonorsList() {

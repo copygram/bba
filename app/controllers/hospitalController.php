@@ -12,7 +12,7 @@ class hospitalController extends BaseController {
 	public function create()
 	{
 
-		return View::make('frontend.hospitalSignup');
+		return View::make('frontend.hosptialSignup');
 	}
 
 	/**
@@ -22,31 +22,7 @@ class hospitalController extends BaseController {
 	 */
 	public function store()
 	{
-		$hospital = Hospital::create(array(
-
-			'name' 			=> Input::get('name'),
-			'pincode' 		=> Input::get('licence'),
-			'area'    		=> Input::get('area'),
-			'countrycode' 	=> Input::get('countrycode'),
-			'mobile' 		=> Input::get('mobile'),
-			'email' 		=> Input::get('email'),
-			'lat'			=> Input::get('lat'),
-			'lng'			=> Input::get('lng')
-		));
-
-		$user = User::create(array(
-			'hospital_id' => $hospital->id,
-			'email' => $hospital->email,
-			'fname' => 'Null',
-			'lname' =>  'Null',
-			'mobile' => 'Null',
-			'role'  => 1,
-			'status' => 1,
-			'password' => Hash::make('123456')
-		));
-
-		return 'Done';
-
+		return 'save hospital details';
 	}
 
 	
