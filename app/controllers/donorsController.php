@@ -10,7 +10,7 @@ class donorsController extends BaseController {
 	
 	public function create()
 	{
-		return View::make('frontend.register');
+		return View::make('frontend.register')->with('bloodtype',Blood::all());
 	}
 
 	public function store()
