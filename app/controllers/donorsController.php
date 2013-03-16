@@ -10,7 +10,7 @@ class donorsController extends BaseController {
 	
 	public function create()
 	{
-		return View::make('frontend.register');
+        return View::make('frontEnd.register', array());
 	}
 
 	public function store()
@@ -18,7 +18,6 @@ class donorsController extends BaseController {
 		$validation = Donor::validate(Input::all());
 		
 		if($validation->passes()){
-			
 
 			$mobile = Input::get('mobile');
 
@@ -51,7 +50,8 @@ class donorsController extends BaseController {
 			'lastDonated' => Input::get('lastDonated')
 		));
 
-		
+
+
 		 $recipientNumber = $donor->mobile;
 
 		 $recipientName = $donor->fname;
@@ -60,9 +60,9 @@ class donorsController extends BaseController {
 		 $messageBody = "Thanks for saving a life.";
 
 		  $sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
-		  
+		  $event = Event::fire('donor.save', $donor);
 		  return Redirect::to('donors/create')->with('success','Thank you. You have successfully registered to BBA');
-		
+
 		}else{
 			return Redirect::to('donors/create')->withErrors($validation)->withInput();
 		}

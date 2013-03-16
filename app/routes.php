@@ -11,46 +11,23 @@
 
 Route::get('/base', function(){
 
-	  $client = new Services_Twilio('ACe8fddabb94827cc5c73bcfb50acb08b5', '462d7dd89fb5bb82a9c4c1acc9f7edfb');
-	 
-	    $recipientNumber = '+46725504592';
-
-	    $recipientName = 'Otis';
-
-	    $messageBody = 'Testing on how to get message id';
-
-	    $donor = array(
-	     
-	        $recipientNumber => $recipientName,  
-	    );
-	 
-	    foreach ($donor as $number => $name) {
-	 		
-	        $sms = $client->account->sms_messages->create('657-999-5090', $number, $messageBody);
-
-	       
-	    }
-	    print_r($sms->fromcountry);
-
-	
-	    
-	    
 
 });
 
 Route::get('/', function(){
-	return View::make('frontend.index');
+	return View::make('frontEnd.index');
 });
 
 Route::get('about', function(){
-	return View::make('frontend.about');
+	return View::make('frontEnd.about', array());
 });
 
 Route::get('contact', function(){
-	return View::make('frontend.contact');
+	return View::make('frontEnd.contact');
 });
 
 
+Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@sendMail'));
 
 // donor Resource
 

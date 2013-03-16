@@ -56,6 +56,18 @@ $app->bindInstallPaths(require __DIR__.'/paths.php');
 
 require $app->getBootstrapFile();
 
+
+/*
+ *
+ */
+
+Event::listen('donor.save', function($donor) {
+    $welcomeMail = new sendMail();
+    $welcomeMail->subject = "Welcome to BBA";
+    $welcomeMail->template = "Template";
+    $welcomeMail->send($donor);
+});
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application
