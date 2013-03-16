@@ -14,7 +14,7 @@ class sendMail extends BaseController {
     }
 
     public function send($user) {
-        $mandrill = new Mandrill('ZPxZgL0JdGPrl6tNQvPN2A');
+        $mandrill = new Mandrill('D0M4hfjLBAV5A8eL8E9gJw');
 
         $message = array(
             'subject' => $this->subject,
