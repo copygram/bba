@@ -8,8 +8,23 @@
 |
 */
 
+
 Route::get('/base', function(){
-	return View::make('frontend.base');
+
+	$string = '00725504592';
+
+	$array = str_split($string);
+	if($array[0] === '0')
+	{
+		return substr($string, 1);
+	}else{
+		return $string ;
+	}
+
+	
+	    
+	    
+
 });
 
 Route::get('/', function(){
