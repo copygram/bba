@@ -36,7 +36,6 @@ class donorsController extends BaseController {
 
 			$bloodtype = Input::get('bloodtype');
 
-			
 
 			$donor = Donor::create(array(
 		
