@@ -56,6 +56,15 @@ $app->bindInstallPaths(require __DIR__.'/paths.php');
 
 require $app->getBootstrapFile();
 
+
+/*
+ *
+ */
+
+Event::listen('donor.create', function(){
+
+});
+
 /*
 |--------------------------------------------------------------------------
 | Return The Application

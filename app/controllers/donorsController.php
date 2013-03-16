@@ -10,7 +10,9 @@ class donorsController extends BaseController {
 	
 	public function create()
 	{
-		return View::make('frontend.register');
+        $event = Event::fire('donor.create', 'slask');
+        return View::make('frontEnd.register');
+
 	}
 
 	public function store()

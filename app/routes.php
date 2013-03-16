@@ -9,22 +9,23 @@
 */
 
 Route::get('/base', function(){
-	return View::make('frontend.base');
+	return View::make('frontEnd.base');
 });
 
 Route::get('/', function(){
-	return View::make('frontend.index');
+	return View::make('frontEnd.index');
 });
 
 Route::get('about', function(){
-	return View::make('frontend.about');
+	return View::make('frontEnd.about');
 });
 
 Route::get('contact', function(){
-	return View::make('frontend.contact');
+	return View::make('frontEnd.contact');
 });
 
 
+Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@sendMail'));
 
 // donor Resource
 
