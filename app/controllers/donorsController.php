@@ -38,9 +38,6 @@ class donorsController extends BaseController {
 		  //$sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
 
             $event = Event::fire('donor.save', $donor);
-
-            dd($event);
-
             return Redirect::to('donors/create')->with('success','Thank you. You have successfully registered to BBA');
 		
 		}else{

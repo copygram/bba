@@ -14,26 +14,23 @@ class sendMail extends BaseController {
     }
 
     public function send($user) {
-        dd($user);
-
         $mandrill = new Mandrill('ZPxZgL0JdGPrl6tNQvPN2A');
 
         $message = array(
             'subject' => $this->subject,
-            'from_email' => 'oskar@copygr.am',
-            'to' => array(array('email' => $user->email, 'name' => $user->fname + $user->lname))
-        ,   'merge_vars' => array(array(
+            'from_email' => 'hello@bloodbankafrica.com',
+            'to' => array(array('email' => $user->email, 'name' => $user->fname + $user->lname)),
+            'merge_vars' => array(array(
                 'rcpt' => 'oskar@copygr.am',
                 'vars' =>
                 array(
                     array(
                         'name' => 'FIRSTNAME',
-                        'content' => 'Recipient 1 first name'),
+                        'content' => $user->fname),
                     array(
                         'name' => 'LASTNAME',
-                        'content' => 'Last name')
-                )
-            )));
+                        'content' => $user->lname)
+                ))));
 
         $template_content = array(
             array(
@@ -45,11 +42,6 @@ class sendMail extends BaseController {
 
         );
 
-        //print_r($mandrill->messages->sendTemplate($this->template, $template_content, $message));
-
-        dd($donor);
-
-        return View::make('frontEnd.mail')->with("slask", "MAIL");
-
+        $mandrill->messages->sendTemplate($this->template, $template_content, $message);
     }
 }
