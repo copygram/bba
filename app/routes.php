@@ -8,8 +8,10 @@
 |
 */
 
+
 Route::get('/base', function(){
-	return View::make('frontEnd.base');
+
+
 });
 
 Route::get('/', function(){
@@ -17,7 +19,7 @@ Route::get('/', function(){
 });
 
 Route::get('about', function(){
-	return View::make('frontEnd.about');
+	return View::make('frontEnd.about', array());
 });
 
 Route::get('contact', function(){

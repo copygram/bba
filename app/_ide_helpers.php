@@ -5,7 +5,7 @@
  * Implements code completion for Laravel 4 in JetBrains PhpStorm and SublimeText 2
  * --------------------------------------------------------------------------------
  */
-
+ 
 /**
  * @method	static	bool	check()	Determine if the current user is authenticated.
  * @method	static	bool	guest()	Determine if the current user is a guest.
