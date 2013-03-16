@@ -51,6 +51,11 @@
 	        	</p>
 
 	        	<p>
+	        		<label for="lastDonated">Last donated:<em>( dd/mm/yyyy )</em></label><br />
+	        		<input type="text" id="datepicker" name="lastDonated" value="">
+	        	</p>
+
+	        	<p>
 	        		<label for="location">Location: <em>( Residential area )</em></label><br />
 	        		<input type="text" class="required" name="area" id="location" value="">
 	        		<input type="hidden" id="lat" name="lat"/>
@@ -122,12 +127,7 @@
 	        		<input type="text"  class="required" name="mobile" value="">
 	        	</p>
 	        	
-	        	<p>
-	        		<label for="lastDonated">Last donated:<em>( dd/mm/yyyy )</em></label><br />
-	        		<input type="text" id="datepicker" name="lastDonated" value="">
-	        	</p>
-	        	
-	       
+	      
 	        	<p>
 	        		<button type="submit" class="bigbtn">Register</button>
 	        	</p>
