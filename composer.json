@@ -4,8 +4,7 @@
 		"laravelbook/ardent": "dev-master",
 		"laravelbook/laravel4-powerpack": "dev-master",
 		"twilio/sdk": "dev-master",
-		"rcrowe/twigbridge": "0.1.*",
-		"symfony/twig-bridge": "2.1.*"
+        "mandrill/mandrill": "dev-master"
 	},
 	"autoload": {
 		"classmap": [
