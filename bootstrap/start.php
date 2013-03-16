@@ -61,8 +61,9 @@ require $app->getBootstrapFile();
  *
  */
 
-Event::listen('donor.create', function(){
-
+Event::listen('donor.tr', function($user){
+    $welcomeMail = new sendMail();
+    $welcomeMail->sendMail();
 });
 
 /*
