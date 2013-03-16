@@ -61,9 +61,10 @@ require $app->getBootstrapFile();
  *
  */
 
-Event::listen('donor.tr', function($user){
+Event::listen('donor.save', function($donor) {
     $welcomeMail = new sendMail();
-    $welcomeMail->sendMail();
+    $welcomeMail->subject = "Welcome to BBA";
+    $welcomeMail->send($donor);
 });
 
 /*

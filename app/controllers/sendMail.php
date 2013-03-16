@@ -7,16 +7,22 @@
 
 class sendMail extends BaseController {
 
-    public function sendMail() {
+    public $subject;
+    public $template;
+
+    public function __construct() {
+    }
+
+    public function send($user) {
+        dd($user);
 
         $mandrill = new Mandrill('ZPxZgL0JdGPrl6tNQvPN2A');
 
         $message = array(
-            'subject' => 'Test message',
+            'subject' => $this->subject,
             'from_email' => 'oskar@copygr.am',
-            'html' => '<p>this is a test message with Mandrill\'s PHP wrapper!.</p>',
-            'to' => array(array('email' => 'oskar@copygr.am', 'name' => 'Recipient 1')),
-            'merge_vars' => array(array(
+            'to' => array(array('email' => $user->email, 'name' => $user->fname + $user->lname))
+        ,   'merge_vars' => array(array(
                 'rcpt' => 'oskar@copygr.am',
                 'vars' =>
                 array(
@@ -26,9 +32,8 @@ class sendMail extends BaseController {
                     array(
                         'name' => 'LASTNAME',
                         'content' => 'Last name')
-                ))));
-
-        $template_name = 'Template';
+                )
+            )));
 
         $template_content = array(
             array(
@@ -40,8 +45,9 @@ class sendMail extends BaseController {
 
         );
 
-        print_r($mandrill->messages->sendTemplate($template_name, $template_content, $message));
+        //print_r($mandrill->messages->sendTemplate($this->template, $template_content, $message));
 
+        dd($donor);
 
         return View::make('frontEnd.mail')->with("slask", "MAIL");
 

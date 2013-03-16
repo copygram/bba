@@ -10,9 +10,7 @@ class donorsController extends BaseController {
 	
 	public function create()
 	{
-        $event = Event::fire('donor.tr', 'slask');
-        return View::make('frontEnd.register', null);
-
+        return View::make('frontEnd.register', array());
 	}
 
 	public function store()
@@ -21,7 +19,7 @@ class donorsController extends BaseController {
 		
 		if($validation->passes()){
 
-            Donor::create(array(
+            $donor = Donor::create(array(
                 'fname'		=> 	Input::get('fname'),
                 'lname'		=> 	Input::get('lname'),
                 'address'	=>  Input::get('area'),
@@ -37,7 +35,11 @@ class donorsController extends BaseController {
 		 $recipientName = Input::get('fname').' '.Input::get('lname');
 		 $messageBody = "Thanks for saving a life.";
 
-		  $sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
+		  //$sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
+
+            $event = Event::fire('donor.save', $donor);
+
+            dd($event);
 
             return Redirect::to('donors/create')->with('success','Thank you. You have successfully registered to BBA');
 		
