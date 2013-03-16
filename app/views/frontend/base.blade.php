@@ -13,11 +13,11 @@
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
 
-        <link rel="stylesheet" href="../assets/css/normalize.css">
-        <link rel="stylesheet" href="../assets/css/main.css">
-        <link rel="stylesheet" href="../assets/css/lib/1140.css">
+        {{ HTML::style('/assets/css/normalize.css') }}
+        {{ HTML::style('/assets/css/main.css') }}
+        {{ HTML::style('/assets/css/lib/1140.css') }}
+   		{{ HTML::script('/assets/js/vendor/modernizr-2.6.2.min.js') }}
         
-        <script src="../assets/js/vendor/modernizr-2.6.2.min.js"></script>
     </head>
     <body>
         <!--[if lt IE 7]>
@@ -29,16 +29,16 @@
 				<div class="container top">
 						<div class="row">
 							<ul class="menu" id="menuLeft">
-								<li><a href="/home" id="home" class="menuItem">Home</a></li>
-								<li><a href="/about" id="about" class="menuItem">About</a></li>
-								<li><a href="/contact" id="contact" class="menuItem">Contact</a></li>
+								<li><a href="{{ URL::to('/') }}" id="home" class="menuItem">Home</a></li>
+								<li><a href="{{ URL::to('/about') }}" id="about" class="menuItem">About</a></li>
+								<li><a href="{{ URL::to('/contact') }}" id="contact" class="menuItem">Contact</a></li>
 							</ul>
 							
 								<span id="logo">THE BLOOD BANK of AFRICA</span>
 					
 							<ul class="menu" id="menuRight">
 								<!-- <li class="firstItem"><a href="/create" id="create" class="menuItem">Create account</a></li> -->
-								<li class="firstItem"><a href="admin/login" id="login" class="menuItem">Login</a></li>
+								<li class="firstItem"><a href="{{ URL::to('/admin/login') }}" id="login" class="menuItem">Login</a></li>
 							</ul>
 						</div>
 				</div>
@@ -81,13 +81,13 @@
 				</div>
 				<div class="threecol">
 					<p><strong>Are you a donor?</strong><br />
-					<a href="#">sign up today</a></p>
+					<a href="{{ URL::to('/donors/create') }}">sign up today</a></p>
 
 					<p><strong>Hospitals or clinic?</strong><br />
 					<a href="#">sign up today</a></p>
 					
 					<p><strong>Contact us</strong><br />
-					<a href="#">help</a> - <a href="#">press</a> - <a href="#">legal</a></p>
+					<a href="{{ URL::to('/contact') }}">help</a> - <a href="#">press</a> - <a href="#">legal</a></p>
 				</div>
 				<div class="threecol last">
 					<p><strong>This is what the press says</strong>
@@ -97,7 +97,7 @@
 				</div>
 				
 				<div class="twelvecol center">
-					<p><small>© 2013, BloodBankAfrica.com.  All Rights Reserved. <a href="#">Privacy Policy</a> - <a href="#">Terms of Service</a> - <a href="#">Partnership Guidelines</a> - <a href="#">Developers</a></small></p>
+					<p><small>&copy; {{ date('Y') }}, BloodBankAfrica.com.  All Rights Reserved. <a href="#">Privacy Policy</a> - <a href="#">Terms of Service</a> - <a href="#">Partnership Guidelines</a> - <a href="#">Developers</a></small></p>
 				</div>
 				
 			</div>
@@ -107,8 +107,10 @@
         <!-- End of site JS and other mambo Jambo here -->
         <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.0/jquery.min.js"></script>
         <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.9.0.min.js"><\/script>')</script>
-        <script src="../assets/js/plugins.js"></script>
-        <script src="../assets/js/main.js"></script>
+        
+        {{ HTML::script('/assets/js/plugins.js') }}
+        {{ HTML::script('/assets/js/main.js') }}
+        
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
@@ -118,6 +120,16 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
 
+        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+
+        <!-- Date picker -->
+       	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
+		  <script src="http://code.jquery.com/jquery-1.9.1.js"></script>
+		  <script src="http://code.jquery.com/ui/1.10.2/jquery-ui.js"></script> 
+       
+       {{ HTML::script('/assets/js/geo.js') }}
+
+          
         <!-- include Validation plugin-->
 		<script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
        <!--hook it up-->
@@ -126,6 +138,9 @@
 		
 			//validation plugin
 			$('.donorForm').validate();
+
+			//date picker
+			$( "#datepicker" ).datepicker();
 				
 		});		
 		</script>
