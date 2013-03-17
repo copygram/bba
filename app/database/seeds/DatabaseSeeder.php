@@ -9,7 +9,10 @@ class DatabaseSeeder extends Seeder {
 	 */
 	public function run()
 	{
-		// $this->call('UserTableSeeder');
+		 $this->call('DonorsTableSeeder');
+		 $this->call('HospitalsTableSeeder');
+		 $this->call('UsersTableSeeder');
+		 $this->call('RolesTableSeeder');
 	}
 
 }
