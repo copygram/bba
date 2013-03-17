@@ -12,7 +12,11 @@
 
 @section('content')
 <div class="container" id="content">
-
+<div class="row">
+<div class="fivecol last">
+	Innehåll
+</div>
+</div>
 <center>
 	<div id="donorReg" style="z-index: 50;">
 		<div class="formcanvas">
