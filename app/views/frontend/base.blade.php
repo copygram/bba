@@ -126,14 +126,12 @@
        <!--hook it up-->
 		<script type="text/javascript">
 		$(document).ready(function() {
-		
 			//validation plugin
 			$('.donorForm').validate();
 
 			//date picker
-			$( "#datepicker" ).datepicker();
-				
-		});		
+			$(".datePicker").datepicker();
+		});
 		</script>
     </body>
 </html>

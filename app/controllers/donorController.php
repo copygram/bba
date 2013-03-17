@@ -18,7 +18,7 @@ class donorController extends BaseController {
         return View::make('frontEnd.register', array());
     }
 
-	public function store()
+	public function postStore()
 	{
 		$validation = Donor::validate(Input::all());
 
