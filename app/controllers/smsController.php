@@ -32,8 +32,33 @@ class smsController extends BaseController {
 
 	}
 
-	
+	// Getting away the first zero and concat with country code
 
+	public static function  phoneNumber( $mobile, $countryCode)
+	{
+		
+			if(isset($mobile))
+			{
+				$array = str_split($mobile);
+
+				if($array[0] === '0')
+				{
+					$mobile = substr($mobile, 1);
+
+				}else{
+					 $mobile = $mobile ;
+				}
+
+				$number = $countryCode.$mobile;
+
+			return $number;
+
+			}
+			else{
+				return;
+			}
+	
+	}
 
 
 }
