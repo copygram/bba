@@ -62,7 +62,7 @@ class sendMail extends BaseController {
         $message = array(
             'subject' => $this->subject,
             'from_email' => 'hello@bloodbankafrica.com',
-            'to' => array(array('email' =>'oskar@copygr.am', 'name' => 'oskar')),
+            'to' => array(array('email' => $user->email, 'name' => $user->fname)),
             'global_merge_vars' => $global_merge_vars,
             'merge_vars' => $merge_vars);
 
@@ -75,8 +75,8 @@ class sendMail extends BaseController {
                 'content' => 'Copyright 2012.')
 
         );
-
-        $mandrill->messages->sendTemplate($this->template, null, $message);
+        
+        dd($mandrill->messages->sendTemplate($this->template, null, $message));
     }
 
     public function render() {
@@ -129,7 +129,7 @@ class sendMail extends BaseController {
         $message = array(
             'subject' => $this->subject,
             'from_email' => 'hello@bloodbankafrica.com',
-            'to' => array(array('email' =>'oskar@copygr.am', 'name' => 'oskar')),
+            'to' => array(array('email' => $user->email, 'name' => $user->fname)),
             'global_merge_vars' => $global_merge_vars,
             'merge_vars' => $merge_vars);
 
