@@ -24,45 +24,40 @@ class donorsController extends BaseController {
 
 		if($validation->passes()){
 
-			
+            $donor = Donor::create(array(
+                'fname'			=> 	Input::get('fname'),
+                'lname'			=> 	Input::get('lname'),
+                'address'		=>  Input::get('area'),
+                'lat'			=>	Input::get('lat'),
+                'lng'			=>	Input::get('lng'),
+                'countrycode' 	=>  Input::get('countrycode'),
+                'mobile'		=>	Input::get('mobile'),
+                'email'			=>	Input::get('email'),
+                'bloodtype'		=>	Input::get('bloodtype'),
+                'gender'		=>	Input::get('gender'),
+                'lastDonated' 	=>  Input::get('lastDonated'),
+            ));
 
-			$donor = Donor::create(array(
-		
-			'fname'			=> 	Input::get('fname'),
-			'lname'			=> 	Input::get('lname'),
-			'address'		=>  Input::get('area'),
-			'lat'			=>	Input::get('lat'),
-			'lng'			=>	Input::get('lng'),
-			'countrycode' 	=>  Input::get('countrycode'),
-			'mobile'		=>	Input::get('mobile'),
-			'email'			=>	Input::get('email'),
-			'bloodtype'		=>	Input::get('bloodtype'),
-			'gender'		=>	Input::get('gender'),
-			'lastDonated' 	=>  Input::get('lastDonated')
-		));
+            $countrycode = $donor->countrycode;
 
+            $mobile = $donor->mobile;
+            $recipientNumber = smsController::phoneNumber($mobile,$countrycode);
+            $recipientName = $donor->fname;
+            $messageBody = "Thanks $recipientName for signing up to Blood Bank Africa.";
 
+            $sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
+            $event = Event::fire('donor.save', $donor);
 
-		 $countrycode = $donor->countrycode;
-
-		 $mobile = $donor->mobile;
-		 
-		 $recipientNumber = smsController::phoneNumber($mobile,$countrycode);
-
-		 $recipientName = $donor->fname;
-		 
-
-		 $messageBody = "Thanks $recipientName for signing up to Blood Bank Africa.";
-
-		  $sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
-		  $event = Event::fire('donor.save', $donor);
-		  return Redirect::to('donors/create')->with('success','Thank you. You have successfully registered to BBA');
-
+            return Redirect::to('donors/next')->with('registered','Thank you!');
 		}else{
 			return Redirect::to('donors/create')->withErrors($validation)->withInput();
 		}
 
 	}
+
+    public function next() {
+        return View::make('frontEnd.next', array());
+    }
 	
 
 }
