@@ -222,8 +222,8 @@ a {
 }
 
 #bigPhoto {
-	height: 500px;
-	background-image: url(../images/bigphotoless.jpg);
+	height: 600px;
+	background-color: #f1f1f1;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
