@@ -55,7 +55,7 @@ class donorController extends BaseController {
 
             return Redirect::to('donor/next')->with('registered',1);
 		}else{
-			return Redirect::to('donor/create')->withErrors($validation)->withInput();
+			return Redirect::to('donor/register')->withErrors($validation)->withInput();
 		}
 
 	}
