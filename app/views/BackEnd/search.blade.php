@@ -2,6 +2,8 @@
 
 @section('content')
 	
+<div class="container">
+    <div class="row" style="padding-top:60px;">
 
 	<form action="{{ URL::to('/admin/search') }}" method="post">
 		
@@ -27,7 +29,8 @@
 	      <input  type="submit" value="Search" />
 	    
 	</form>
-	
+</div>
+</div>	
 	
 
 @stop

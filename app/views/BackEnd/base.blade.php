@@ -26,7 +26,24 @@
 
         <!-- Add your site or application content here -->
 
-        @yield('supernav')
+        <div id="superTop" class="container">
+				<div class="container top">
+						<div class="row">
+							<ul class="menu" id="menuLeft">
+								<li><a href="{{ route('donorSearch') }}" id="home" class="menuItem">Search</a></li>
+
+							</ul>
+							
+								<span id="logo">THE BLOOD BANK of AFRICA</span>
+					
+							<ul class="menu" id="menuRight">
+								<?php $fullname = Auth::user()->fname .' '. Auth::user()->lname ;?>
+								<li class="firstItem"><a href="{{ URL::to('/admin') }}" id="login" class="menuItem">{{$fullname}}</a></li>
+								<li class="firstItem"><a href="{{ URL::to('/admin/logout') }}" id="login" class="menuItem">Logout</a></li>
+							</ul>
+						</div>
+				</div>
+		</div>
 		
 		<!-- This is the Big Photo or Video --> 
 		

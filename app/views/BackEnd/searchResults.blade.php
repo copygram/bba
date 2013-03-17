@@ -1,6 +1,9 @@
 @extends('BackEnd.base')
 
+
 @section('content')
+<div class="container">
+    <div class="row" style="padding-top:60px;">
 
 	<a href="{{ route('donorSearchOnMap') }}">View on map</a> 
 	
@@ -38,4 +41,7 @@
 		No donor found <br/>
 		<a href="{{URL::route('donorSearch')}}">Back</a>
 	@endif
+
+</div>
+</div>
 @stop
