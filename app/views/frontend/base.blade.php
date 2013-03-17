@@ -50,11 +50,10 @@
 		@yield('topcontent')
         
 
-		<div class="container" id="content" >	
-			
-			@yield('content')
+		
+		@yield('content')
 
-		</div>        
+		       
         
 
 

@@ -39,11 +39,13 @@ body {
 
 ::-moz-selection {
     background: #8a0b0b;
+    color:#fff;
     text-shadow: none;
 }
 
 ::selection {
     background: #8a0b0b;
+    color:#fff;
     text-shadow: none;
 }
 
@@ -110,12 +112,10 @@ h2 {
 }
 
 h3 {
-	font-family: serif;
 	font-size: 26px;
 	font-weight: 100;
-	font-style: italic;
 	margin: 0px;
-	color: #555555;
+	color: #222;
 	text-transform: uppercase;
 	
 	border-bottom: solid 1px #ddd;
@@ -297,6 +297,15 @@ a {
 	margin: 0 auto;
 }
 
+.mission {
+	width: 70%;
+	text-align: center;
+	margin: 0 auto;
+	font-size: 18px !important;
+	line-height: 28px !important;
+	color: #333;
+}
+
 .bigbtn {
 	background-color: #6fae5b;
 	padding: 20px 15px 20px 15px;
@@ -330,6 +339,10 @@ a {
 	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.35);
 }
 
+.grayline {
+	border-top: solid 1px #ddd;
+}
+
 #whatwedo, #areyoudonor, #areyouhospital {
 	border-bottom: solid 1px #ddd;
 	padding-bottom: 50px;
@@ -338,6 +351,7 @@ a {
 #whatwedo p, #areyoudonor p, #areyouhospital p {
 	font-size: 14px;
 	line-height: 23px;
+	margin-bottom: 40px;
 }
 
 .center {
@@ -406,7 +420,11 @@ a {
    ========================================================================== */
 
 #donorReg {
-	margin-top: -300px;
+	
+	margin-top: -450px;
+	margin-bottom: 20px;
+	margin-left: 400px;
+	width: 36%;
 	
 }
 
@@ -416,9 +434,6 @@ a {
 	-moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 	-webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
 	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
-	width: 40%;
-	margin: 0 auto;
-	margin-bottom: 20px;
 }
 
 .formcanvas label {
