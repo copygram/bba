@@ -13,15 +13,16 @@
 
 			<div class="center formcanvas">
 
-				<form action="{{ URL::to('/donors') }}" method="POST" class="donorForm">
+
+				<form action="{{ URL::to('/donors') }}" method="POST">
 				<p>
 	        		<label for="firstname">First name:</label>
-	        		{{ $errors->first('fname', '<p>:message</p>') }}
+	        		{{ $errors->first('fname', '<p class="field-error">:message</p>') }}
 	        		<input type="text"     name="fname" value="{{ Input::old('fname')}}" />
 	        	</p>
 	        	<p>
 	        		<label for="lastname">Last name:</label>
-	        		{{ $errors->first('lname', '<p>:message</p>') }}
+	        		{{ $errors->first('lname', '<p class="field-error">:message</p>') }}
 	        		<input type="text" name="lname" value="{{ Input::old('lname')}}">
 	        	</p>
 	        	<p>
@@ -36,7 +37,8 @@
 	        	</p>
 
 	        	<p>
-	        		<label for="bloodtype">Blood Type:</label><br />
+	        		<label for="bloodtype">Blood Type:</label>
+	        		{{ $errors->first('bloodtype', '<p class="field-error">:message</p>') }}
 	        		<?php 
 	        			echo Form::select('bloodtype',array(
 	        					 "0"=>'Choose one',
@@ -56,7 +58,6 @@
 			        			 "Unknown"=>'Unknown'
 	        				),Input::old('bloodtype'));
 
-
 	        		 ?>
 	        		
 	        	</p>
@@ -68,7 +69,7 @@
 
 	        	<p>
 	        		<label for="location">Location: <em>( Residential area )</em></label>
-	        		{{ $errors->first('area', '<p>:message</p>') }}
+	        		{{ $errors->first('area', '<p class="field-error">:message</p>') }}
 	        		<input type="text"  name="area" id="location" value="{{ Input::old('area')}}">
 	        		<input type="hidden" id="lat" name="lat" value="{{ Input::old('lat')}}"/>
 					<input type="hidden" id="lng" name="lng" value="{{ Input::old('lng')}}" />
@@ -76,7 +77,7 @@
 	        	</p>
 
 	        	<p>
-	        		<label for="email">Email:</label> {{ $errors->first('email', '<p>:message</p>') }}
+	        		<label for="email">Email:</label> {{ $errors->first('email', '<p class="field-error">:message</p>') }}
 	        		<input type="email" name="email" value="{{ Input::old('email')}}">
 	        	</p>
 
@@ -136,7 +137,7 @@
 	        	</p>
 	        	
 	        	<p>
-	        		<label for="mobile">Mobile:</label> {{ $errors->first('mobile', '<p>:message</p>') }}
+	        		<label for="mobile">Mobile:</label> {{ $errors->first('mobile', '<p class="field-error">:message</p>') }}
 	        		<input type="text"   name="mobile" value="{{ Input::old('mobile')}}">
 	        	</p>
 	        	

@@ -51,7 +51,9 @@ App::error(function(Exception $exception, $code)
 {
 
     Log::error($exception);
-    return Response::make(View::make('error.'.$code));
+    if($code == '404') {
+    	return Response::make(View::make('error.'.$code));
+    }
 
 });
 

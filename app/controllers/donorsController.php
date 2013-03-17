@@ -19,9 +19,13 @@ class donorsController extends BaseController {
 		
 		$validation = Donor::validate(Input::all());
 
+		//validating blood select 
+
+
 		if($validation->passes()){
 
-			$donorMobile = smsController::phoneNumber(Input::get('mobile'),Input::get('countrycode'));
+			
+
 			$donor = Donor::create(array(
 		
 			'fname'			=> 	Input::get('fname'),
@@ -39,7 +43,11 @@ class donorsController extends BaseController {
 
 
 
-		 $recipientNumber = $donor->mobile;
+		 $countrycode = $donor->countrycode;
+
+		 $mobile = $donor->mobile;
+		 
+		 $recipientNumber = smsController::phoneNumber($mobile,$countrycode);
 
 		 $recipientName = $donor->fname;
 		 
