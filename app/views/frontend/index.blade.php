@@ -2,7 +2,14 @@
 
 @section('topcontent')
 
-
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=214014001993372";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
 
 		<div class="container" id="bigPhotoOne">
 			<div class="row">     
@@ -19,6 +26,15 @@
         				<p class="lead">A nation can meet all its need for blood,<br />
         				if only 1% to 3% of its population donate.</p>
         				<a href="{{ URL::to('/donor/register') }}" class="bigbtn">start by register as a Donor</a>
+        				<br />
+						<div>
+						<div class="fb-like" data-href="http://www.facebook.com/pages/Blood-Bank-Africa/346943998742803?sid=0.3250413304194808" data-send="true" data-width="450" data-show-faces="true"></div>
+						</div>
+        				<div>
+						<a href="https://twitter.com/share" class="twitter-share-button" data-text="Register as a Blood Donor Today -" data-via="BloodBankAfrica" data-hashtags="bba">Tweet</a>
+						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+						</div>
+
         			</div>
         	</div>
 		</div>
@@ -28,8 +44,21 @@
 @section('content')
 
 <div class="container" id="content">
-
 	<div class="row" id="whatwedo">	
+				<div class="twelvecol" style="padding-top:8px;">
+					<!-- 
+					<div style="width:20%; margin: 0 auto;">
+					<div style="width: 50%; float: left;">
+					<a href="https://twitter.com/share" class="twitter-share-button" data-text="Register as a Blood Donor Today -" data-via="BloodBankAfrica" data-hashtags="bba">Tweet</a>
+					<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
+					</div>
+					<div style="width: 50%; float: left;">
+					<div class="fb-like" data-href="http://www.facebook.com/pages/Blood-Bank-Africa/346943998742803?sid=0.3250413304194808" data-send="true" data-width="450" data-show-faces="true"></div>
+					</div>
+					</div>
+					-->
+				</div>
+
 				<div class="twelvecol center">
 				<span class="lead">Our mission</span>
 				<h2>Devoted to Save Lifes</h2>
@@ -141,3 +170,5 @@
 -->
 </div>
 @stop
+
+

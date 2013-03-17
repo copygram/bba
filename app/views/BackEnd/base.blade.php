@@ -17,8 +17,6 @@
         {{ HTML::style('/assets/css/main.css') }}
         {{ HTML::style('/assets/css/lib/1140.css') }}
    		{{ HTML::script('/assets/js/vendor/modernizr-2.6.2.min.js') }}
-
-   		<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
         
     </head>
     <body>
@@ -27,25 +25,25 @@
         <![endif]-->
 
         <!-- Add your site or application content here -->
-        <div id="superTop" class="container"></div>
+
+        <div id="superTop" class="container">
 				<div class="container top">
 						<div class="row">
 							<ul class="menu" id="menuLeft">
-								<li><a href="{{ URL::to('/') }}" id="home" class="menuItem">Home</a></li>
-								<li><a href="{{ URL::to('/about') }}" id="about" class="menuItem">About</a></li>
-								<li><a href="{{ URL::to('/contact') }}" id="contact" class="menuItem">Contact</a></li>
+								<li><a href="{{ route('donorSearch') }}" id="home" class="menuItem">Search</a></li>
+
 							</ul>
 							
 								<span id="logo">THE BLOOD BANK of AFRICA</span>
 					
 							<ul class="menu" id="menuRight">
-								<!-- <li class="firstItem"><a href="/create" id="create" class="menuItem">Create account</a></li> -->
-								<li class="firstItem"><a href="{{ URL::to('/admin/login') }}" id="login" class="menuItem">Login</a></li>
+								<?php $fullname = Auth::user()->fname .' '. Auth::user()->lname ;?>
+								<li class="firstItem"><a href="{{ URL::to('/admin') }}" id="login" class="menuItem">{{$fullname}}</a></li>
+								<li class="firstItem"><a href="{{ URL::to('/admin/logout') }}" id="login" class="menuItem">Logout</a></li>
 							</ul>
 						</div>
 				</div>
 		</div>
-		
 		
 		<!-- This is the Big Photo or Video --> 
 		
@@ -64,26 +62,23 @@
 				<div class="sixcol">
 					<p><strong>THE BLOOD BANK of AFRICA</strong></p>
 					<p class="footerlead">Helping the medical industry in the African Region by enabeling a continental wide blood donor database</p>
-					
-					<p><strong>Find us Online</strong></p>
 					<ul>
-						<li><a href="http://www.facebook.com/pages/Blood-Bank-Africa/346943998742803?sid=0.13846731185913086">Facebook</a></li>
+						<li><a href="#">Home</a></li>
 						<li class="gray">-</li>
-						<li><a href="https://twitter.com/bloodbankafrica">Twitter</a></li>
+						<li><a href="#">About</a></li>
 						<li class="gray">-</li>
-						<li><a href="http://www.youtube.com/watch?v=D4Tcp15O5dE">Youtube</a></li>
+						<li><a href="#">Contact</a></li>
 					</ul>
-
 				</div>
 				<div class="threecol">
 					<p><strong>Are you a donor?</strong><br />
-					<a href="{{ URL::to('/donor/register') }}">sign up today</a></p>
+					<a href="{{ URL::to('/donors/create') }}">sign up today</a></p>
 
 					<p><strong>Hospitals or clinic?</strong><br />
-					<a href="{{ URL::to('/hospitals') }}">sign up today</a></p>
+					<a href="#">sign up today</a></p>
 					
 					<p><strong>Contact us</strong><br />
-					<a href="{{ URL::to('/contact') }}">Visit our contact page</a></p>
+					<a href="{{ URL::to('/contact') }}">help</a> - <a href="#">press</a> - <a href="#">legal</a></p>
 				</div>
 				<div class="threecol last">
 					<p><strong>This is what the press says</strong>
@@ -116,7 +111,7 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
 
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        
 
         <!-- Date picker -->
        	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
@@ -125,18 +120,18 @@
        
        {{ HTML::script('/assets/js/geo.js') }}
 
-          
-        <!-- include Validation plugin-->
-		<script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
+       
        <!--hook it up-->
 		<script type="text/javascript">
 		$(document).ready(function() {
-			//validation plugin
-			$('.donorForm').validate();
-
+		
 			//date picker
-			$(".datePicker").datepicker();
-		});
+			$( ".datePicker" ).datepicker();
+				
+		});		
 		</script>
+
+		 @yield('scripts')
+
     </body>
 </html>

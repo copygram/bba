@@ -12,6 +12,8 @@
 Route::get('/base', function(){
 
 
+	
+
 });
 
 Route::get('/', function(){
@@ -26,14 +28,22 @@ Route::get('contact', function(){
 	return View::make('frontEnd.contact');
 });
 
+Route::get('hospital', function(){
+	return View::make('frontEnd.hospitals');
+});
 
-Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@render'));
+
+Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@sendMail'));
+
 // Here be donors
 Route::controller('donor', 'donorController');
 
+
+
+
 /*
 |--------------------------------------------------------------------------
-                          BACK END  AUTHENTICATION
+                          BACK END  ROUTES
 |--------------------------------------------------------------------------
 |
 |
@@ -50,17 +60,15 @@ Route::post('admin/login','UsersController@postLogin');
 Route::get('admin/logout',array('as'=>'logout','uses'=>'UsersController@getLogout'))->before('auth');
 
 
+Route::get('admin/search', array('as'=>'donorSearch','uses'=>'DonorSearchController@index'))->before('auth');
+Route::post('admin/search','DonorSearchController@searchDonors');
+Route::get('admin/search/mapview', array('as'=>'donorSearchOnMap','uses'=>'DonorSearchController@searchDonorsOnMap'))->before('auth');
+
+
+
+
 
 /*
-|--------------------------------------------------------------------------
-                          BACK END  USERS
-|--------------------------------------------------------------------------
-|
-|
-*/
-
-// user Resource
-
 Route::get('admin/users', array('as' => 'users', 'uses' => 'UsersController@index'))->before('auth');
 
 Route::get('admin/users/create', array('as' => 'new_user', 'uses' => 'UsersController@create'))->before('auth');
@@ -71,23 +79,11 @@ Route::get('admin/users/{id}/edit', array('as' => 'edit_user', 'uses' => 'UsersC
 
 Route::put('admin/users/update', array('uses'=>'UsersController@update'));
 
-//Route::put('admin/users/deactivate', array('as'=>'deactivate_user','uses' => 'UsersController@deactivateAccount'));
+*/
 
 
 
 
-
-Route::get('admin/donors/search', array('as'=>'donorSearch','uses'=>'DonorSearchController@index'))->before('auth');
-
-Route::post('admin/donors/search','DonorSearchController@searchDonors');
-
-Route::get('admin/donors/mapview', array('as'=>'donorSearchOnMap','uses'=>'DonorSearchController@searchDonorsOnMap'))->before('auth');
-
-Route::get('admin/donor/{id}',array('as'=>'view_donor','uses'=>'DonorSearchController@show'));
-
-Route::get('admin/donors/search/sms/create', array('as'=>'smsDonor','uses'=>'smsController@smsForm'));
-
-Route::post('admin/donors/search/sms','smsController@sendSMS');
 
 
 
