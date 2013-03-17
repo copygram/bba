@@ -2,7 +2,7 @@
 
 @section('content')
 	
-<div class="container">
+<div class="container" style="min-height: 600px;">
     <div class="row" style="padding-top:60px;">
 
 	<form action="{{ URL::to('/admin/search') }}" method="post">
