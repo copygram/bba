@@ -25,8 +25,6 @@ class UsersController extends BaseController {
 
 		);
 
-		
-
 		if (Auth::attempt($users)) {
 			return Redirect::route('home');
 		}else{
@@ -57,9 +55,6 @@ class UsersController extends BaseController {
 	public function index()
 	{
 		$data = User::userList();
-
-		
-
 		return View::make('BackEnd.Users.index')->with('users',$data);
 	}
 
