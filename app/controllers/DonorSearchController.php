@@ -9,20 +9,14 @@ class DonorSearchController extends BaseController {
 	 */
 	public function index()
 	{
-		return View::make('BackEnd.Search.donorSearch');
+		return View::make('BackEnd.search');
 	}
 
     private static function getDonorsList() {
-        $selectBlood = Input::get('bloodType');
-
-        if($selectBlood == '0')
-        {
-            return View::make('BackEnd.Search.donorSearch')->with('flash_notice','Please select blood type');
-
-        }else{
+        
 
             $hospital = Hospital::find(Auth::user()->hospital_id);
-            $bloodType = Input::get('bloodType');
+            $bloodType = Input::get('bloodtype');
             $poslat = $hospital->lat;
             $poslng = $hospital->lng;
             $distance = 5;
@@ -33,7 +27,7 @@ class DonorSearchController extends BaseController {
 					(radians(lat)))) AS distance FROM donors WHERE bloodtype = ?  HAVING distance < ? ', array($poslat, $poslng, $poslat,$bloodType,$distance));
 
             return $donors;
-        }
+        
     }
 
     private static function getAllDonors() {
@@ -51,15 +45,16 @@ class DonorSearchController extends BaseController {
     }
 
 	public function searchDonors(){
+
         $donors = self::getDonorsList();
-        return View::make('BackEnd.Search.donorSearchResults')->with('results',$donors);
+        return View::make('BackEnd.searchResults')->with('results',$donors);
 	}
 
 
     public function searchDonorsOnMap() {
         $donors = json_encode(self::getAllDonors());
 
-        return View::make('BackEnd.Search.donorSearchResultsOnMap')
+        return View::make('BackEnd.searchResultsOnMap')
             ->with('donors',$donors)
             ->with('hospital', Hospital::find(Auth::user()->hospital_id));
     }
