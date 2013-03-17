@@ -18,7 +18,7 @@
 <center>
 	<div id="donorReg" style="z-index: 50;">
 		<div class="formcanvas">
-			<form action="{{ URL::to('/donors') }}" method="POST" class="donorForm">
+			<form action="{{ URL::to('/donor/store') }}" method="POST" class="donorForm">
 			<p>
 	       		<label for="firstname">First name:</label><br />
 	       		<input type="text"   class="required"  name="fname" value="">
