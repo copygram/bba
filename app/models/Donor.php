@@ -3,9 +3,13 @@
 class Donor extends Basemodel{
 
 	public static $rules = array(
-
-		
+			'fname'=>'required',
+			'email'=>'required|unique:donors,email',
+			'lname'=>'required',
+			'area'=>'required',
+			'mobile' => 'required|unique:donors,mobile'
 
 	);
+	
 	
 }
