@@ -77,7 +77,7 @@
 					<a href="{{ URL::to('/donor/register') }}">sign up today</a></p>
 
 					<p><strong>Hospitals or clinic?</strong><br />
-					<a href="{{ URL::to('/hospital') }}">sign up today</a></p>
+					<a href="{{ URL::to('/hospitals') }}">sign up today</a></p>
 					
 					<p><strong>Contact us</strong><br />
 					<a href="{{ URL::to('/contact') }}">Visit our contact page</a></p>

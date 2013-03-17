@@ -27,6 +27,10 @@ Route::get('contact', function(){
 	return View::make('frontEnd.contact');
 });
 
+Route::get('hospitals', function(){
+	return View::make('frontEnd.hospitals');
+});
+
 
 Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@sendMail'));
 
@@ -63,7 +67,7 @@ Route::get('admin/search/mapview', array('as'=>'donorSearchOnMap','uses'=>'Donor
 
 
 
-
+/*
 Route::get('admin/users', array('as' => 'users', 'uses' => 'UsersController@index'))->before('auth');
 
 Route::get('admin/users/create', array('as' => 'new_user', 'uses' => 'UsersController@create'))->before('auth');
@@ -73,6 +77,8 @@ Route::resource('admin/users/store', 'UsersController');
 Route::get('admin/users/{id}/edit', array('as' => 'edit_user', 'uses' => 'UsersController@edit'));
 
 Route::put('admin/users/update', array('uses'=>'UsersController@update'));
+
+*/
 
 
 
