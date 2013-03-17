@@ -229,6 +229,54 @@ a {
 	background-position: center top;
 }
 
+#bigPhotoOne {
+	height: 600px;
+	background-image: url(../images/bigphotoless-woman.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+}
+
+.frontMsg {
+	padding-top: 160px;
+}
+
+.frontMsgVideo {
+	padding-top: 308px;
+}
+
+.frontMsgVideo iframe {
+	border: solid #fff 8px;
+
+	-moz-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+	-webkit-box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+	box-shadow: 0px 2px 3px rgba(0, 0, 0, 0.25);
+}
+
+.frontMsgVideo small {
+	color: #fff;
+	padding-left: 8px;
+}
+
+.frontMsg .lead {
+	color: #fff;
+	font-family: 'helvetica', arial, verdana, sans-serif;
+	font-size: 18px;
+	text-shadow: 1px 1px rgba(0,0,0, 0.3);
+	font-weight: bold;
+}
+
+#bigPhotoOne h2 {
+	color: #fff;
+	font-size: 102px;
+	font-family: 'helvetica', arial, verdana, sans-serif;
+	padding: 0;
+	margin: 0;
+	text-transform: uppercase;
+	line-height:90px;
+	text-shadow: 1px 1px rgba(0,0,0, 0.3);
+}
+
 #forHumanity {
 	padding-top: 280px;
 	display: block;
@@ -251,15 +299,16 @@ a {
 
 .bigbtn {
 	background-color: #6fae5b;
-	padding: 12px 10px 12px 10px;
+	padding: 20px 15px 20px 15px;
 	display: block;
-	width: 280px;
+	max-width: 320px;
 	text-decoration: none;
 	text-transform: uppercase;
-	margin: 0 auto;
-	margin-top: 110px;
+	margin-top: 30px;
 	margin-bottom: 10px;
 	color: #fff;
+	text-align: center;
+	font-size: 18px;
 	
 	border: none;
 	

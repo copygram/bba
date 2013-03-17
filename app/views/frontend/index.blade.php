@@ -1,9 +1,31 @@
 @extends('frontend.base')
 
-@section('forhumanity')
-	<h1>Are you ready to safe a Life? </h1>
-    <a href="{{ URL::to('donors/create') }}" class="bigbtn">start by register as a Donor</a>
+@section('topcontent')
+
+		<div class="container" id="bigPhotoOne">
+			<div class="row">     
+        		
+					<div class="sixcol frontMsgVideo">
+
+						<iframe width="320" height="180" src="http://www.youtube.com/embed/D4Tcp15O5dE" frameborder="0" allowfullscreen></iframe>
+						<br /><small>60 seconds on why you should donate blood</small>
+					</div>
+        			
+        			<div class="sixcol last frontMsg">
+
+        				<h2>Donate Blood<br />& Save a life</h2>
+        				<p class="lead">A nation can meet all its need for blood,<br />
+        				if only 1% to 3% of its population donate.</p>
+
+        				<a href="{{ URL::to('donors/create') }}" class="bigbtn">start by register as a Donor</a></div>
+   					
+
+        		
+        	</div>
+		</div>
+
 @stop
+
 
 @section('content')
 
