@@ -1,5 +1,10 @@
 @extends('frontend.base')
 
 @section('forhumanity')
-<h1>Next</h1>
+
 @stop
+<?php if(isset($registered)) : ?>
+@if ( $registered == true )
+<h1>Well thank you kind sir and or madam</h1>
+@endif
+<?php endif; ?>
