@@ -10,4 +10,9 @@ class Donor extends Basemodel{
 			'mobile' => 'required|numeric|unique:donors,mobile',
 			'bloodtype' =>'regex:/[a-zA-Z].*/'
 	);
+
+    public function gender()
+    {
+        return $this->hasOne('Gender');
+    }
 }
