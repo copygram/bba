@@ -2,6 +2,8 @@
 
 @section('topcontent')
 
+
+
 		<div class="container" id="bigPhotoOne">
 			<div class="row">     
         		
@@ -16,15 +18,10 @@
         				<h2>Donate Blood<br />& Save a life</h2>
         				<p class="lead">A nation can meet all its need for blood,<br />
         				if only 1% to 3% of its population donate.</p>
-
         				<a href="{{ URL::to('/donor/register') }}" class="bigbtn">start by register as a Donor</a>
         			</div>
-   					
-
-        		
         	</div>
 		</div>
-
 @stop
 
 
@@ -34,7 +31,7 @@
 
 	<div class="row" id="whatwedo">	
 				<div class="twelvecol center">
-				<spand class="lead">Our mission</spand>
+				<span class="lead">Our mission</span>
 				<h2>Devoted to Save Lifes</h2>
 				<div class="line"></div>
 				</div>
@@ -51,7 +48,7 @@
 	
 	<div class="row" id="whatwedo">	
 				<div class="twelvecol center">
-				<spand class="lead">information</spand>
+				<span class="lead">information</span>
 				<h2>Facts on Blood Donation</h2>
 				<div class="line"></div>
 				</div>
@@ -78,7 +75,7 @@
 				<div class="row grayline">	
 					
 					<div class="twelvecol center">
-					<spand class="lead">How it works</spand>
+					<span class="lead">How it works</span>
 					<h2>Lets get started, are you a donor?</h2>
 					<div class="line"></div>
 					
