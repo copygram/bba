@@ -13,6 +13,7 @@ class donorsController extends BaseController {
         return View::make('frontEnd.register', array());
 	}
 
+
 	public function store()
 	{
 		
@@ -41,7 +42,7 @@ class donorsController extends BaseController {
 			'lastDonated' 	=>  Input::get('lastDonated')
 		));
 
-
+		/*
 
 		 $countrycode = $donor->countrycode;
 
@@ -55,7 +56,8 @@ class donorsController extends BaseController {
 		 $messageBody = "Thanks $recipientName for signing up to Blood Bank Africa.";
 
 		  $sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
-		  $event = Event::fire('donor.save', $donor);
+		  $event = Event::fire('donor.save', $donor); */
+		  
 		  return Redirect::to('donors/create')->with('success','Thank you. You have successfully registered to BBA');
 
 		}else{
