@@ -29,10 +29,12 @@ Route::get('contact', function(){
 
 Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@sendMail'));
 
-// donor Resource
+// Here be donors
+Route::controller('donor', 'donorController');
 
 
-Route::resource('donors','donorsController');
+//Route::resource('donors','donorsController');
+//
 
 
 /*

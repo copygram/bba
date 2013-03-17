@@ -1,14 +1,20 @@
 @extends('frontend.base')
 
-@section('forhumanity')
-	<h1>About us</h1>
+@section('topcontent')
+
+		<div class="container" id="bigPhotoTwo">
+			<div class="row">     
+				<!-- info -->
+        	</div>
+		</div>
+
 @stop
 
 @section('content')
 	<div class="row" id="whatwedo">	
 		<div class="twelvecol center">
 			<spand class="lead">Meet the team</spand>
-			<h2>This is the crazy people...</h2>
+			<h2>This is for the crazy ones...</h2>
 			<div class="line"></div>
 		</div>
 				
