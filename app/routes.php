@@ -32,13 +32,9 @@ Route::get('hospital', function(){
 	return View::make('frontEnd.hospitals');
 });
 
-
-Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@sendMail'));
-
+Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@render'));
 // Here be donors
 Route::controller('donor', 'donorController');
-
-
 
 
 /*
