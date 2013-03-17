@@ -21,52 +21,57 @@
 			<form action="{{ URL::to('/donor/store') }}" method="POST" class="donorForm">
 			<p>
 	       		<label for="firstname">First name:</label><br />
-	       		<input type="text"   class="required"  name="fname" value="">
+	       		<input type="text" class="required" name="fname" value="{{ Input::old('fname')}}" />
 	       	</p>
 	       	<p>
 	       		<label for="lastname">Last name:</label><br />
-	       		<input type="text"   class="required"  name="lname" value="">
+	       		<input type="text" class="required" name="lname" value="{{ Input::old('lname')}}"  />
 	       	</p>
 	       	<p>
 	       		<label for="gender">Gender:</label><br />
-	       		<select name="gender" >
-	       			<option value="1">Male</option>
-	       			<option value="2">Female</option>
-	       		</select>	
+                <?php
+                echo Form::select('gender', array(
+                    '0' => 'Choose gender',
+                    '1' => 'Female',
+                    '2' => 'Male',
+                ), Input::old('gender'));
+                ?>
 	       	</p>
 	       	<p>
 	       		<label for="bloodtype">Blood Type:</label><br />
-	       		<select name="bloodtype" >
-	       			<option value="0">Choose one.</option>
-	       			<option value="A+">A+</option>
-	       			<option value="A-">A-</option>
-	        		<option value="B+">B+</option>
-	        		<option value="B-">B-</option>
-	        		<option value="AB+">AB+</option>
-	        		<option value="AB-">AB-</option>
-	        		<option value="O+">O+</option>
-	        		<option value="A1+">A1+</option>
-	        		<option value="A1-">A1-</option>
-	        		<option value="A2+">A2+</option>
-	        		<option value="A1B+">A1B+</option>
-	        		<option value="A2B+">A2B+</option>
-	        		<option value="A2B-">A2B-</option>
-	        		<option value="Unknown">Unknown</option>
-	        	</select>
+                <?php
+                echo Form::select('bloodtype', array(
+	       			'0'       => 'Choose',
+	       			'A+'      => 'A+',
+	       			'A-'      => 'A-',
+	        		'B+'      => 'B+',
+	        		'B-'      => 'B-',
+	        		'AB+'     => 'AB+',
+	        		'AB-'     => 'AB-',
+	        		'O+'      => 'O+',
+	        		'A1+'     => 'A1+',
+	        		'A1-'     => 'A1-',
+	        		'A2+'     => 'A2+',
+	        		'A1B+'    => 'A1B+',
+	        		'A2B+'    => 'A2B+',
+	        		'A2B-'    => 'A2B-',
+	        		'Unknown' =>'Unknown',
+                ), Input::old('bloodtype'));
+                ?>
 	        </p>
 	        <p>
 	        	<label for="lastDonated">Last donated:<em>( dd/mm/yyyy )</em></label><br />
-	        	<input type="text" id="datepicker" name="lastDonated" value="">
+	        	<input type="text" id="lastDonated" class="datePicker" name="lastDonated" value="{{ Input::old('lastDonated')}}">
 	        </p>
         	<p>
         		<label for="location">Location: <em>( Residential area )</em></label><br />
-        		<input type="text" class="required" name="area" id="location" value="">
-        		<input type="hidden" id="lat" name="lat"/>
-				<input type="hidden" id="lng" name="lng"/>
+        		<input type="text" class="required" name="area" id="location" value="{{ Input::old('area')}}" />
+        		<input type="hidden" id="lat" name="lat" value="{{ Input::old('lat')}}" />
+				<input type="hidden" id="lng" name="lng" value="{{ Input::old('lng')}}" />
         	</p>
         	<p>
                 <label for="email">Email:</label> {{ $errors->first('email', '<p class="field-error">:message</p>') }}
-                <input type="email" name="email" value="{{ Input::old('email')}}">
+                <input type="email" name="email" id="email" value="{{ Input::old('email')}}" />
         	</p>
 
         	<p>
