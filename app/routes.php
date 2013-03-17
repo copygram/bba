@@ -27,7 +27,7 @@ Route::get('contact', function(){
 });
 
 
-Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@sendMail'));
+Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@send'));
 
 // Here be donors
 Route::controller('donor', 'donorController');
