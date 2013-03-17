@@ -1,6 +1,6 @@
 <?php
 
-class donorsController extends BaseController {
+class donorController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -8,10 +8,15 @@ class donorsController extends BaseController {
 	 * @return Response
 	 */
 	
-	public function create()
+	public function getIndex()
 	{
         return View::make('frontEnd.register', array());
 	}
+
+    public function getRegister()
+    {
+        return View::make('frontEnd.register', array());
+    }
 
 	public function store()
 	{
@@ -45,19 +50,17 @@ class donorsController extends BaseController {
             $recipientName = $donor->fname;
             $messageBody = "Thanks $recipientName for signing up to Blood Bank Africa.";
 
-            $sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
-            $event = Event::fire('donor.save', $donor);
+            //$sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
+            //$event = Event::fire('donor.save', $donor);
 
-            return Redirect::to('donors/next')->with('registered','Thank you!');
+            return Redirect::to('donor/next')->with('registered',1);
 		}else{
-			return Redirect::to('donors/create')->withErrors($validation)->withInput();
+			return Redirect::to('donor/create')->withErrors($validation)->withInput();
 		}
 
 	}
 
-    public function next() {
-        return View::make('frontEnd.next', array());
+    public function getNext() {
+        return View::make('frontEnd.next');
     }
-	
-
 }
