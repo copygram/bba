@@ -64,13 +64,16 @@
 				<div class="sixcol">
 					<p><strong>THE BLOOD BANK of AFRICA</strong></p>
 					<p class="footerlead">Helping the medical industry in the African Region by enabeling a continental wide blood donor database</p>
+					
+					<p><strong>Find us Online</strong></p>
 					<ul>
-						<li><a href="{{ URL::to('/') }}">Home</a></li>
+						<li><a href="http://www.facebook.com/pages/Blood-Bank-Africa/346943998742803?sid=0.13846731185913086">Facebook</a></li>
 						<li class="gray">-</li>
-						<li><a href="{{ URL::to('/about') }}">About</a></li>
+						<li><a href="https://twitter.com/bloodbankafrica">Twitter</a></li>
 						<li class="gray">-</li>
-						<li><a href="{{ URL::to('/contact') }}">Contact</a></li>
+						<li><a href="http://www.youtube.com/watch?v=D4Tcp15O5dE">Youtube</a></li>
 					</ul>
+
 				</div>
 				<div class="threecol">
 					<p><strong>Are you a donor?</strong><br />
