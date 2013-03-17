@@ -76,7 +76,7 @@ class sendMail extends BaseController {
 
         );
         
-        dd($mandrill->messages->sendTemplate($this->template, null, $message));
+        $mandrill->messages->sendTemplate($this->template, null, $message);
     }
 
     public function render() {
