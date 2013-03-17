@@ -47,7 +47,7 @@ class donorController extends BaseController {
             $messageBody = "Thanks $recipientName for signing up to Blood Bank Africa.";
 
             //$sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
-            //$event = Event::fire('donor.save', $donor);
+            $event = Event::fire('donor.save', $donor);
 
             return Redirect::to('donor/next')->with('registered',1);
 		}else{
