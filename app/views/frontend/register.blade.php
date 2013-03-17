@@ -1,7 +1,7 @@
 @extends('frontend.base')
 
 @section('topcontent')
-		<div class="container" id="bigPhotoOne">
+		<div class="container" id="bigPhotoRegister">
 			<div class="row">     
 				<!-- info -->
         	</div>

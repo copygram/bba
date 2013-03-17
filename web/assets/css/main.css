@@ -237,6 +237,14 @@ a {
 	background-position: center top;
 }
 
+#bigPhotoRegister {
+	height:750px;
+	background-image: url(../images/bigphotoless-woman.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+}
+
 #bigPhotoTwo {
 	height: 600px;
 	background-image: url(../images/bigphotoless-about.jpg);
@@ -436,8 +444,8 @@ a {
 
 #donorReg {
 	
-	margin-top: -450px;
-	margin-bottom: 20px;
+	margin-top: -650px;
+	margin-bottom: 80px;
 	margin-left: 400px;
 	width: 36%;
 	
