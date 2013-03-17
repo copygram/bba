@@ -9,8 +9,5 @@ class Donor extends Basemodel{
 			'area'=>'required',
 			'mobile' => 'required|numeric|unique:donors,mobile',
 			'bloodtype' =>'regex:/[a-zA-Z].*/'
-
 	);
-	
-	
 }
