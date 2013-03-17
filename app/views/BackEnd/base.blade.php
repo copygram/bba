@@ -94,7 +94,7 @@
             s.parentNode.insertBefore(g,s)}(document,'script'));
         </script>
 
-        <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
+        
 
         <!-- Date picker -->
        	  <link rel="stylesheet" href="http://code.jquery.com/ui/1.10.2/themes/smoothness/jquery-ui.css" />
@@ -103,22 +103,18 @@
        
        {{ HTML::script('/assets/js/geo.js') }}
 
-          
-        <!-- include Validation plugin-->
-		<script type="text/javascript" src="../assets/js/jquery.validate.js"></script>
+       
        <!--hook it up-->
 		<script type="text/javascript">
 		$(document).ready(function() {
 		
-			//validation plugin
-			$('.donorForm').validate();
-
 			//date picker
-			$( "#datepicker" ).datepicker();
+			$( ".datePicker" ).datepicker();
 				
 		});		
 		</script>
 
-		
+		 @yield('scripts')
+
     </body>
 </html>

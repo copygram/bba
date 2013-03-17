@@ -5,7 +5,7 @@
     </style>
 @stop
 @section('content')
-    <h2>Donor search results</h2>
+ <a href="javascript:history.back()">Back</a>
     @if($donors)
         <div id="map_canvas"></div>
     @else

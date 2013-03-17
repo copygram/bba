@@ -1,7 +1,7 @@
 @extends('BackEnd.base')
 
 @section('supernav')
-		<div id="superTop" class="container"></div>
+		<div id="superTop" class="container">
 				<div class="container top">
 						<div class="row">
 							<ul class="menu" id="menuLeft">
@@ -12,7 +12,6 @@
 								<span id="logo">THE BLOOD BANK of AFRICA</span>
 					
 							<ul class="menu" id="menuRight">
-								<!-- <li class="firstItem"><a href="/create" id="create" class="menuItem">Create account</a></li> -->
 								<li class="firstItem"><a href="{{ URL::to('/admin/login') }}" id="login" class="menuItem">name</a></li>
 								<li class="firstItem"><a href="{{ URL::to('/admin/login') }}" id="login" class="menuItem">Logout</a></li>
 							</ul>
