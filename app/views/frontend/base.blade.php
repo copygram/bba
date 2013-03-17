@@ -47,22 +47,13 @@
 		
 		<!-- This is the Big Photo or Video --> 
 		
-		<div class="container" id="bigPhoto">
-			<div class="row">     
-        		<div id="forHumanity" @yield('style') >
-
-        			@yield('forhumanity')
-
-        		</div>
-        	</div>
-		</div>
+		@yield('topcontent')
         
 
-		<div class="container" id="content" >	
-			
-			@yield('content')
+		
+		@yield('content')
 
-		</div>        
+		       
         
 
 

@@ -49,12 +49,10 @@ Log::useDailyFiles(__DIR__.'/../storage/logs/'.$logFile);
 
 App::error(function(Exception $exception, $code)
 {
-
     Log::error($exception);
     if($code == '404') {
     	return Response::make(View::make('error.'.$code));
     }
-
 });
 
 /*
