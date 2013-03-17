@@ -6,7 +6,7 @@
 @stop
 
 @section('content')
-<div class="container">
+<div class="container" style="min-height: 800px;">
     <div class="row" style="padding-top:60px;">
         <div class="twelvecol">
 
