@@ -17,6 +17,8 @@
         {{ HTML::style('/assets/css/main.css') }}
         {{ HTML::style('/assets/css/lib/1140.css') }}
    		{{ HTML::script('/assets/js/vendor/modernizr-2.6.2.min.js') }}
+
+   		<link href='http://fonts.googleapis.com/css?family=Economica' rel='stylesheet' type='text/css'>
         
     </head>
     <body>

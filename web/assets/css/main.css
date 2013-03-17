@@ -276,12 +276,12 @@ a {
 
 #bigPhotoOne h2 {
 	color: #fff;
-	font-size: 62px;
-	font-family: 'helvetica', arial, verdana, sans-serif;
+	font-size: 90px;
+	font-family: 'Economica', helvetica, arial, verdana, sans-serif;
 	padding: 0;
 	margin: 0;
 	text-transform: uppercase;
-	line-height:90px;
+	line-height:80px;
 	text-shadow: 1px 1px rgba(0,0,0, 0.3);
 }
 
