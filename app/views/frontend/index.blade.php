@@ -112,7 +112,7 @@
 
 
 
-
+<!-- 
 	<div class="row" id="whatwedo">	
 				
 				<div class="twelvecol center">
@@ -141,5 +141,6 @@
 				<p>We learnt that the lack of blood in many cases are immensive and by using BBA you are getting more access to donors. </p>
 				</div>
 	</div>
+-->
 </div>
 @stop
