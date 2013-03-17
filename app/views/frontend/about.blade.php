@@ -2,7 +2,7 @@
 
 @section('topcontent')
 
-		<div class="container" id="bigPhotoTwo">
+		<div class="container" id="bigPhotoThree">
 			<div class="row">     
 				<!-- info -->
         	</div>
