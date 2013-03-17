@@ -72,7 +72,7 @@
 				</div>
 				<div class="threecol">
 					<p><strong>Are you a donor?</strong><br />
-					<a href="{{ URL::to('/donors/create') }}">sign up today</a></p>
+					<a href="{{ URL::to('/donor/register') }}">sign up today</a></p>
 
 					<p><strong>Hospitals or clinic?</strong><br />
 					<a href="#">sign up today</a></p>

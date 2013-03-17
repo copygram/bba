@@ -20,13 +20,9 @@ class donorController extends BaseController {
 
 	public function store()
 	{
-		
-		
 		$validation = Donor::validate(Input::all());
 
-		//validating blood select 
-
-
+		//validating blood select
 		if($validation->passes()){
 
             $donor = Donor::create(array(

@@ -17,7 +17,7 @@
         				<p class="lead">A nation can meet all its need for blood,<br />
         				if only 1% to 3% of its population donate.</p>
 
-        				<a href="{{ URL::to('donors/create') }}" class="bigbtn">start by register as a Donor</a>
+        				<a href="{{ URL::to('/donor/register') }}" class="bigbtn">start by register as a Donor</a>
         			</div>
    					
 
@@ -83,7 +83,7 @@
 					<div class="line"></div>
 					
 					<div class="twelvecol" style="margin-bottom: 60px;">
-					<a href="{{ URL::to('donors/create') }}" class="bigbtn" style="margin: 0 auto;">start by register as a Donor</a>
+					<a href="{{ URL::to('/donor/register') }}" class="bigbtn" style="margin: 0 auto;">start by register as a Donor</a>
 					</div>
 					
 					</div>
