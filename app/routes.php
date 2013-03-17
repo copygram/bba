@@ -11,6 +11,7 @@
 
 Route::get('/base', function(){
 
+
 	
 
 });
@@ -27,7 +28,7 @@ Route::get('contact', function(){
 	return View::make('frontEnd.contact');
 });
 
-Route::get('hospitals', function(){
+Route::get('hospital', function(){
 	return View::make('frontEnd.hospitals');
 });
 
