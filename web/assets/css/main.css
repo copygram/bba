@@ -411,23 +411,9 @@ a {
 	width: 97%;
 	margin-top: 20px;
 }
-.donorForm p {
-	position: relative;
-}
-
-.donorForm label.error {
-	position: absolute;
-	top: 0;
-	right: 5px;
-	text-align: right;
-	width: 80%;
-	color: #c7483e;
-	font-family: 'Droid Serif', serif;
-	font-size: 14px;
-	font-style: italic;
-	}	
 	
-.donorForm input.error {
+	
+.field-error input.error {
 	color: #fff;
 	box-shadow: 0 0 10px #F86735;
 	-webkit-box-shadow: 0 0 10px #F86735;
@@ -436,6 +422,14 @@ a {
 	color: #fff !important;
 
 	}
+.field-error{
+	text-align: right;
+	width: 100%;
+	color: #c7483e;
+	font-family: 'Droid Serif', serif;
+	font-size: 16px;
+	font-style: italic;
+}
 
 
 

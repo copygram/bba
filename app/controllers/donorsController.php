@@ -15,49 +15,44 @@ class donorsController extends BaseController {
 
 	public function store()
 	{
-		$validation = Donor::validate(Input::all());
 		
+		
+		$validation = Donor::validate(Input::all());
+
+		//validating blood select 
+
+
 		if($validation->passes()){
 
-			$mobile = Input::get('mobile');
-
-			$array = str_split($mobile);
-			if($array[0] === '0')
-			{
-				$mobile = substr($mobile, 1);
-			}else{
-				 $mobile = $mobile ;
-			}
-
-			$countryCode = Input::get('countrycode');
-
-			$donorMobile = $countryCode.$mobile;
-
-			$bloodtype = Input::get('bloodtype');
-
+			
 
 			$donor = Donor::create(array(
 		
-			'fname'		=> 	Input::get('fname'),
-			'lname'		=> 	Input::get('lname'),
-			'address'	=>  Input::get('area'),
-			'lat'		=>	Input::get('lat'),
-			'lng'		=>	Input::get('lng'),
-			'mobile'	=>	$donorMobile,
-			'email'		=>	Input::get('email'),
-			'bloodtype'	=>	Input::get('bloodtype'),
-			'gender'	=>	Input::get('gender'),
-			'lastDonated' => Input::get('lastDonated')
+			'fname'			=> 	Input::get('fname'),
+			'lname'			=> 	Input::get('lname'),
+			'address'		=>  Input::get('area'),
+			'lat'			=>	Input::get('lat'),
+			'lng'			=>	Input::get('lng'),
+			'countrycode' 	=>  Input::get('countrycode'),
+			'mobile'		=>	Input::get('mobile'),
+			'email'			=>	Input::get('email'),
+			'bloodtype'		=>	Input::get('bloodtype'),
+			'gender'		=>	Input::get('gender'),
+			'lastDonated' 	=>  Input::get('lastDonated')
 		));
 
 
 
-		 $recipientNumber = $donor->mobile;
+		 $countrycode = $donor->countrycode;
+
+		 $mobile = $donor->mobile;
+		 
+		 $recipientNumber = smsController::phoneNumber($mobile,$countrycode);
 
 		 $recipientName = $donor->fname;
 		 
 
-		 $messageBody = "Thanks for saving a life.";
+		 $messageBody = "Thanks $recipientName for signing up to Blood Bank Africa.";
 
 		  $sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
 		  $event = Event::fire('donor.save', $donor);

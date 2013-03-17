@@ -5,6 +5,7 @@
 		"laravelbook/laravel4-powerpack": "dev-master",
 		"twilio/sdk": "dev-master",
         "mandrill/mandrill": "dev-master"
+        
 	},
 	"autoload": {
 		"classmap": [
