@@ -49,7 +49,8 @@ Log::useDailyFiles(__DIR__.'/../storage/logs/'.$logFile);
 
 App::error(function(Exception $exception, $code)
 {
-	Log::error($exception);
+    Log::error($exception);
+    return Response::make(View::make('error.'.$code), $code);
 });
 
 /*
