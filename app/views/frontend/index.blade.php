@@ -1,4 +1,4 @@
-@extends('frontend.base')
+@extends('frontEnd.base')
 
 @section('topcontent')
 
