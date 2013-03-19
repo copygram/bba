@@ -32,7 +32,7 @@ class sendMail extends BaseController {
                 'content' => $user->lname),
             array(
                 'name' => 'BLOODTYPE',
-                'content' => $user->bloodtype),
+                'content' => $user->bloodtype->bloodtype),
             array(
                 'name' => 'LASTDONATED',
                 'content' => $user->lastDonated),
@@ -83,7 +83,8 @@ class sendMail extends BaseController {
     }
 
     public function render() {
-        $user = Donor::find(1);
+        $user = Donor::all()->first();
+
         $this->subject = "Subject";
 
         $mandrill = new Mandrill('D0M4hfjLBAV5A8eL8E9gJw');
@@ -103,7 +104,7 @@ class sendMail extends BaseController {
                 'content' => $user->lname),
             array(
                 'name' => 'BLOODTYPE',
-                'content' => $user->bloodtype),
+                'content' => $user->bloodtype->bloodtype),
             array(
                 'name' => 'LASTDONATED',
                 'content' => $user->lastDonated),
