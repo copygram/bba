@@ -13,6 +13,6 @@ class Donor extends Basemodel{
 
     public function gender()
     {
-        return $this->hasOne('Gender');
+        return $this->belongsTo('Gender');
     }
 }

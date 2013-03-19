@@ -2,8 +2,8 @@
 
 class Gender extends Eloquent{
 
-    public function donor()
+    public function donors()
     {
-        return $this->belongsTo('Donor');
+        return $this->hasMany('Donor');
     }
 }

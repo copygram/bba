@@ -42,6 +42,9 @@ class sendMail extends BaseController {
             array(
                 'name' => 'MOBILE',
                 'content' => $user->mobile),
+            array(
+                'name' => 'GENDER',
+                'content' => $user->gender->description),
             );
 
         $merge_vars = array(array(
@@ -82,6 +85,7 @@ class sendMail extends BaseController {
     public function render() {
         $user = Donor::find(1);
         $this->subject = "Subject";
+
         $mandrill = new Mandrill('D0M4hfjLBAV5A8eL8E9gJw');
 
         $global_merge_vars = array('global_merge_vars' =>
@@ -109,6 +113,9 @@ class sendMail extends BaseController {
             array(
                 'name' => 'MOBILE',
                 'content' => $user->mobile),
+            array(
+                'name' => 'GENDER',
+                'content' => $user->gender->description),
         );
 
         $merge_vars = array(array(
