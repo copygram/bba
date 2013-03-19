@@ -11,10 +11,10 @@ class GendersTableSeeder extends Seeder {
 		$gender = array(
 
 			array(
-				'name'=>'Male'
+				'description'=>'Male'
 			),
 			array(
-				'name'=>'Female'
+				'description'=>'Female'
 			)
 		);
 
