@@ -32,7 +32,7 @@ class sendMail extends BaseController {
                 'content' => $user->lname),
             array(
                 'name' => 'BLOODTYPE',
-                'content' => $user->bloodtype),
+                'content' => $user->bloodtype->bloodtype),
             array(
                 'name' => 'LASTDONATED',
                 'content' => $user->lastDonated),
@@ -104,7 +104,7 @@ class sendMail extends BaseController {
                 'content' => $user->lname),
             array(
                 'name' => 'BLOODTYPE',
-                'content' => $user->bloodtype),
+                'content' => $user->bloodtype->bloodtype),
             array(
                 'name' => 'LASTDONATED',
                 'content' => $user->lastDonated),

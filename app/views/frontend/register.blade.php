@@ -30,11 +30,7 @@
 	       	<p>
 	       		<label for="gender">Gender:</label>{{ $errors->first('gender_id', '<p class="field-error">:message</p>') }}
                 <?php
-                echo Form::select('gender_id', array(
-                    '0' => 'Choose gender',
-                    '1' => 'Female',
-                    '2' => 'Male',
-                ), Input::old('gender_id'));
+                echo Form::select('gender_id', $genders, Input::old('gender_id'));
                 ?>
 	       	</p>
 	       	<p>

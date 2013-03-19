@@ -15,12 +15,12 @@ class donorController extends BaseController {
 
     public function getRegister()
     {
-        $bloodtypes = array_map(function($n){
-            return $n['bloodtype'];
-        },  Bloodtype::all()->toArray());
-        array_unshift($bloodtypes, 'Choose one');
-
-        return View::make('frontEnd.register', array('bloodtypes' => $bloodtypes));
+        $bloodtypes = objectFormArray::flatten(Bloodtype::all());
+        $genders = objectFormArray::flatten(Gender::all());
+        return View::make('frontEnd.register', array(
+            'bloodtypes' => $bloodtypes,
+            'genders' => $genders
+        ));
     }
 
 	public function postStore()
