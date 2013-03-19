@@ -11,8 +11,11 @@ class Donor extends Basemodel{
 			'bloodtype' =>'regex:/[a-zA-Z].*/'
 	);
 
-    public function gender()
-    {
+    public function gender() {
         return $this->belongsTo('Gender');
+    }
+
+    public function bloodtype() {
+        return $this->belongsTo('Bloodtype');
     }
 }
