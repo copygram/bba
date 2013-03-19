@@ -1,3 +1,8 @@
 <?php
 
-class Blood extends Eloquent {}
+class Bloodtype extends Eloquent {
+
+    public function donors() {
+        return $this->hasMany('Donor');
+    }
+}

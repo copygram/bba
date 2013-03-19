@@ -85,7 +85,6 @@ class sendMail extends BaseController {
     public function render() {
         $user = Donor::all()->first();
 
-        dd($user->gender);
         $this->subject = "Subject";
 
         $mandrill = new Mandrill('D0M4hfjLBAV5A8eL8E9gJw');
