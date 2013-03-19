@@ -1,6 +1,6 @@
 <?php
 
-class Bloodtype extends Eloquent {
+class Bloodtype extends Basemodel {
 
     public function donors() {
         return $this->hasMany('Donor');

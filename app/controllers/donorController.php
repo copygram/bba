@@ -10,12 +10,17 @@ class donorController extends BaseController {
 	
 	public function getIndex()
 	{
-        return View::make('frontEnd.register', array());
+        return View::make('frontEnd.next');
 	}
 
     public function getRegister()
     {
-        return View::make('frontEnd.register', array());
+        $bloodtypes = array_map(function($n){
+            return $n['bloodtype'];
+        },  Bloodtype::all()->toArray());
+        array_unshift($bloodtypes, 'Choose one');
+
+        return View::make('frontEnd.register', array('bloodtypes' => $bloodtypes));
     }
 
 	public function postStore()
@@ -34,8 +39,8 @@ class donorController extends BaseController {
                 'countrycode' 	=>  Input::get('countrycode'),
                 'mobile'		=>	Input::get('mobile'),
                 'email'			=>	Input::get('email'),
-                'bloodtype'		=>	Input::get('bloodtype'),
-                'gender'		=>	Input::get('gender'),
+                'bloodtype_id'	=>	Input::get('bloodtype_id'),
+                'gender_id'		=>	Input::get('gender_id'),
                 'lastDonated' 	=>  Input::get('lastDonated'),
             ));
 

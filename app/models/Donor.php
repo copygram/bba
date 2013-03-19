@@ -8,7 +8,8 @@ class Donor extends Basemodel{
 			'lname'=>'required',
 			'area'=>'required',
 			'mobile' => 'required|numeric|unique:donors,mobile',
-			'bloodtype' =>'regex:/[a-zA-Z].*/'
+			'bloodtype_id' =>'exists:bloodtypes,id',
+            'gender_id' => 'exists:genders,id',
 	);
 
     public function gender() {
