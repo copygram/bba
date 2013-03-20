@@ -9,13 +9,18 @@ class smsController extends BaseController {
 	 * @return Response
 	 */
 
+    private $account;
+    private $token;
 
+    public function __construct() {
+        $this->account = Config::get('app.twilio_account');
+        $this->token = Config::get('app.twilio_auth_token');
+    }
 
-	
 	public static function sendSMS($recipientNumber,$recipientName,$messageBody = NULL)
 	{
 
-	    $client = new Services_Twilio('ACe8fddabb94827cc5c73bcfb50acb08b5', '462d7dd89fb5bb82a9c4c1acc9f7edfb');
+	    $client = new Services_Twilio('', '');
 	 
 	    $donor = array(
 	     

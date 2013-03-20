@@ -66,6 +66,8 @@ Event::listen('donor.save', function($donor) {
     $welcomeMail->subject = "Welcome to BBA";
     $welcomeMail->template = "fluid-welcome-email";
     $welcomeMail->send($donor);
+
+    $welcomeSMS = new
 });
 
 /*

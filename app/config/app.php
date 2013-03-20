@@ -69,6 +69,8 @@ return array(
 
     // API Keys
     'mandrill_key' => 'D0M4hfjLBAV5A8eL8E9gJw',
+    'twilio_account' => 'ACe8fddabb94827cc5c73bcfb50acb08b5',
+    'twilio_auth_token' => '462d7dd89fb5bb82a9c4c1acc9f7edfb',
 
 	/*
 	|--------------------------------------------------------------------------

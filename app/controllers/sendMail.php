@@ -11,7 +11,10 @@ class sendMail extends BaseController {
     public $subject;
     public $template;
 
+    private $mandrillKey;
+
     public function __construct() {
+        $this->mandrillKey = Config::get('app.mandrill_key');
     }
 
     public function verifyMail($hash) {
@@ -32,8 +35,8 @@ class sendMail extends BaseController {
 
     public function send($user = null) {
 
-        $mandrillKey = Config::get('app.mandrill_key');
-        $mandrill = new Mandrill($mandrillKey);
+
+        $mandrill = new Mandrill($this->mandrillKey);
 
         $global_merge_vars = array('global_merge_vars' =>
             array(
@@ -107,8 +110,7 @@ class sendMail extends BaseController {
 
         $this->subject = "Subject";
 
-        $mandrillKey = Config::get('app.mandrill_key');
-        $mandrill = new Mandrill($mandrillKey);
+        $mandrill = new Mandrill($this->mandrillKey);
 
         $global_merge_vars = array('global_merge_vars' =>
         array(
