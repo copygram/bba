@@ -62,6 +62,9 @@ class sendMail extends BaseController {
             array(
                 'name' => 'GENDER',
                 'content' => $user->gender->description),
+            array(
+                'name' => 'MAILHASH',
+                'content' => $user->email_hash),
             );
 
         $merge_vars = array(array(
@@ -95,7 +98,7 @@ class sendMail extends BaseController {
                 'content' => 'Copyright 2012.')
 
         );
-        
+
         $mandrill->messages->sendTemplate($this->template, null, $message);
     }
 
@@ -135,6 +138,9 @@ class sendMail extends BaseController {
             array(
                 'name' => 'GENDER',
                 'content' => $user->gender->description),
+            array(
+                'name' => 'MAILHASH',
+                'content' => $user->email_hash),
         );
 
         $merge_vars = array(array(
