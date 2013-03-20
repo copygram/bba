@@ -14,10 +14,19 @@ class sendMail extends BaseController {
     }
 
     public function verifyMail($hash) {
-        $donor = Donor::where('email_hash', '=', $hash)->first();
-        dd($donor);
-        //Hash::check($hash, );
+        try {
+            $donor = Donor::where('email_hash', '=', $hash)->first();
+            if($donor == null) {
+                App::abort(404, 'Page not found');
+            } else {
+                $donor->email_verified = 1;
+                $donor->save();
 
+                return View::make('frontEnd.emailVerified', array());
+            }
+        } catch (Exception $e) {
+            throw $e;
+        }
     }
 
     public function send($user = null) {
