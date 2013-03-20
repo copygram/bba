@@ -6,10 +6,8 @@ class DonorsTableSeeder extends Seeder {
 	 *
 	 * @return void
 	 */
-	public function run()
-	{
+	public function run() {
 		$donors = array(
-
 			array(
 				'fname'=>'Kennedy',
 				'lname'=>'Otis',
@@ -23,11 +21,10 @@ class DonorsTableSeeder extends Seeder {
 				'lat'=>'56.90273329999999',
 				'lng'=>'12.488801299999977',
 				'created_at'=> new DateTime,
-				'updated_at'=> new DateTime
-
-			),
-
-			array(
+				'updated_at'=> new DateTime,
+                'email_verified' => 0,
+                'email_hash' => Hash::make('kennedy.otis@gmail.com')
+			), array(
 				'fname'=>'Oskar',
 				'lname'=>'Adin',
 				'email'=>'oskar@copygr.am',
@@ -40,10 +37,10 @@ class DonorsTableSeeder extends Seeder {
 				'lat'=>'56.90273329999999',
 				'lng'=>'12.488801299999977',
 				'created_at'=> new DateTime,
-				'updated_at'=> new DateTime
-
-			),
-			array(
+				'updated_at'=> new DateTime,
+                'email_verified' => 0,
+                'email_hash' => Hash::make('oskar@copygr.am')
+			), array(
 				'fname'=>'Linus',
 				'lname'=>'Designer',
 				'email'=>'linus@copygr.am',
@@ -55,12 +52,11 @@ class DonorsTableSeeder extends Seeder {
 				'lastDonated'=>'03/12/2013',
 				'lat'=>'56.90273329999999',
 				'lng'=>'12.488801299999977',
-				'created_at'=> new DateTime,
-				'updated_at'=> new DateTime
-
-			),
-
-			array(
+				'created_at' => new DateTime,
+				'updated_at' => new DateTime,
+                'email_verified' => 0,
+                'email_hash' => Hash::make('linus@copygr.am'),
+			), array(
 				'fname'=>'Jane',
 				'lname'=>'Doe',
 				'email'=>'jane@doe.am',
@@ -73,11 +69,10 @@ class DonorsTableSeeder extends Seeder {
 				'lat'=>'57.70887',
 				'lng'=>'11.974559999999997',
 				'created_at'=> new DateTime,
-				'updated_at'=> new DateTime
-
-			),
-
-			array(
+				'updated_at'=> new DateTime,
+                'email_verified' => 1,
+                'email_hash' => Hash::make('jane@doe.am'),
+			), array(
 				'fname'=>'Mary',
 				'lname'=>'Doe',
 				'email'=>'mary@doe.am',
@@ -90,14 +85,12 @@ class DonorsTableSeeder extends Seeder {
 				'lat'=>'56.90273329999999',
 				'lng'=>'12.488801299999977',
 				'created_at'=> new DateTime,
-				'updated_at'=> new DateTime
-
+				'updated_at'=> new DateTime,
+                'email_verified' => 1,
+                'email_hash' => Hash::make('mary@doe.am'),
 			)
-			
-			
 		);
 
 		DB::table('donors')->insert($donors);
 	}
-
 }
