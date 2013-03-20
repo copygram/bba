@@ -9,12 +9,8 @@ class ChangeBloodsToBloodtypes extends Migration {
 	 *
 	 * @return void
 	 */
-	public function up()
-	{
-		Schema::table('bloods', function($table)
-		{
-			DB::statement('ALTER TABLE donors CHANGE bloodtype bloodtype_id int(11)');
-		});
+	public function up() {
+		DB::statement('ALTER TABLE donors CHANGE bloodtype bloodtype_id int(11)');
 	}
 
 	/**
@@ -22,12 +18,7 @@ class ChangeBloodsToBloodtypes extends Migration {
 	 *
 	 * @return void
 	 */
-	public function down()
-	{
-		Schema::table('bloods', function($table)
-		{
-            DB::statement('ALTER TABLE donors CHANGE bloodtype_id bloodtype int(11)');
-		});
+	public function down() {
+		DB::statement('ALTER TABLE donors CHANGE bloodtype_id bloodtype int(11)');
 	}
-
 }
