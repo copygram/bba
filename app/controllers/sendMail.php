@@ -3,6 +3,7 @@
  * User: oskar@copygr.am
  * Date: 3/16/13
  * Time: 6:07 PM
+ * TODO: Fix a generic function for getting the data so we don't have to update on two places.
  */
 
 class sendMail extends BaseController {
@@ -96,7 +97,6 @@ class sendMail extends BaseController {
             array(
                 'name' => 'footer',
                 'content' => 'Copyright 2012.')
-
         );
 
         $mandrill->messages->sendTemplate($this->template, null, $message);
@@ -172,7 +172,6 @@ class sendMail extends BaseController {
             array(
                 'name' => 'footer',
                 'content' => 'Copyright 2012.')
-
         );
 
         $rendered_template = $mandrill->templates->render('fluid-welcome-email', null, $global_merge_vars);
