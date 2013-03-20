@@ -65,7 +65,7 @@ return array(
 	|
 	*/
 
-	'key' => 'YourSecretKey!!!',
+	'key' => 'd=-n)m|/M|HIlx8-<E[[,p^S2an|fp~-^KXz |j,_uyp>8C)l9S20yV$@et]Ip1b',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -136,7 +136,6 @@ return array(
 	*/
 
 	'aliases' => array(
-
 		'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
 		'Auth'            => 'Illuminate\Support\Facades\Auth',
@@ -173,9 +172,5 @@ return array(
 		'HTML'            => 'LaravelBook\Laravel4Powerpack\Facades\HTMLFacade',
 		'Form'            => 'LaravelBook\Laravel4Powerpack\Facades\FormFacade',
 		'Str'             => 'LaravelBook\Laravel4Powerpack\Facades\StrFacade',
-				
-
-
 	),
-
 );

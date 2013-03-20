@@ -13,6 +13,13 @@ class sendMail extends BaseController {
     public function __construct() {
     }
 
+    public function verifyMail($hash) {
+        $donor = Donor::where('email_hash', '=', $hash)->first();
+        dd($donor);
+        //Hash::check($hash, );
+
+    }
+
     public function send($user = null) {
 
         $mandrill = new Mandrill('D0M4hfjLBAV5A8eL8E9gJw');

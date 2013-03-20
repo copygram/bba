@@ -1,6 +1,13 @@
 <?php  
 class DonorsTableSeeder extends Seeder {
 
+
+    private $salt;
+
+    public function __construct() {
+        $this->salt = Config::get('app.key');
+    }
+
 	/**
 	 * Run the database seeds.
 	 *
@@ -23,7 +30,7 @@ class DonorsTableSeeder extends Seeder {
 				'created_at'=> new DateTime,
 				'updated_at'=> new DateTime,
                 'email_verified' => 0,
-                'email_hash' => Hash::make('kennedy.otis@gmail.com')
+                'email_hash' => md5('kennedy.otis@gmail.com' . $this->salt),
 			), array(
 				'fname'=>'Oskar',
 				'lname'=>'Adin',
@@ -39,7 +46,7 @@ class DonorsTableSeeder extends Seeder {
 				'created_at'=> new DateTime,
 				'updated_at'=> new DateTime,
                 'email_verified' => 0,
-                'email_hash' => Hash::make('oskar@copygr.am')
+                'email_hash' => md5('oskar@copygr.am' . $this->salt),
 			), array(
 				'fname'=>'Linus',
 				'lname'=>'Designer',
@@ -55,7 +62,7 @@ class DonorsTableSeeder extends Seeder {
 				'created_at' => new DateTime,
 				'updated_at' => new DateTime,
                 'email_verified' => 0,
-                'email_hash' => Hash::make('linus@copygr.am'),
+                'email_hash' => md5('linus@copygr.am' . $this->salt),
 			), array(
 				'fname'=>'Jane',
 				'lname'=>'Doe',
@@ -71,7 +78,7 @@ class DonorsTableSeeder extends Seeder {
 				'created_at'=> new DateTime,
 				'updated_at'=> new DateTime,
                 'email_verified' => 1,
-                'email_hash' => Hash::make('jane@doe.am'),
+                'email_hash' => md5('jane@doe.am' . $this->salt),
 			), array(
 				'fname'=>'Mary',
 				'lname'=>'Doe',
@@ -87,7 +94,7 @@ class DonorsTableSeeder extends Seeder {
 				'created_at'=> new DateTime,
 				'updated_at'=> new DateTime,
                 'email_verified' => 1,
-                'email_hash' => Hash::make('mary@doe.am'),
+                'email_hash' => md5('mary@doe.am' . $this->salt),
 			)
 		);
 

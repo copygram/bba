@@ -12,8 +12,6 @@
 Route::get('/base', function(){
 
 
-	
-
 });
 
 Route::get('/', function(){
@@ -32,9 +30,13 @@ Route::get('hospital', function(){
 	return View::make('frontEnd.hospitals');
 });
 
+//This is just a test route to view the generated mail from mandrillapp.
 Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@render'));
+Route::get('/mail/verify/{hash}', array('as' => 'verifyMail', 'uses' => 'sendMail@verifyMail'));
+
 // Here be donors
 Route::controller('donor', 'donorController');
+
 
 
 /*
