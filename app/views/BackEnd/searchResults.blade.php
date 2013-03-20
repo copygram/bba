@@ -24,10 +24,10 @@
 								<tr class="odd">
 						<td>{{ $donor->fname }}</td>
 						<td>{{ $donor->lname }}</td>
-						<td>{{ $donor->gender }}</td>
+						<td>{{ $donor->gender_id }}</td>
 						<td>{{ $donor->mobile }}</td>
 						<td>{{ $donor->email }}</td>
-						<td>{{ $donor->bloodtype }}</td>
+						<td>{{ $donor->bloodtype_id }}</td>
 					</tr>
 				@endforeach
 							
