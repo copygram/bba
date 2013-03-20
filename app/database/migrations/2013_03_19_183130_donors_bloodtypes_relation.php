@@ -2,7 +2,7 @@
 
 use Illuminate\Database\Migrations\Migration;
 
-class ChangeBloodsToBloodtypes extends Migration {
+class DonorsBloodtypeRelation extends Migration {
 
 	/**
 	 * Run the migrations.
