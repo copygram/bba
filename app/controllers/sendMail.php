@@ -34,8 +34,6 @@ class sendMail extends BaseController {
     }
 
     public function send($user = null) {
-
-
         $mandrill = new Mandrill($this->mandrillKey);
 
         $global_merge_vars = array('global_merge_vars' =>
