@@ -3,6 +3,7 @@
  * User: oskar@copygr.am
  * Date: 3/16/13
  * Time: 6:07 PM
+ * TODO: Fix a generic function for getting the data so we don't have to update on two places.
  */
 
 class sendMail extends BaseController {
@@ -13,9 +14,26 @@ class sendMail extends BaseController {
     public function __construct() {
     }
 
+    public function verifyMail($hash) {
+        try {
+            $donor = Donor::where('email_hash', '=', $hash)->first();
+            if($donor == null) {
+                App::abort(404, 'Page not found');
+            } else {
+                $donor->email_verified = 1;
+                $donor->save();
+
+                return View::make('frontEnd.emailVerified', array());
+            }
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
     public function send($user = null) {
 
-        $mandrill = new Mandrill('D0M4hfjLBAV5A8eL8E9gJw');
+        $mandrillKey = Config::get('app.mandrill_key');
+        $mandrill = new Mandrill($mandrillKey);
 
         $global_merge_vars = array('global_merge_vars' =>
             array(
@@ -45,6 +63,9 @@ class sendMail extends BaseController {
             array(
                 'name' => 'GENDER',
                 'content' => $user->gender->description),
+            array(
+                'name' => 'MAILHASH',
+                'content' => $user->email_hash),
             );
 
         $merge_vars = array(array(
@@ -76,9 +97,8 @@ class sendMail extends BaseController {
             array(
                 'name' => 'footer',
                 'content' => 'Copyright 2012.')
-
         );
-        
+
         $mandrill->messages->sendTemplate($this->template, null, $message);
     }
 
@@ -87,7 +107,8 @@ class sendMail extends BaseController {
 
         $this->subject = "Subject";
 
-        $mandrill = new Mandrill('D0M4hfjLBAV5A8eL8E9gJw');
+        $mandrillKey = Config::get('app.mandrill_key');
+        $mandrill = new Mandrill($mandrillKey);
 
         $global_merge_vars = array('global_merge_vars' =>
         array(
@@ -117,6 +138,9 @@ class sendMail extends BaseController {
             array(
                 'name' => 'GENDER',
                 'content' => $user->gender->description),
+            array(
+                'name' => 'MAILHASH',
+                'content' => $user->email_hash),
         );
 
         $merge_vars = array(array(
@@ -148,7 +172,6 @@ class sendMail extends BaseController {
             array(
                 'name' => 'footer',
                 'content' => 'Copyright 2012.')
-
         );
 
         $rendered_template = $mandrill->templates->render('fluid-welcome-email', null, $global_merge_vars);
