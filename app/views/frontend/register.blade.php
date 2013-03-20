@@ -1,4 +1,4 @@
-@extends('frontend.base')
+@extends('frontEnd.base')
 
 @section('topcontent')
 		<div class="container" id="bigPhotoRegister">
@@ -28,36 +28,14 @@
 	       		<input type="text" class="required" name="lname" value="{{ Input::old('lname')}}"  />
 	       	</p>
 	       	<p>
-	       		<label for="gender">Gender:</label><br />
+	       		<label for="gender">Gender:</label>{{ $errors->first('gender_id', '<p class="field-error">:message</p>') }}
                 <?php
-                echo Form::select('gender', array(
-                    '0' => 'Choose gender',
-                    '1' => 'Female',
-                    '2' => 'Male',
-                ), Input::old('gender'));
+                echo Form::select('gender_id', $genders, Input::old('gender_id'));
                 ?>
 	       	</p>
 	       	<p>
-	       		<label for="bloodtype">Blood Type:</label><br />
-                <?php
-                echo Form::select('bloodtype', array(
-	       			'0'       => 'Choose',
-	       			'A+'      => 'A+',
-	       			'A-'      => 'A-',
-	        		'B+'      => 'B+',
-	        		'B-'      => 'B-',
-	        		'AB+'     => 'AB+',
-	        		'AB-'     => 'AB-',
-	        		'O+'      => 'O+',
-	        		'A1+'     => 'A1+',
-	        		'A1-'     => 'A1-',
-	        		'A2+'     => 'A2+',
-	        		'A1B+'    => 'A1B+',
-	        		'A2B+'    => 'A2B+',
-	        		'A2B-'    => 'A2B-',
-	        		'Unknown' =>'Unknown',
-                ), Input::old('bloodtype'));
-                ?>
+	       		<label for="bloodtype">Blood Type:</label> {{ $errors->first('bloodtype_id', '<p class="field-error">:message</p>') }}
+                {{ Form::select('bloodtype_id', $bloodtypes, Input::old('bloodtype_id')) }}
 	        </p>
 	        <p>
 	        	<label for="lastDonated">Last donated:<em>( dd/mm/yyyy )</em></label><br />
