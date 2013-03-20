@@ -67,6 +67,9 @@ return array(
 
 	'key' => 'd=-n)m|/M|HIlx8-<E[[,p^S',
 
+    // API Keys
+    'mandrill_key' => 'D0M4hfjLBAV5A8eL8E9gJw',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Autoloaded Service Providers
