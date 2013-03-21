@@ -22,7 +22,7 @@ class smsController extends BaseController {
     }
 
 	private function sendSMS($recipient, $messageBody) {
-	    $client = new Services_Twilio($this->account, $this->token);
+        $client = new Services_Twilio($this->account, $this->token);
         $number = $this->phoneNumber($recipient);
         $sms = $client->account->sms_messages->create($this->twilio_number, $number, $messageBody);
 	}
@@ -34,7 +34,8 @@ class smsController extends BaseController {
                 $mobile = (substr($recipient->mobile, 0, 1) == 0) ? substr($recipient->mobile, 1) : $recipient->mobile;
                 $mobile = $recipient->countrycode.$mobile;
 
-			    return $mobile;
+                return $mobile;
+
             } catch (Exception $e) {
                 throw $e;
             }
