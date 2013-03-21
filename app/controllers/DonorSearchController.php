@@ -60,7 +60,7 @@ class DonorSearchController extends BaseController {
 	}
 
     public function searchDonorsOnMap() {
-        $donors = json_encode(self::getDonorsList());
+        $donors = json_encode(self::getAllDonors());
 
         return View::make( 'backend.searchResultsOnMap' )
 	        ->with( 'donors', $donors )
