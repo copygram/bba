@@ -65,7 +65,7 @@ Event::listen('donor.save', function($donor) {
     $welcomeMail = new sendMail();
     $welcomeMail->subject = "Welcome to BBA";
     $welcomeMail->template = "fluid-welcome-email";
-    //$welcomeMail->send($donor);
+    $welcomeMail->send($donor);
 
     $mandrill = new Mandrill(Config::get('app.mandrill_key'));
     $global_merge_vars = array('global_merge_vars' =>
@@ -75,9 +75,7 @@ Event::listen('donor.save', function($donor) {
     );
     $welcomeMessage = $mandrill->templates->render('sms-welcome',null,$global_merge_vars);
 
-
-    dd($welcomeMessage['html']);
-    //$welcomeSMS = new smsController($donor, "Thanks for signing up to Blood Bank Africa.");
+    //$welcomeSMS = new smsController($donor, $welcomeMessage);
 
 });
 
