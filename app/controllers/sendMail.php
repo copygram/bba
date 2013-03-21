@@ -10,11 +10,13 @@ class sendMail extends BaseController {
 
     public $subject;
     public $template;
+    private $donor;
 
     private $mandrillKey;
 
-    public function __construct() {
+    public function __construct(Donor $donor) {
         $this->mandrillKey = Config::get('app.mandrill_key');
+        $this->donor = $donor;
     }
 
     public function verifyMail($hash) {
@@ -33,8 +35,9 @@ class sendMail extends BaseController {
         }
     }
 
-    public function send($user = null) {
-        $mandrill = new Mandrill($this->mandrillKey);
+    public function send() {
+		$mandrill = new Mandrill($this->mandrillKey);
+		$user = $this->donor;
 
         $global_merge_vars = array('global_merge_vars' =>
             array(
@@ -91,22 +94,13 @@ class sendMail extends BaseController {
             'global_merge_vars' => $global_merge_vars,
             'merge_vars' => $merge_vars);
 
-        $template_content = array(
-            array(
-                'name' => 'main',
-                'content' => 'Hi *|FIRSTNAME|* *|LASTNAME|*, thanks for signing up.'),
-            array(
-                'name' => 'footer',
-                'content' => 'Copyright 2012.')
-        );
-
         $mandrill->messages->sendTemplate($this->template, null, $message);
     }
 
     public function render() {
         $user = Donor::all()->first();
 
-        $this->subject = "Subject";
+        $this->subject = " Say. *|FNAME|*";
 
         $mandrill = new Mandrill($this->mandrillKey);
 
@@ -165,14 +159,6 @@ class sendMail extends BaseController {
             'global_merge_vars' => $global_merge_vars,
             'merge_vars' => $merge_vars);
 
-        $template_content = array(
-            array(
-                'name' => 'main',
-                'content' => 'Hi *|FIRSTNAME|* *|LASTNAME|*, thanks for signing up.'),
-            array(
-                'name' => 'footer',
-                'content' => 'Copyright 2012.')
-        );
 
         $rendered_template = $mandrill->templates->render('fluid-welcome-email', null, $global_merge_vars);
         echo $rendered_template['html'];
