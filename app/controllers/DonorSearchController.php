@@ -64,6 +64,6 @@ class DonorSearchController extends BaseController {
 
 
 	public function show($id) {
-		return View::make('backend.Search.show')->with('donor',Donor::find($id));
+		return View::make('backend.search.show')->with('donor',Donor::find($id));
 	}
 }
