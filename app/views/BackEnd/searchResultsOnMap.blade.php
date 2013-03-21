@@ -1,4 +1,4 @@
-@extends('BackEnd.base')
+@extends('backend.base')
 @section('header')
     <style type="text/css">
 

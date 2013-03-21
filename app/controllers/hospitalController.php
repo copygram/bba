@@ -12,7 +12,7 @@ class hospitalController extends BaseController {
 	public function create()
 	{
 
-		return View::make('frontEnd.hosptialSignup');
+		return View::make('frontend.hosptialSignup');
 	}
 
 	/**

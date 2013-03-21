@@ -10,14 +10,14 @@ class donorController extends BaseController {
 	
 	public function getIndex()
 	{
-        return View::make('frontEnd.next');
+        return View::make('frontend.next');
 	}
 
     public function getRegister()
     {
         $bloodtypes = objectFormArray::flatten(Bloodtype::all());
         $genders = objectFormArray::flatten(Gender::all());
-        return View::make('frontEnd.register', array(
+        return View::make('frontend.register', array(
             'bloodtypes' => $bloodtypes,
             'genders' => $genders
         ));
@@ -56,6 +56,6 @@ class donorController extends BaseController {
 	}
 
     public function getNext() {
-        return View::make('frontEnd.next');
+        return View::make('frontend.next');
     }
 }

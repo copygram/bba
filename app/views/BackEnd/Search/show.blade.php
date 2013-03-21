@@ -1,4 +1,4 @@
-@extends('BackEnd.default')
+@extends('backend.default')
 
 @section('content')
 	<h2><?php echo $donor->fname .' '.$donor->lname ;?> details</h2>

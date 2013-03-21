@@ -1,4 +1,4 @@
-@extends('BackEnd.default')
+@extends('backend.default')
 
 @section('content')
 	<h2>Search for donors</h2>

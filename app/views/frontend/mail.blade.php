@@ -1,4 +1,4 @@
-@extends('frontEnd.base')
+@extends('frontend.base')
 
 @section('forhumanity')
 <h1>{{$slask}}</h1>

@@ -13,7 +13,7 @@ class UsersController extends BaseController {
 
 	public function getLogin()
 	{
-		return View::make('BackEnd.Authentication.login');
+		return View::make('backend.Authentication.login');
 	}
 
 	public function postLogin()
@@ -55,7 +55,7 @@ class UsersController extends BaseController {
 	public function index()
 	{
 		$data = User::userList();
-		return View::make('BackEnd.Users.index')->with('users',$data);
+		return View::make('backend.Users.index')->with('users',$data);
 	}
 
 	/**
@@ -65,7 +65,7 @@ class UsersController extends BaseController {
 	 */
 	public function create()
 	{
-		return View::make('BackEnd.Users.new');
+		return View::make('backend.Users.new');
 	}
 
 	/**
@@ -116,7 +116,7 @@ class UsersController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		return View::make('BackEnd.Users.edit')->with('user',User::find($id));
+		return View::make('backend.Users.edit')->with('user',User::find($id));
 	}
 
 	/**

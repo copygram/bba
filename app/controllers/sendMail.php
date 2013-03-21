@@ -28,7 +28,7 @@ class sendMail extends BaseController {
                 $donor->email_verified = 1;
                 $donor->save();
 
-                return View::make('frontEnd.emailVerified', array());
+                return View::make('frontend.emailVerified', array());
             }
         } catch (Exception $e) {
             throw $e;
