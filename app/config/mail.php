@@ -10,7 +10,7 @@ return array(
     | Set all default values for mails here.
     | All user properties are available as merge vars with: *|VAR|*
     */
-    'welcome_subject' => 'Welcome to Blood Bank Africa',
+    'welcome_subject' => '*|FNAME|*, Welcome to Blood Bank Africa',
 
     /*
     |--------------------------------------------------------------------------
