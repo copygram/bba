@@ -1,13 +1,12 @@
 <?php
 
-
 class smsController extends BaseController {
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
+    /**
+    * Display a listing of the resource.
+    *
+    * @return Response
+    */
 
     private $account;
     private $token;
@@ -20,15 +19,14 @@ class smsController extends BaseController {
 
         $this->sendSMS($recipient, $messageBody);
     }
-
-	private function sendSMS($recipient, $messageBody) {
+    private function sendSMS($recipient, $messageBody) {
         $client = new Services_Twilio($this->account, $this->token);
         $number = $this->phoneNumber($recipient);
         $sms = $client->account->sms_messages->create($this->twilio_number, $number, $messageBody);
-	}
+    }
 
-	// Getting away the first zero and concat with country code
-	private function phoneNumber(Donor $recipient) {
+    // Getting away the first zero and concat with country code
+    private function phoneNumber(Donor $recipient) {
         if(isset($recipient)) {
             try {
                 $mobile = (substr($recipient->mobile, 0, 1) == 0) ? substr($recipient->mobile, 1) : $recipient->mobile;
@@ -40,5 +38,5 @@ class smsController extends BaseController {
                 throw $e;
             }
         }
-	}
+    }
 }
