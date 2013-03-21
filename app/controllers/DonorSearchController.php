@@ -10,8 +10,16 @@ class DonorSearchController extends BaseController {
 	public function index()
 	{
         $bloodtypes = objectFormArray::flatten(Bloodtype::all());
+<<<<<<< Updated upstream
 		return View::make('backend.search',array('bloodtypes' => $bloodtypes));
+=======
+
+		return View::make('BackEnd.search',array('bloodtypes' => $bloodtypes));
+
+>>>>>>> Stashed changes
 	}
+
+
 
     private static function getDonorsList() {
         
@@ -21,18 +29,31 @@ class DonorSearchController extends BaseController {
             $poslat = $hospital->lat;
             $poslng = $hospital->lng;
             $distance = 5;
+<<<<<<< Updated upstream
             $allowablePeriod = 56;
 
             
+=======
+  
+>>>>>>> Stashed changes
 
             $donors = DB::select('SELECT *, (3959 * acos(cos
 					(radians(?)) * cos(radians(lat)) * cos(radians
 					(lng) - radians(?)) + sin(radians(?)) * sin
+<<<<<<< Updated upstream
 					(radians(lat)))) AS distance FROM donors WHERE bloodtype_id = ? AND lastDonated <= DATE_SUB(CURDATE(), INTERVAL ? DAY)  HAVING distance < ? ', array($poslat, $poslng, $poslat,$bloodType,$allowablePeriod,$distance));
+=======
+					(radians(lat)))) AS distance FROM donors WHERE bloodtype_id = ?  HAVING distance < ? ', array($poslat, $poslng, $poslat,$bloodType,$distance));
+
+>>>>>>> Stashed changes
 
            
             return $donors;
+<<<<<<< Updated upstream
 
+=======
+            
+>>>>>>> Stashed changes
         
     }
     

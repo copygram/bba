@@ -11,6 +11,16 @@
 
 Route::get('/base', function(){
 
+<<<<<<< Updated upstream
+=======
+$dateStr = '03/06/2013';
+
+$phpdate = strtotime( $dateStr );
+$mysqldate = date( 'Y-m-d H:i:s', $phpdate );
+
+dd($mysqldate);
+
+>>>>>>> Stashed changes
 	
 
 });

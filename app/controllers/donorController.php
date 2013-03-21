@@ -28,6 +28,7 @@ class donorController extends BaseController {
 		$validation = Donor::validate(Input::all());
         $salt = Config::get('app.key');
 
+      
 		//validating blood select
 		if($validation->passes()){
 
@@ -46,7 +47,19 @@ class donorController extends BaseController {
                 'email_hash'    => md5(Input::get('email').$salt),
             ));
 
+<<<<<<< Updated upstream
             $event = Event::fire('donor.save', $donor);
+=======
+            $countrycode = $donor->countrycode;
+
+            $mobile = $donor->mobile;
+            $recipientNumber = smsController::phoneNumber($mobile,$countrycode);
+            $recipientName = $donor->fname;
+            $messageBody = "Thanks $recipientName for signing up to Blood Bank Africa.";
+
+            //$sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
+            //$event = Event::fire('donor.save', $donor);
+>>>>>>> Stashed changes
 
             return Redirect::to('donor/next')->with('registered',1);
 		}else{
