@@ -63,7 +63,7 @@ require $app->getBootstrapFile();
 
 Event::listen('donor.save', function($donor) {
     $welcomeMail = new sendMail();
-    $welcomeMail->subject = "Welcome to BBA";
+    $welcomeMail->subject = Config::get('mail.welcome_subject');
     $welcomeMail->template = "fluid-welcome-email";
     $welcomeMail->send($donor);
 
