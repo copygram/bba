@@ -159,7 +159,6 @@ class sendMail extends BaseController {
             'global_merge_vars' => $global_merge_vars,
             'merge_vars' => $merge_vars);
 
-
         $rendered_template = $mandrill->templates->render('fluid-welcome-email', null, $global_merge_vars);
         echo $rendered_template['html'];
         die();
