@@ -8,30 +8,25 @@ class donorController extends BaseController {
 	 * @return Response
 	 */
 	
-	public function getIndex()
-	{
+	public function getIndex() {
         return View::make('frontend.next');
 	}
 
-    public function getRegister()
-    {
+    public function getRegister() {
         $bloodtypes = objectFormArray::flatten(Bloodtype::all());
         $genders = objectFormArray::flatten(Gender::all());
-        return View::make('frontend.register', array(
-            'bloodtypes' => $bloodtypes,
-            'genders' => $genders
+        return View::make( 'frontend.register', array(
+	        'bloodtypes' => $bloodtypes,
+            'genders' => $genders,
         ));
     }
 
-	public function postStore()
-	{
-		$validation = Donor::validate(Input::all());
-        $salt = Config::get('app.key');
+	public function postStore() {
+		$validation = Donor::validate( Input::all() );
+        $salt = Config::get( 'app.key' );
 
-      
 		//validating blood select
-		if($validation->passes()){
-
+		if( $validation->passes() ){
             $donor = Donor::create(array(
                 'fname'			=> Input::get('fname'),
                 'lname'			=> Input::get('lname'),
@@ -47,28 +42,16 @@ class donorController extends BaseController {
                 'email_hash'    => md5(Input::get('email').$salt),
             ));
 
-<<<<<<< Updated upstream
-            $event = Event::fire('donor.save', $donor);
-=======
-            $countrycode = $donor->countrycode;
+            $event = Event::fire( 'donor.save', $donor );
 
-            $mobile = $donor->mobile;
-            $recipientNumber = smsController::phoneNumber($mobile,$countrycode);
-            $recipientName = $donor->fname;
-            $messageBody = "Thanks $recipientName for signing up to Blood Bank Africa.";
+            return Redirect::to( 'donor/next' )->with( 'registered', 1 );
 
-            //$sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
-            //$event = Event::fire('donor.save', $donor);
->>>>>>> Stashed changes
-
-            return Redirect::to('donor/next')->with('registered',1);
-		}else{
-			return Redirect::to('donor/register')->withErrors($validation)->withInput();
+		} else {
+			return Redirect::to( 'donor/register' )->withErrors( $validation )->withInput();
 		}
-
 	}
 
     public function getNext() {
-        return View::make('frontend.next');
+        return View::make( 'frontend.next' );
     }
 }
