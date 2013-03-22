@@ -8,13 +8,13 @@ class DonorSearchController extends BaseController {
 	 * @return Response
 	 */
 	public function index() {
-        $bloodtypes = objectFormArray::flatten(Bloodtype::all());
-		return View::make('backend.search',array('bloodtypes' => $bloodtypes));
+        $bloodtypes = objectFormArray::flatten( Bloodtype::all() );
+		return View::make( 'backend.search', array( 'bloodtypes' => $bloodtypes ) );
 	}
 
     private static function getDonorsList() {
 		$hospital = Hospital::find(Auth::user()->hospital_id);
-	    $bloodType = Input::get('bloodtype_id');
+	    $bloodType = Input::get( 'bloodtype_id' );
 	    $poslat = $hospital->lat;
 	    $poslng = $hospital->lng;
 	    $distance = 5;
@@ -24,7 +24,8 @@ class DonorSearchController extends BaseController {
                     (lng) - radians(?)) + sin(radians(?)) * sin
                     (radians(lat)))) AS distance FROM donors WHERE bloodtype_id = ? AND lastDonated <= DATE_SUB(CURDATE(), INTERVAL ? DAY)  HAVING distance < ? ', array($poslat, $poslng, $poslat,$bloodType,$allowablePeriod,$distance));
 
-            return $donors;
+	    return $donors;
+
     }
     
     private static function getAllDonors() {
@@ -39,7 +40,8 @@ class DonorSearchController extends BaseController {
                     (lng) - radians(?)) + sin(radians(?)) * sin
                     (radians(lat)))) AS distance FROM donors WHERE lastDonated <= DATE_SUB(CURDATE(), INTERVAL ? DAY) HAVING distance < ? ', array($poslat, $poslng, $poslat, $allowablePeriod, $distance));
 
-        return $donors;
+	    return $donors;
+
     }
 
 	public function searchDonors() {
@@ -47,23 +49,29 @@ class DonorSearchController extends BaseController {
 
         if($validation->passes()) {
             $donors = self::getDonorsList();
-            return View::make('backend.searchResults')->with('results',$donors);
+
+            return View::make( 'backend.searchResults' )->with( 'results', $donors );
 
         } else {
-            return Redirect::to('admin/search')->withErrors($validation)->withInput();
+
+            return Redirect::to( 'admin/search' )->withErrors( $validation )->withInput();
+
         }
 	}
 
     public function searchDonorsOnMap() {
         $donors = json_encode(self::getAllDonors());
 
-        return View::make('backend.searchResultsOnMap')
-            ->with('donors',$donors)
-            ->with('hospital', Hospital::find(Auth::user()->hospital_id));
+        return View::make( 'backend.searchResultsOnMap' )
+	        ->with( 'donors', $donors )
+	        ->with( 'hospital', Hospital::find(Auth::user()->hospital_id) );
+
     }
 
 
 	public function show($id) {
-		return View::make('backend.search.show')->with('donor',Donor::find($id));
+
+		return View::make( 'backend.search.show' )->with( 'donor', Donor::find($id) );
+
 	}
 }
