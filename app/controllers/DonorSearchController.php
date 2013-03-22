@@ -17,8 +17,9 @@ class DonorSearchController extends BaseController {
 	    $bloodType = Input::get( 'bloodtype_id' );
 	    $poslat = $hospital->lat;
 	    $poslng = $hospital->lng;
-	    $distance = 5;
-	    $allowablePeriod = 56;
+	    $distance = Config::get('app.search_radius');
+	    $allowablePeriod = Config::get('app.date_difference');
+
 		$donors = DB::select('SELECT *, (3959 * acos(cos
                     (radians(?)) * cos(radians(lat)) * cos(radians
                     (lng) - radians(?)) + sin(radians(?)) * sin
@@ -32,8 +33,8 @@ class DonorSearchController extends BaseController {
         $hospital = Hospital::find(Auth::user()->hospital_id);
         $poslat = $hospital->lat;
         $poslng = $hospital->lng;
-        $distance = 5;
-        $allowablePeriod = 56;
+        $distance = Config::get('app.search_radius');
+        $allowablePeriod = Config::get('app.date_difference');
 
         $donors = DB::select('SELECT *, (3959 * acos(cos
                     (radians(?)) * cos(radians(lat)) * cos(radians
