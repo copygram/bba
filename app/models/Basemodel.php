@@ -11,7 +11,7 @@ class Basemodel extends Eloquent {
     		'area.required' => 'Please enter area name.',
     		'email.email' => 'Please enter a valid email format',
     		'fname.required' => 'The first name is required.',
-    		'bloodtype.exists' => 'Please select your blood type.'
+    		'bloodtype.exists' => 'Please select your blood type.',
 		);
 
 		return Validator::make($data, static::$rules,$messages);
