@@ -20,40 +20,35 @@
 		<div class="formcanvas">
 			<form action="{{ URL::to('/donor/store') }}" method="POST" class="donorForm">
 			<p>
-	       		<label for="firstname">First name:</label><br />
-	       		<input type="text" class="required" name="fname" value="{{ Input::old('fname')}}" />
-                {{ $errors->first('fname','<span class="field-error">:message</span>')}}
+	       		<label for="firstname">First name:</label>{{ $errors->first('fname','<span class="field-error">:message</span>')}}
+	       		<input type="text"  name="fname" value="{{ Input::old('fname')}}" />
 	       	</p>
 	       	<p>
-	       		<label for="lastname">Last name:</label><br />
-	       		<input type="text" class="required" name="lname" value="{{ Input::old('lname')}}" />
-                {{ $errors->first('lname','<span class="field-error">:message</span>')}}
+	       		<label for="lastname">Last name:</label>{{ $errors->first('lname','<span class="field-error">:message</span>')}}
+	       		<input type="text"  name="lname" value="{{ Input::old('lname')}}" />
 	       	</p>
 	       	<p>
-	       		<label for="gender">Gender:</label><br />
+	       		<label for="gender">Gender:</label>{{ $errors->first('gender_id','<span class="field-error">:message</span>') }}
                 {{ Form::select('gender_id', $genders, Input::old('gender_id')) }}
-                {{ $errors->first('gender_id','<span class="field-error">:message</span>') }}
 	       	</p>
 	       	<p>
-	       		<label for="bloodtype">Blood Type:</label><br />
+	       		<label for="bloodtype">Blood Type:</label>{{ $errors->first('bloodtype_id', '<span class="field-error">:message</span>') }}
                 {{ Form::select('bloodtype_id', $bloodtypes, Input::old('bloodtype_id')) }}
-                {{ $errors->first('bloodtype_id', '<span class="field-error">:message</span>') }}
 	        </p>
 	        <p>
 	        	<label for="lastDonated">Last donated:<em>( dd/mm/yyyy )</em></label><br />
 	        	<input type="text" id="lastDonated" class="datePicker" name="lastDonated" value="{{ Input::old('lastDonated')}}">
 	        </p>
         	<p>
-        		<label for="location">Location: <em>( Residential area )</em></label><br />
-        		<input type="text" class="required" name="area" id="location" value="{{ Input::old('area')}}" />
+        		<label for="location">Location: <em>( Residential area )</em></label>{{ $errors->first('area', '<span class="field-error">:message</span>') }}
+        		<input type="text"  name="area" id="location" value="{{ Input::old('area')}}" />
         		<input type="hidden" id="lat" name="lat" value="{{ Input::old('lat')}}" />
 				<input type="hidden" id="lng" name="lng" value="{{ Input::old('lng')}}" />
-                {{ $errors->first('area', '<span class="field-error">:message</span>') }}
         	</p>
+            
         	<p>
-                <label for="email">Email:</label><br />
+                <label for="email">Email:</label>{{ $errors->first('email', '<span class="field-error">:message</span>') }}
                 <input type="email" name="email" id="email" value="{{ Input::old('email')}}" />
-                {{ $errors->first('email', '<span class="field-error">:message</span>') }}
         	</p>
 
         	<p>
@@ -110,9 +105,8 @@
                 ?>
   			</p>
 	        <p>
-                <label for="mobile">Mobile:</label><br/>
+                <label for="mobile">Mobile:</label>{{ $errors->first('mobile', '<span class="field-error">:message</span>') }}
                 <input type="text"   name="mobile" value="{{ Input::old('mobile')}}">
-                {{ $errors->first('mobile', '<span class="field-error">:message</span>') }}
 	        </p>
 	        <p>
 	        	<button type="submit" class="bigbtn" style="max-width:100%;">Register</button>

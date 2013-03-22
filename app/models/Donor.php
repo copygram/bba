@@ -9,7 +9,7 @@ class Donor extends Basemodel{
 			'area'=>'required',
 			'mobile' => 'required|numeric|unique:donors,mobile',
 			'bloodtype_id' =>'exists:bloodtypes,id',
-            'gender_id' => 'exists:genders,id',
+            'gender_id' => 'exists:genders,id'
 	);
 
     public function gender() {
