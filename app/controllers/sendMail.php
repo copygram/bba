@@ -87,6 +87,15 @@ class sendMail extends BaseController {
                     'content' => $user->fname .' '. $user->lname)
             )));
 
+	    $map_url = 'http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=600x200&maptype=roadmap&sensor=false&markers=';
+	    $map_location = $map_url . $user->lat .','. $user->lng;
+
+	    $template_content = array(
+		    array(
+			    'name' => 'area',
+			    'content' => '<img src="'.$map_location.'">'),
+	    );
+
         $message = array(
             'subject' => $this->subject,
             'from_email' => 'hello@bloodbankafrica.com',
@@ -94,7 +103,7 @@ class sendMail extends BaseController {
             'global_merge_vars' => $global_merge_vars,
             'merge_vars' => $merge_vars);
 
-        $mandrill->messages->sendTemplate($this->template, null, $message);
+        $mandrill->messages->sendTemplate($this->template, $template_content, $message);
     }
 
     public function render() {
@@ -152,6 +161,15 @@ class sendMail extends BaseController {
                     'content' => $user->fname .' '. $user->lname)
             )));
 
+		$map_url = 'http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=600x200&maptype=roadmap&sensor=false&markers=';
+	    $map_location = $map_url . $user->lat .','. $user->lng;
+
+	    $template_content = array(
+		    array(
+			    'name' => 'area',
+			    'content' => '<img src="'.$map_location.'">'),
+	    );
+
         $message = array(
             'subject' => $this->subject,
             'from_email' => 'hello@bloodbankafrica.com',
@@ -159,7 +177,7 @@ class sendMail extends BaseController {
             'global_merge_vars' => $global_merge_vars,
             'merge_vars' => $merge_vars);
 
-        $rendered_template = $mandrill->templates->render('fluid-welcome-email', null, $global_merge_vars);
+        $rendered_template = $mandrill->templates->render('fluid-welcome-email', $template_content, $global_merge_vars);
         echo $rendered_template['html'];
         die();
     }
