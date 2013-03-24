@@ -38,5 +38,7 @@ class smsController extends BaseController {
                 throw $e;
             }
         }
+
+	    return false;
     }
 }
