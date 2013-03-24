@@ -42,7 +42,8 @@ class DonorSearchController extends BaseController {
                     (lng) - radians(?)) + sin(radians(?)) * sin
                     (radians(lat)))) AS distance FROM donors WHERE lastDonated <= DATE_SUB(CURDATE(), INTERVAL ? DAY) HAVING distance < ? ', array($poslat, $poslng, $poslat, $allowablePeriod, $distance));
 
-	    return $donors;
+	    $donorsObj = Donor::stdClassToEloquent($donors, 'Donor');
+	    return $donorsObj;
 
     }
 
