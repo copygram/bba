@@ -31,8 +31,8 @@ Route::get( 'hospital', function() {
 });
 
 //This is just a test route to view the generated mail from mandrillapp.
-Route::get( '/mail', array( 'as'=>'mail', 'uses'=> 'sendMail@render' ) );
-Route::get( '/mail/verify/{hash}', array( 'as' => 'verifyMail', 'uses' => 'sendMail@verifyMail' ) );
+Route::get( '/mail', array( 'as'=>'mail', 'uses'=> 'MailController@render' ) );
+Route::get( '/mail/verify/{hash}', array( 'as' => 'verifyMail', 'uses' => 'MailController@verifyMail' ) );
 
 // Here be donors
 Route::controller( 'donor', 'DonorController' );
