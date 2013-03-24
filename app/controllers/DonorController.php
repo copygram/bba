@@ -1,6 +1,6 @@
 <?php
 
-class donorController extends BaseController {
+class DonorController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.

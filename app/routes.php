@@ -35,7 +35,7 @@ Route::get( '/mail', array( 'as'=>'mail', 'uses'=> 'sendMail@render' ) );
 Route::get( '/mail/verify/{hash}', array( 'as' => 'verifyMail', 'uses' => 'sendMail@verifyMail' ) );
 
 // Here be donors
-Route::controller( 'donor', 'donorController' );
+Route::controller( 'donor', 'DonorController' );
 
 
 /*
