@@ -15,19 +15,19 @@ Route::get('/base', function() {
 });
 
 Route::get( '/', function() {
-	return View::make('frontEnd.index');
+	return View::make('frontend.index');
 });
 
 Route::get( 'about', function() {
-	return View::make('frontEnd.about', array());
+	return View::make('frontend.about', array());
 });
 
 Route::get( 'contact', function() {
-	return View::make('frontEnd.contact');
+	return View::make('frontend.contact');
 });
 
 Route::get( 'hospital', function() {
-	return View::make( 'frontEnd.hospitals' );
+	return View::make( 'frontend.hospitals' );
 });
 
 //This is just a test route to view the generated mail from mandrillapp.
