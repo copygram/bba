@@ -35,9 +35,8 @@
         var map = new google.maps.Map(document.getElementById("map_canvas"), mapOptions);
 
         var donors =  <?php echo $donors ; ?>;
-		console.log(donors);
+
         for (var key in donors) {
-			console.log(key);
             var data = donors[key];
             var marker = new google.maps.Marker({
                 position: new google.maps.LatLng(data.lat,data.lng),
