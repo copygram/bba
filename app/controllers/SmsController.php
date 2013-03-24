@@ -1,6 +1,6 @@
 <?php
 
-class smsController extends BaseController {
+class SmsController extends BaseController {
 
     /**
     * Display a listing of the resource.
