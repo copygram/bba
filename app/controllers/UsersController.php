@@ -26,11 +26,15 @@ class UsersController extends BaseController {
 		);
 
 		if (Auth::attempt($users)) {
-			return Redirect::route('home');
-		}else{
-			return Redirect::route('login')->with('flash_error', 'Your username/password combination was incorrect.')->withInput();
-		}
 
+			if(Auth::check())
+				return Redirect::route('home');
+			else
+				return Redirect::route('login');	
+			
+		}else
+			return Redirect::route('login')->with('flash_error', 'Your username/password combination was incorrect.')->withInput();
+		
 	}
 
 	public function getLogout(){
