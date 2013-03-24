@@ -55,7 +55,8 @@ class DonorSearchController extends BaseController {
 
             return View::make( 'backend.searchResults' )->with( 'results', $donors );
 
-        } else {
+        }
+		else {
 
             return Redirect::to( 'admin/search' )->withErrors( $validation )->withInput();
 
@@ -63,10 +64,15 @@ class DonorSearchController extends BaseController {
 	}
 
     public function searchDonorsOnMap() {
-        $donors = json_encode(self::getAllDonors());
+        $donors = self::getAllDonors();
+		$result = array();
+		foreach($donors as $donor) {
+			$result[] = $donor->toArray();
+		}
+		//dd(json_encode($result));
 
         return View::make( 'backend.searchResultsOnMap' )
-	        ->with( 'donors', $donors )
+	        ->with( 'donors', json_encode($result) )
 	        ->with( 'hospital', Hospital::find(Auth::user()->hospital_id) );
 
     }
