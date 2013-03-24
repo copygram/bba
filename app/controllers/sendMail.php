@@ -3,19 +3,41 @@
  * User: oskar@copygr.am
  * Date: 3/16/13
  * Time: 6:07 PM
+ * TODO: Fix a generic function for getting the data so we don't have to update on two places.
  */
 
 class sendMail extends BaseController {
 
     public $subject;
     public $template;
+    private $donor;
 
-    public function __construct() {
+    private $mandrillKey;
+
+    public function __construct(Donor $donor) {
+        $this->mandrillKey = Config::get('app.mandrill_key');
+        $this->donor = $donor;
     }
 
-    public function send($user = null) {
+    public function verifyMail($hash) {
+        try {
+            $donor = Donor::where('email_hash', '=', $hash)->first();
+            if($donor == null) {
+                App::abort(404, 'Page not found');
+            } else {
+                $donor->email_verified = 1;
+                $donor->save();
 
-        $mandrill = new Mandrill('D0M4hfjLBAV5A8eL8E9gJw');
+                return View::make('frontend.emailVerified', array());
+            }
+        } catch (Exception $e) {
+            throw $e;
+        }
+    }
+
+    public function send() {
+		$mandrill = new Mandrill($this->mandrillKey);
+		$user = $this->donor;
 
         $global_merge_vars = array('global_merge_vars' =>
             array(
@@ -45,6 +67,9 @@ class sendMail extends BaseController {
             array(
                 'name' => 'GENDER',
                 'content' => $user->gender->description),
+            array(
+                'name' => 'MAILHASH',
+                'content' => $user->email_hash),
             );
 
         $merge_vars = array(array(
@@ -62,6 +87,15 @@ class sendMail extends BaseController {
                     'content' => $user->fname .' '. $user->lname)
             )));
 
+	    $map_url = 'http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=600x200&maptype=roadmap&sensor=false&markers=';
+	    $map_location = $map_url . $user->lat .','. $user->lng;
+
+	    $template_content = array(
+		    array(
+			    'name' => 'area',
+			    'content' => '<img src="'.$map_location.'">'),
+	    );
+
         $message = array(
             'subject' => $this->subject,
             'from_email' => 'hello@bloodbankafrica.com',
@@ -69,25 +103,15 @@ class sendMail extends BaseController {
             'global_merge_vars' => $global_merge_vars,
             'merge_vars' => $merge_vars);
 
-        $template_content = array(
-            array(
-                'name' => 'main',
-                'content' => 'Hi *|FIRSTNAME|* *|LASTNAME|*, thanks for signing up.'),
-            array(
-                'name' => 'footer',
-                'content' => 'Copyright 2012.')
-
-        );
-        
-        $mandrill->messages->sendTemplate($this->template, null, $message);
+        $mandrill->messages->sendTemplate($this->template, $template_content, $message);
     }
 
     public function render() {
         $user = Donor::all()->first();
 
-        $this->subject = "Subject";
+        $this->subject = " Say. *|FNAME|*";
 
-        $mandrill = new Mandrill('D0M4hfjLBAV5A8eL8E9gJw');
+        $mandrill = new Mandrill($this->mandrillKey);
 
         $global_merge_vars = array('global_merge_vars' =>
         array(
@@ -117,6 +141,9 @@ class sendMail extends BaseController {
             array(
                 'name' => 'GENDER',
                 'content' => $user->gender->description),
+            array(
+                'name' => 'MAILHASH',
+                'content' => $user->email_hash),
         );
 
         $merge_vars = array(array(
@@ -134,6 +161,15 @@ class sendMail extends BaseController {
                     'content' => $user->fname .' '. $user->lname)
             )));
 
+		$map_url = 'http://maps.googleapis.com/maps/api/staticmap?zoom=13&size=600x200&maptype=roadmap&sensor=false&markers=';
+	    $map_location = $map_url . $user->lat .','. $user->lng;
+
+	    $template_content = array(
+		    array(
+			    'name' => 'area',
+			    'content' => '<img src="'.$map_location.'">'),
+	    );
+
         $message = array(
             'subject' => $this->subject,
             'from_email' => 'hello@bloodbankafrica.com',
@@ -141,17 +177,7 @@ class sendMail extends BaseController {
             'global_merge_vars' => $global_merge_vars,
             'merge_vars' => $merge_vars);
 
-        $template_content = array(
-            array(
-                'name' => 'main',
-                'content' => 'Hi *|FIRSTNAME|* *|LASTNAME|*, thanks for signing up.'),
-            array(
-                'name' => 'footer',
-                'content' => 'Copyright 2012.')
-
-        );
-
-        $rendered_template = $mandrill->templates->render('fluid-welcome-email', null, $global_merge_vars);
+        $rendered_template = $mandrill->templates->render('fluid-welcome-email', $template_content, $global_merge_vars);
         echo $rendered_template['html'];
         die();
     }

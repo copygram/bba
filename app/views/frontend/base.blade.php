@@ -44,7 +44,7 @@
 							</ul>
 						</div>
 				</div>
-		</div>
+		
 		
 		
 		<!-- This is the Big Photo or Video --> 

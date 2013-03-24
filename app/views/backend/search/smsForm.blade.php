@@ -1,4 +1,4 @@
-@extends('BackEnd.default')
+@extends('backend.default')
 
 @section('content')
 	<h2>Send SMS to donor </h2>

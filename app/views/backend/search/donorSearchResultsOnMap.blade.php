@@ -1,30 +1,21 @@
-@extends('BackEnd.base')
+@extends('backend.default')
 @section('header')
     <style type="text/css">
 
     </style>
 @stop
-
 @section('content')
-<div class="container" style="min-height: 800px;">
-    <div class="row" style="padding-top:60px;">
-        <div class="twelvecol">
-
-            <a href="javascript:history.back()">Back</a>
-                @if($donors)
-                <div id="map_canvas"></div>
-                @else
-                <h1>No donor found</h1>
-                {{{ HTML::route('donorSearch','Back to search form') }}}
-            @endif
-
-        </div>
-   </div>
-</div>
+    <h2>Donor search results</h2>
+    @if($donors)
+        <div id="map_canvas"></div>
+    @else
+    <h1>No donor found</h1>
+        {{{ HTML::route('donorSearch','Back to search form') }}}
+    @endif
 @stop
-
 @section('scripts')
-<script type="text/javascript" src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS7TbH7HgqB2kVU6gO_QJo2JcviDAoVys&sensor=false">
+<script type="text/javascript"
+        src="https://maps.googleapis.com/maps/api/js?key=AIzaSyCS7TbH7HgqB2kVU6gO_QJo2JcviDAoVys&sensor=false">
 </script>
 <script type="text/javascript">
     function initialize() {
@@ -54,7 +45,4 @@
         }
     });
 </script>
-  
- 
-
 @stop

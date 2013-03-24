@@ -2,16 +2,26 @@
 
 return array(
 
-	/*
-	|--------------------------------------------------------------------------
-	| SMTP Host Address
-	|--------------------------------------------------------------------------
-	|
-	| Here you may provide the host address of the SMTP server used by your
-	| applications. A default option is provided that is compatible with
-	| the Postmark mail service, which will provide reliable delivery.
-	|
-	*/
+    /*
+    |--------------------------------------------------------------------------
+    | Mandrill Mail Settings
+    |--------------------------------------------------------------------------
+    |
+    | Set all default values for mails here.
+    | All user properties are available as merge vars with: *|VAR|*
+    */
+    'welcome_subject' => '*|FNAME|*, Welcome to Blood Bank Africa',
+
+    /*
+    |--------------------------------------------------------------------------
+    | SMTP Host Address
+    |--------------------------------------------------------------------------
+    |
+    | Here you may provide the host address of the SMTP server used by your
+    | applications. A default option is provided that is compatible with
+    | the Postmark mail service, which will provide reliable delivery.
+    |
+    */
 
 	'host' => 'smtp.postmarkapp.com',
 

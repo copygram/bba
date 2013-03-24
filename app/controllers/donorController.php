@@ -8,60 +8,50 @@ class donorController extends BaseController {
 	 * @return Response
 	 */
 	
-	public function getIndex()
-	{
-        return View::make('frontEnd.next');
+	public function getIndex() {
+        return View::make('frontend.next');
 	}
 
-    public function getRegister()
-    {
+    public function getRegister() {
         $bloodtypes = objectFormArray::flatten(Bloodtype::all());
         $genders = objectFormArray::flatten(Gender::all());
-        return View::make('frontEnd.register', array(
-            'bloodtypes' => $bloodtypes,
-            'genders' => $genders
+        return View::make( 'frontend.register', array(
+	        'bloodtypes' => $bloodtypes,
+            'genders' => $genders,
         ));
     }
 
-	public function postStore()
-	{
-		$validation = Donor::validate(Input::all());
+	public function postStore() {
+		$validation = Donor::validate( Input::all() );
+        $salt = Config::get( 'app.key' );
 
 		//validating blood select
-		if($validation->passes()){
-
+		if( $validation->passes() ){
             $donor = Donor::create(array(
-                'fname'			=> 	Input::get('fname'),
-                'lname'			=> 	Input::get('lname'),
-                'address'		=>  Input::get('area'),
-                'lat'			=>	Input::get('lat'),
-                'lng'			=>	Input::get('lng'),
-                'countrycode' 	=>  Input::get('countrycode'),
-                'mobile'		=>	Input::get('mobile'),
-                'email'			=>	Input::get('email'),
-                'bloodtype_id'	=>	Input::get('bloodtype_id'),
-                'gender_id'		=>	Input::get('gender_id'),
-                'lastDonated' 	=>  Input::get('lastDonated'),
+                'fname'			=> Input::get('fname'),
+                'lname'			=> Input::get('lname'),
+                'address'		=> Input::get('area'),
+                'lat'			=> Input::get('lat'),
+                'lng'			=> Input::get('lng'),
+                'countrycode' 	=> Input::get('countrycode'),
+                'mobile'		=> Input::get('mobile'),
+                'email'			=> Input::get('email'),
+                'bloodtype_id'	=> Input::get('bloodtype_id'),
+                'gender_id'		=> Input::get('gender_id'),
+                'lastDonated' 	=> Input::get('lastDonated'),
+                'email_hash'    => md5(Input::get('email').$salt),
             ));
 
-            $countrycode = $donor->countrycode;
+            $event = Event::fire( 'donor.save', $donor );
 
-            $mobile = $donor->mobile;
-            $recipientNumber = smsController::phoneNumber($mobile,$countrycode);
-            $recipientName = $donor->fname;
-            $messageBody = "Thanks $recipientName for signing up to Blood Bank Africa.";
+            return Redirect::to( 'donor/next' )->with( 'registered', 1 );
 
-            //$sms = smsController::sendSMS($recipientNumber,$recipientName,$messageBody);
-            $event = Event::fire('donor.save', $donor);
-
-            return Redirect::to('donor/next')->with('registered',1);
-		}else{
-			return Redirect::to('donor/register')->withErrors($validation)->withInput();
+		} else {
+			return Redirect::to( 'donor/register' )->withErrors( $validation )->withInput();
 		}
-
 	}
 
     public function getNext() {
-        return View::make('frontEnd.next');
+        return View::make( 'frontend.next' );
     }
 }
