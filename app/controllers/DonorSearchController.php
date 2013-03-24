@@ -20,12 +20,13 @@ class DonorSearchController extends BaseController {
 	    $distance = Config::get('app.search_radius');
 	    $allowablePeriod = Config::get('app.date_difference');
 
-		$donors = DB::select('SELECT *, (3959 * acos(cos
+	    $donors = DB::select('SELECT *, (3959 * acos(cos
                     (radians(?)) * cos(radians(lat)) * cos(radians
                     (lng) - radians(?)) + sin(radians(?)) * sin
                     (radians(lat)))) AS distance FROM donors WHERE bloodtype_id = ? AND lastDonated <= DATE_SUB(CURDATE(), INTERVAL ? DAY)  HAVING distance < ? ', array($poslat, $poslng, $poslat,$bloodType,$allowablePeriod,$distance));
 
-	    return $donors;
+	    $donorsObj = Donor::stdClassToEloquent($donors, 'Donor');
+	    return $donorsObj;
 
     }
     
@@ -41,7 +42,8 @@ class DonorSearchController extends BaseController {
                     (lng) - radians(?)) + sin(radians(?)) * sin
                     (radians(lat)))) AS distance FROM donors WHERE lastDonated <= DATE_SUB(CURDATE(), INTERVAL ? DAY) HAVING distance < ? ', array($poslat, $poslng, $poslat, $allowablePeriod, $distance));
 
-	    return $donors;
+	    $donorsObj = Donor::stdClassToEloquent($donors, 'Donor');
+	    return $donorsObj;
 
     }
 
