@@ -1,6 +1,6 @@
 <?php
 
-class hospitalController extends BaseController {
+class HospitalController extends BaseController {
 
 
 

@@ -6,7 +6,7 @@
  * TODO: Fix a generic function for getting the data so we don't have to update on two places.
  */
 
-class sendMail extends BaseController {
+class MailController extends BaseController {
 
     public $subject;
     public $template;

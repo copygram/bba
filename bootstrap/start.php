@@ -62,7 +62,7 @@ require $app->getBootstrapFile();
  */
 
 Event::listen('donor.save', function($donor) {
-    $welcomeMail = new sendMail($donor);
+    $welcomeMail = new MailController($donor);
     $welcomeMail->subject = Config::get('mail.welcome_subject');
     $welcomeMail->template = "fluid-welcome-email";
     $welcomeMail->send();
@@ -75,7 +75,7 @@ Event::listen('donor.save', function($donor) {
     );
     $welcomeMessage = $mandrill->templates->render('sms-welcome',null,$global_merge_vars);
 
-    //$welcomeSMS = new smsController($donor, $welcomeMessage);
+    //$welcomeSMS = new SmsController($donor, $welcomeMessage);
 
 });
 
