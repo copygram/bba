@@ -49,8 +49,8 @@ Route::group(array('prefix' => 'admin'), function() {
 
 		Route::get('/',array('as'=>'home','uses'=>'HomeController@dashboard'));
 		Route::get('logout',array('as'=>'logout','uses'=>'UsersController@getLogout'));
-		Route::get('search', array('as'=>'donorSearch','uses'=>'DonorSearchController@index'));
-		Route::get('search/mapview', array('as'=>'donorSearchOnMap','uses'=>'DonorSearchController@searchDonorsOnMap'));
+		Route::get('search', array('as'=>'donorSearch','uses'=>'donorSearchController@index'));
+		Route::get('search/mapview', array('as'=>'donorSearchOnMap','uses'=>'donorSearchController@searchDonorsOnMap'));
 
 	});
 
