@@ -27,7 +27,7 @@
 						<td>{{ $donor->gender->description }}</td>
 						<td>{{ $donor->mobile }}</td>
 						<td>{{ $donor->email }}</td>
-						<td>{{ $donor->bloodtype->description }}</td>
+						<td>{{ $donor->bloodtype->bloodtype }}</td>
 					</tr>
 				@endforeach
 							
