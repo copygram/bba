@@ -51,7 +51,7 @@ class Cache extends Illuminate\Cache\Store {}
 
 /**
  * @method	static	bool	has(string  $key)	Determine if the given configuration value exists.
- * @method	static	mixed	get(string  $key, mixed   $default)	Get the specified configuration value.
+ * @method	static	mixed	get(string  $key, mixed   $default=null)	Get the specified configuration value.
  * @method	static	void	set(string  $key, mixed   $value)	Set a given configuration value.
  * @method	static	void	getEnvironment(string  $package, string  $hint, string  $namespace)	Register a package for cascading configuration.
  * @method	static	void	afterLoading(string   $namespace, Closure  $callback)	Register an after load callback for a given namespace.
