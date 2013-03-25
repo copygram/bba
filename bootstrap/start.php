@@ -75,7 +75,7 @@ Event::listen('donor.save', function($donor) {
     );
     $welcomeMessage = $mandrill->templates->render('sms-welcome',null,$global_merge_vars);
 
-    //$welcomeSMS = new SmsController($donor, $welcomeMessage);
+    $welcomeSMS = new SmsController($donor, $welcomeMessage);
 
 });
 
