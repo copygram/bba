@@ -21,13 +21,13 @@
 			<tbody>
 							
 				@foreach($results as $donor)
-								<tr class="odd">
+						<tr class="odd">
 						<td>{{ $donor->fname }}</td>
 						<td>{{ $donor->lname }}</td>
-						<td>{{ $donor->gender_id }}</td>
+						<td>{{ $donor->gender->description }}</td>
 						<td>{{ $donor->mobile }}</td>
 						<td>{{ $donor->email }}</td>
-						<td>{{ $donor->bloodtype_id }}</td>
+						<td>{{ $donor->bloodtype->bloodtype }}</td>
 					</tr>
 				@endforeach
 							
