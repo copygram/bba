@@ -17,7 +17,7 @@ class HomeController extends BaseController {
 
 	public function dashboard()
 	{
-		return View::make('BackEnd.index');
+		return View::make('backend.index');
 	}
 
 }

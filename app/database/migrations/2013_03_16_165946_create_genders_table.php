@@ -14,7 +14,7 @@ class CreateGendersTable extends Migration {
 		Schema::create('genders', function($table)
 		{
 			$table->increments('id');
-			$table->text('gendertype',50);
+			$table->text('name',11);
 
 		});
 	}

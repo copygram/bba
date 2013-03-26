@@ -1,8 +1,8 @@
-@extends('BackEnd.base')
+@extends('backend.base')
 
 
 @section('content')
-<div class="container">
+<div class="container" style="min-height: 600px;">
     <div class="row" style="padding-top:60px;">
 
 	<a href="{{ route('donorSearchOnMap') }}">View on map</a> 
@@ -21,13 +21,13 @@
 			<tbody>
 							
 				@foreach($results as $donor)
-								<tr class="odd">
+						<tr class="odd">
 						<td>{{ $donor->fname }}</td>
 						<td>{{ $donor->lname }}</td>
-						<td>{{ $donor->gender }}</td>
+						<td>{{ $donor->gender->description }}</td>
 						<td>{{ $donor->mobile }}</td>
 						<td>{{ $donor->email }}</td>
-						<td>{{ $donor->bloodtype }}</td>
+						<td>{{ $donor->bloodtype->bloodtype }}</td>
 					</tr>
 				@endforeach
 							

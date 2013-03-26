@@ -44,7 +44,7 @@
 							</ul>
 						</div>
 				</div>
-		</div>
+		
 		
 		
 		<!-- This is the Big Photo or Video --> 
@@ -64,23 +64,26 @@
 				<div class="sixcol">
 					<p><strong>THE BLOOD BANK of AFRICA</strong></p>
 					<p class="footerlead">Helping the medical industry in the African Region by enabeling a continental wide blood donor database</p>
+					
+					<p><strong>Find us Online</strong></p>
 					<ul>
-						<li><a href="#">Home</a></li>
+						<li><a href="http://www.facebook.com/pages/Blood-Bank-Africa/346943998742803?sid=0.13846731185913086">Facebook</a></li>
 						<li class="gray">-</li>
-						<li><a href="#">About</a></li>
+						<li><a href="https://twitter.com/bloodbankafrica">Twitter</a></li>
 						<li class="gray">-</li>
-						<li><a href="#">Contact</a></li>
+						<li><a href="http://www.youtube.com/watch?v=D4Tcp15O5dE">Youtube</a></li>
 					</ul>
+
 				</div>
 				<div class="threecol">
 					<p><strong>Are you a donor?</strong><br />
 					<a href="{{ URL::to('/donor/register') }}">sign up today</a></p>
 
 					<p><strong>Hospitals or clinic?</strong><br />
-					<a href="#">sign up today</a></p>
+					<a href="{{ URL::to('/hospitals') }}">sign up today</a></p>
 					
 					<p><strong>Contact us</strong><br />
-					<a href="{{ URL::to('/contact') }}">help</a> - <a href="#">press</a> - <a href="#">legal</a></p>
+					<a href="{{ URL::to('/contact') }}">Visit our contact page</a></p>
 				</div>
 				<div class="threecol last">
 					<p><strong>This is what the press says</strong>

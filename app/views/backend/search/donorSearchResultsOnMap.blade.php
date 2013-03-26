@@ -1,4 +1,4 @@
-@extends('BackEnd.default')
+@extends('backend.default')
 @section('header')
     <style type="text/css">
 

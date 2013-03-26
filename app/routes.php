@@ -2,100 +2,60 @@
 
 /*
 |--------------------------------------------------------------------------
-                          FRONT END  
+                          FRONT END  ROUTES
 |--------------------------------------------------------------------------
 |
 |
 */
 
 
-Route::get('/base', function(){
+Route::get('/base', function() {
 
 	
-
 });
 
-Route::get('/', function(){
-	return View::make('frontEnd.index');
+Route::get( '/', function() {
+	return View::make('frontend.index');
 });
 
-Route::get('about', function(){
-	return View::make('frontEnd.about', array());
+Route::get( 'about', function() {
+	return View::make('frontend.about', array());
 });
 
-Route::get('contact', function(){
-	return View::make('frontEnd.contact');
+Route::get( 'contact', function() {
+	return View::make('frontend.contact');
 });
 
+Route::get( 'hospital', function() {
+	return View::make( 'frontend.hospitals' );
+});
 
-Route::get('/mail', array('as'=>'mail', 'uses'=> 'sendMail@sendMail'));
+//This is just a test route to view the generated mail from mandrillapp.
+Route::get( '/mail', array( 'as'=>'mail', 'uses'=> 'MailController@render' ) );
+Route::get( '/mail/verify/{hash}', array( 'as' => 'verifyMail', 'uses' => 'MailController@verifyMail' ) );
 
 // Here be donors
-Route::controller('donor', 'donorController');
-
-
+Route::controller( 'donor', 'DonorController' );
 
 
 /*
 |--------------------------------------------------------------------------
                           BACK END  ROUTES
 |--------------------------------------------------------------------------
-|
-|
 */
+Route::group(array('prefix' => 'admin'), function() {
 
+	Route::group(array('before'=>'auth'), function() {
 
+		Route::get('/',array('as'=>'home','uses'=>'HomeController@dashboard'));
+		Route::get('logout',array('as'=>'logout','uses'=>'UsersController@getLogout'));
+		Route::get('search', array('as'=>'donorSearch','uses'=>'DonorSearchController@index'));
+		Route::get('search/mapview', array('as'=>'donorSearchOnMap','uses'=>'DonorSearchController@searchDonorsOnMap'));
 
-Route::get('/admin',array('as'=>'home','uses'=>'HomeController@dashboard'))->before('auth');
+	});
 
-Route::get('admin/login', array('as' => 'login', 'uses' => 'UsersController@getLogin'))->before('guest');
-
-Route::post('admin/login','UsersController@postLogin');
-
-Route::get('admin/logout',array('as'=>'logout','uses'=>'UsersController@getLogout'))->before('auth');
-
-
-Route::get('admin/search', array('as'=>'donorSearch','uses'=>'DonorSearchController@index'))->before('auth');
-Route::post('admin/search','DonorSearchController@searchDonors');
-Route::get('admin/search/mapview', array('as'=>'donorSearchOnMap','uses'=>'DonorSearchController@searchDonorsOnMap'))->before('auth');
-
-
-
-
-
-
-Route::get('admin/users', array('as' => 'users', 'uses' => 'UsersController@index'))->before('auth');
-
-Route::get('admin/users/create', array('as' => 'new_user', 'uses' => 'UsersController@create'))->before('auth');
-
-Route::resource('admin/users/store', 'UsersController');
-
-Route::get('admin/users/{id}/edit', array('as' => 'edit_user', 'uses' => 'UsersController@edit'));
-
-Route::put('admin/users/update', array('uses'=>'UsersController@update'));
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+    Route::get('login', array('as' => 'login', 'uses' => 'UsersController@getLogin'))->before('guest');
+    Route::post('login','UsersController@postLogin');
+    Route::post('search','DonorSearchController@searchDonors');
+    
+});

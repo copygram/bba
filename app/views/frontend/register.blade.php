@@ -1,7 +1,7 @@
 @extends('frontend.base')
 
 @section('topcontent')
-		<div class="container" id="bigPhotoOne">
+		<div class="container" id="bigPhotoRegister">
 			<div class="row">     
 				<!-- info -->
         	</div>
@@ -20,57 +20,34 @@
 		<div class="formcanvas">
 			<form action="{{ URL::to('/donor/store') }}" method="POST" class="donorForm">
 			<p>
-	       		<label for="firstname">First name:</label><br />
-	       		<input type="text" class="required" name="fname" value="{{ Input::old('fname')}}" />
+	       		<label for="firstname">First name:</label>{{ $errors->first('fname','<span class="field-error">:message</span>')}}
+	       		<input type="text"  name="fname" value="{{ Input::old('fname')}}" />
 	       	</p>
 	       	<p>
-	       		<label for="lastname">Last name:</label><br />
-	       		<input type="text" class="required" name="lname" value="{{ Input::old('lname')}}"  />
+	       		<label for="lastname">Last name:</label>{{ $errors->first('lname','<span class="field-error">:message</span>')}}
+	       		<input type="text"  name="lname" value="{{ Input::old('lname')}}" />
 	       	</p>
 	       	<p>
-	       		<label for="gender">Gender:</label><br />
-                <?php
-                echo Form::select('gender', array(
-                    '0' => 'Choose gender',
-                    '1' => 'Female',
-                    '2' => 'Male',
-                ), Input::old('gender'));
-                ?>
+	       		<label for="gender">Gender:</label>{{ $errors->first('gender_id','<span class="field-error">:message</span>') }}
+                {{ Form::select('gender_id', $genders, Input::old('gender_id')) }}
 	       	</p>
 	       	<p>
-	       		<label for="bloodtype">Blood Type:</label><br />
-                <?php
-                echo Form::select('bloodtype', array(
-	       			'0'       => 'Choose',
-	       			'A+'      => 'A+',
-	       			'A-'      => 'A-',
-	        		'B+'      => 'B+',
-	        		'B-'      => 'B-',
-	        		'AB+'     => 'AB+',
-	        		'AB-'     => 'AB-',
-	        		'O+'      => 'O+',
-	        		'A1+'     => 'A1+',
-	        		'A1-'     => 'A1-',
-	        		'A2+'     => 'A2+',
-	        		'A1B+'    => 'A1B+',
-	        		'A2B+'    => 'A2B+',
-	        		'A2B-'    => 'A2B-',
-	        		'Unknown' =>'Unknown',
-                ), Input::old('bloodtype'));
-                ?>
+	       		<label for="bloodtype">Blood Type:</label>{{ $errors->first('bloodtype_id', '<span class="field-error">:message</span>') }}
+                {{ Form::select('bloodtype_id', $bloodtypes, Input::old('bloodtype_id')) }}
 	        </p>
 	        <p>
 	        	<label for="lastDonated">Last donated:<em>( dd/mm/yyyy )</em></label><br />
 	        	<input type="text" id="lastDonated" class="datePicker" name="lastDonated" value="{{ Input::old('lastDonated')}}">
 	        </p>
         	<p>
-        		<label for="location">Location: <em>( Residential area )</em></label><br />
-        		<input type="text" class="required" name="area" id="location" value="{{ Input::old('area')}}" />
+        		<label for="location">Location: <em>( Residential area )</em></label>{{ $errors->first('area', '<span class="field-error">:message</span>') }}
+        		<input type="text"  name="area" id="location" value="{{ Input::old('area')}}" />
         		<input type="hidden" id="lat" name="lat" value="{{ Input::old('lat')}}" />
 				<input type="hidden" id="lng" name="lng" value="{{ Input::old('lng')}}" />
         	</p>
+            
         	<p>
-                <label for="email">Email:</label> {{ $errors->first('email', '<p class="field-error">:message</p>') }}
+                <label for="email">Email:</label>{{ $errors->first('email', '<span class="field-error">:message</span>') }}
                 <input type="email" name="email" id="email" value="{{ Input::old('email')}}" />
         	</p>
 
@@ -128,7 +105,7 @@
                 ?>
   			</p>
 	        <p>
-                <label for="mobile">Mobile:</label> {{ $errors->first('mobile', '<p class="field-error">:message</p>') }}
+                <label for="mobile">Mobile:</label>{{ $errors->first('mobile', '<span class="field-error">:message</span>') }}
                 <input type="text"   name="mobile" value="{{ Input::old('mobile')}}">
 	        </p>
 	        <p>

@@ -222,8 +222,8 @@ a {
 }
 
 #bigPhoto {
-	height: 500px;
-	background-image: url(../images/bigphotoless.jpg);
+	height: 600px;
+	background-color: #f1f1f1;
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
@@ -237,9 +237,25 @@ a {
 	background-position: center top;
 }
 
+#bigPhotoRegister {
+	height:750px;
+	background-image: url(../images/bigphotoless-woman.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+}
+
 #bigPhotoTwo {
 	height: 600px;
 	background-image: url(../images/bigphotoless-about.jpg);
+	background-repeat: no-repeat;
+	background-size: cover;
+	background-position: center top;
+}
+
+#bigPhotoThree {
+	height: 600px;
+	background-image: url(../images/bigphotoless-woman2.jpg);
 	background-repeat: no-repeat;
 	background-size: cover;
 	background-position: center top;
@@ -394,7 +410,6 @@ a {
 	background-color: #555555;
 	color: #b9b9b9;
 	padding-top: 60px;
-	margin-top: 140px;
 }
 
 #footer ul {
@@ -429,8 +444,8 @@ a {
 
 #donorReg {
 	
-	margin-top: -450px;
-	margin-bottom: 20px;
+	margin-top: -650px;
+	margin-bottom: 80px;
 	margin-left: 400px;
 	width: 36%;
 	
