@@ -25,6 +25,11 @@ class DonorController extends BaseController {
 		$validation = Donor::validate( Input::all() );
         $salt = Config::get( 'app.key' );
 
+        $currentDate = date('Y-m-d');
+        $getLastDonated = Input::get('lastDonated');
+
+        $currDate = ($getLastDonated === '') ? $currentDate : $getLastDonated ;
+
 		//validating blood select
 		if( $validation->passes() ){
             $donor = Donor::create(array(
@@ -38,7 +43,7 @@ class DonorController extends BaseController {
                 'email'			=> Input::get('email'),
                 'bloodtype_id'	=> Input::get('bloodtype_id'),
                 'gender_id'		=> Input::get('gender_id'),
-                'lastDonated' 	=> Input::get('lastDonated'),
+                'lastDonated' 	=> $currDate,
                 'email_hash'    => md5(Input::get('email').$salt),
             ));
 

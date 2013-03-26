@@ -5,10 +5,11 @@
 <div class="container" style="min-height: 600px;">
     <div class="row" style="padding-top:60px;">
 
-	<a href="{{ route('donorSearchOnMap') }}">View on map</a> 
+	
 	
 	@if($results)
-			
+	    
+	    <a href="{{ route('donorSearchOnMap') }}">View on map</a>
 		<table>
 			<tr>
 				<th>First name</th>
