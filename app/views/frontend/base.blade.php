@@ -135,7 +135,9 @@
 			$('.donorForm').validate();
 
 			//date picker
-			$(".datePicker").datepicker();
+			$(".datePicker").datepicker({
+				dateFormat : 'yy-mm-dd'
+			});
 		});
 		</script>
     </body>

@@ -12,6 +12,8 @@
 Route::get('/base', function() {
 
 	
+
+
 });
 
 Route::get( '/', function() {
