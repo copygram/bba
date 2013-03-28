@@ -442,6 +442,11 @@ a {
    Register Form 
    ========================================================================== */
 
+.vital {
+	list-style: none;
+	list-style-type: none;
+}
+
 #donorReg {
 	
 	margin-top: -650px;
@@ -509,6 +514,7 @@ a {
 	color: #fff !important;
 
 	}
+	
 .field-error{
 	text-align: right;
 	width: 100%;
@@ -517,6 +523,8 @@ a {
 	font-size: 16px;
 	font-style: italic;
 }
+
+
 
 /*-------------------------------------maps section-------------------------------------*/
 #map_canvas { height: 600px; width: 100%;}

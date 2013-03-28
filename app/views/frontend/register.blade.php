@@ -12,7 +12,18 @@
 <div class="container" id="content">
 <div class="row">
 <div class="fivecol last">
-	Innehåll
+<ul class="vital">
+<li>You should not have donated blood in the last 3 months.</li>
+<li>You should not have undergone any major surgery within 3 months.</li>
+<li>You has not had alcohol 48 hours before the donation.</li>
+<li>You should avoid smoking on the day of donation and 3 hours after donation.</li>
+<li>You should not have fever at the time of donation.</li>
+<li>You should have had a good meal before donation.</li>
+<li>You should disclose whether he is under any medication for malaria, jaundice, etc.</li>
+<li>You should not have had any tooth extraction in the past 2 weeks.</li>
+<li>You should not be pregnant.</li>
+<li>You should not have had any immunization at least one month before.</li>
+</ul>
 </div>
 </div>
 <center>
