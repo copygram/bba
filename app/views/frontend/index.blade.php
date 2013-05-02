@@ -13,14 +13,18 @@
 
 		<div class="container" id="bigPhotoOne">
 			<div class="row">     
-        		
-					<div class="sixcol frontMsgVideo">
 
-						<iframe width="320" height="180" src="http://www.youtube.com/embed/D4Tcp15O5dE" frameborder="0" allowfullscreen></iframe>
-						<br /><small>60 seconds on why you should donate blood</small>
+					<div class="sixcol">
+					</div>
+        		
+					<div class="sixcol last frontMsgVideo">
+
+						<iframe width="480" height="270" src="http://www.youtube.com/embed/D4Tcp15O5dE" frameborder="0" allowfullscreen></iframe>
+						<br /><small>60 seconds on why you should donate blood</small><br />
+						
 					</div>
         			
-        			<div class="sixcol last frontMsg">
+        			<!-- <div class="sixcol last frontMsg">
 
         				<h2>Donate Blood<br />& Save a life</h2>
         				<p class="lead">A nation can meet all its need for blood,<br />
@@ -33,7 +37,7 @@
         				<div>
 						<a href="https://twitter.com/share" class="twitter-share-button" data-text="Register as a Blood Donor Today -" data-via="BloodBankAfrica" data-hashtags="bba">Tweet</a>
 						<script>!function(d,s,id){var js,fjs=d.getElementsByTagName(s)[0];if(!d.getElementById(id)){js=d.createElement(s);js.id=id;js.src="//platform.twitter.com/widgets.js";fjs.parentNode.insertBefore(js,fjs);}}(document,"script","twitter-wjs");</script>
-						</div>
+						</div> -->
 
         			</div>
         	</div>
