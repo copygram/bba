@@ -5,3 +5,4 @@ composer.lock
 /app/views/frontend/about.html
 *.idea
 *.log
+web/hubgit.php
