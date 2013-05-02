@@ -22,6 +22,22 @@ Route::get( 'about', function() {
 	return View::make('frontend.about', array());
 });
 
+Route::get( '/about/blood-donation', function() {
+	return View::make('frontend.bloodDonation', array());
+});
+
+Route::get( '/about/10-facts', function() {
+	return View::make('frontend.facts', array());
+});
+
+Route::get( '/about/misconceptions', function() {
+	return View::make('frontend.misconceptions', array());
+});
+
+Route::get( '/about/lists-of-hospital', function() {
+	return View::make('frontend.listHospitals', array());
+});
+
 Route::get( 'contact', function() {
 	return View::make('frontend.contact');
 });

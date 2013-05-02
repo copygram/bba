@@ -213,6 +213,35 @@ a {
 	color: #222;
 }
 
+#subNavigationCanvas {
+	padding-top: 10px;
+	min-height: 60px;
+	background-color: #f3f3f3;
+}
+
+#subNavigation {
+	padding: 0px;
+}
+
+#subNavigation li {
+	list-style: none;
+	display: inline-block;
+	padding: 0 10px 0 0px;
+	color: #a0a0a0;
+}
+
+#subNavigation li a {
+	text-decoration: none;
+}
+
+#subNavigation li a:hover {
+	text-decoration: underline;
+}
+
+.current {
+	color: #a63939;
+}
+
 #logo {
 	color: #a63939;
 	text-align: center;
@@ -266,7 +295,7 @@ a {
 }
 
 .frontMsgVideo {
-	padding-top: 308px;
+	padding-top: 180px;
 }
 
 .frontMsgVideo iframe {
@@ -278,7 +307,7 @@ a {
 }
 
 .frontMsgVideo small {
-	color: #fff;
+	color: #333;
 	padding-left: 8px;
 }
 
@@ -401,6 +430,11 @@ a {
 	margin-bottom: 50px;
 }
 
+#hospitalList li {
+	list-style: circle;
+	list-style-type: circle;
+	line-height: 27px;
+}
 
 
 

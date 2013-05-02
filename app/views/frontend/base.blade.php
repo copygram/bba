@@ -40,7 +40,8 @@
 					
 							<ul class="menu" id="menuRight">
 								<!-- <li class="firstItem"><a href="/create" id="create" class="menuItem">Create account</a></li> -->
-								<li class="firstItem"><a href="{{ URL::to('/admin/login') }}" id="login" class="menuItem">Login</a></li>
+								<li class="firstItem"><a href="http://bloodbankafrica.tictail.com" id="shop" class="menuItem" target="_new">Shop</a></li>
+								<li ><a href="{{ URL::to('/admin/login') }}" id="login" class="menuItem">Login</a></li>
 							</ul>
 						</div>
 				</div>
