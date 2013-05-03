@@ -29,7 +29,7 @@
 			<br />
 		</div>
 		
-		<div class="twelvcol">
+		<div class="twelvecol">
 			<article>
 				<h4>Blood transfusion saves lives and improves health.</h4>
 				<p>However, many patients requiring transfusion do not have timely access to safe blood. Every country needs to ensure that blood supplies are sufficient and free from HIV, hepatitis viruses and other infections that can be transmitted through unsafe transfusion.</p>
