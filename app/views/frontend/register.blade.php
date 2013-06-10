@@ -1,20 +1,12 @@
 @extends('frontend.base')
 
 @section('topcontent')
-		<div class="container" id="bigPhotoRegister">
-			<div class="row">     
-				<!-- info -->
-        	</div>
-		</div>
+
 @stop
 
 @section('content')
 <div class="container" id="content">
-<div class="row">
-<div class="fivecol last">
-	Innehåll
-</div>
-</div>
+    <div class="row">
 <center>
 	<div id="donorReg" style="z-index: 50;">
 		<div class="formcanvas">
@@ -115,5 +107,6 @@
 		</div>
 	</div>
 </center>
+</div>
 </div>
 @stop
