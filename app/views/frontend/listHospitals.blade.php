@@ -25,7 +25,7 @@
 	<div class="row" id="whatwedo">	
 		<div class="twelvecol">
 			<br /><br />
-			<h2>Lists of Hospitals</h2>
+			<h2>Lists of Hospitals in Nairobi, Kenya</h2>
 			<br />
 		</div>
 		

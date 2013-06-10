@@ -62,7 +62,7 @@
 		</div>
 
 		<div class="fivecol last">
-			<h4>List of Hospitals</h4>
+			<h4>List of Hospitals in Nairobi, Kenya</h4>
 		    <ul id="hospitalList">
 				<li><a href="http://www.agakhanhospitals.org/nairobi/">The Aga Khan Hospital (Nairobi)</a></li>
 				<li><a href="#">Pine Breeze Hospital</a></li>
