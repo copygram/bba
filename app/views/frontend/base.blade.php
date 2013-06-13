@@ -80,7 +80,7 @@
 					<p><strong>Are you a donor?</strong><br />
 					<a href="{{ URL::to('/donor/register') }}">Sign up today</a></p>
 
-					<p><strong>Hospitals or clinic?</strong><br />
+					<p><strong>Hospitals or clinics?</strong><br />
 					Not available yet</p>
 					
 					<p><strong>Contact us</strong><br />
