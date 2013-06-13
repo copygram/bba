@@ -72,8 +72,7 @@
 				<div class="twelvecol last">
 
 					<p class="mission">
-						We built a platform that makes it easy for any hospital or blood donation facility to get a valid donor to donate blood on time.
-						Enduring the ever growing communication platform in Africa we built to scale, booth backwards & forwards. <strong>We’re here to stay.</strong>
+						We built a platform that makes it easy for any hospital or blood donation facility to get a valid donor to donate blood on time. Enduring the ever growing communication platform in Africa we built to scale, both backwards & forwards.  <strong>We’re here to stay.</strong>
 					</p>
 
 				</div>
@@ -125,12 +124,12 @@
 					
 					<div class="fourcol">
 					<h3>You save lifes.</h3>
-					<p>By signing up and making yourself visible to the medical community you’ll be part of helping to save life's. <a href="#">Read our Stories</a></p>
+					<p>By signing up and making yourself visible to the medical community you’ll be part of helping to save lives. <a href="http://www.youtube.com/watch?v=D4Tcp15O5dE">See video.</a></p>
 					</div>
 					
 					<div class="fourcol last">
 					<h3>Insecure? ask us!</h3>
-					<p>This is a trusted platform in close co-op with the hospitals and clinics, if you are insecure please <a href="#">visit our help section</a></p>
+					<p>This is a trusted platform in close co-op with the hospitals and clinics, if you are insecure please <a href="mailto:hello@bloodbankafrica.com">email us.</a></p>
 					</div>
 				</div>
 

@@ -64,7 +64,7 @@
 			<div class="row" id="footercanvas">	
 				<div class="sixcol">
 					<p><strong>THE BLOOD BANK of AFRICA</strong></p>
-					<p class="footerlead">Helping the medical industry in the African Region by enabeling a continental wide blood donor database</p>
+					<p class="footerlead">Helping the medical industry in the African Region by enabling a continental wide blood donor database.</p>
 					
 					<p><strong>Find us Online</strong></p>
 					<ul>
@@ -78,7 +78,7 @@
 				</div>
 				<div class="threecol">
 					<p><strong>Are you a donor?</strong><br />
-					<a href="{{ URL::to('/donor/register') }}">sign up today</a></p>
+					<a href="{{ URL::to('/donor/register') }}">Sign up today</a></p>
 
 					<p><strong>Hospitals or clinic?</strong><br />
 					Not available yet</p>
@@ -111,7 +111,7 @@
 
         <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
         <script>
-            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            var _gaq=[['_setAccount','UA-39665698-1'],['_trackPageview']];
             (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
             g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
             s.parentNode.insertBefore(g,s)}(document,'script'));
