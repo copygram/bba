@@ -119,7 +119,7 @@
 					
 					<div class="fourcol">
 					<h3>Sign up and help.</h3>
-					<p>If you are interested in being a donor or if you are already listed at a hospital or local blood donation facility, <a href="#">sign up now.</a> </p>
+					<p>If you are interested in being a donor or if you are already listed at a hospital or local blood donation facility, <a href="{{ URL::to('/donor/register') }}">sign up now.</a> </p>
 					</div>
 					
 					<div class="fourcol">
