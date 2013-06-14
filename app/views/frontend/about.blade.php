@@ -34,7 +34,7 @@
 		<div class="fourcol">
 			<img src="assets/images/about/otis.jpg" alt="Otis Kennedy" title="Otis Kennedy" width="100%" style="margin-bottom:10px;" />
 			<h3>Otis Kennedy</h3>
-			<p>Moved to Sweden from Nairobi, Kenya in the summer of 2012. Backend Engineer that never stops to learn new things. He want to give back to the socity, fluent in Swahili and English and soon Swedish. </p>
+			<p>Moved to Sweden from Nairobi, Kenya in the summer of 2012. Backend Engineer that never stops to learn new things. He wants to give back to the society, fluent in Swahili and English and soon Swedish. </p>
 			<p><a href="mailto:otis@bloodbankafrica.com">otis@bloodbankafrica.com</a><br />
 			<a href="http://twitter.com/kenjox">@Kenjox</a>
 			</p>
@@ -61,7 +61,7 @@
 		<div class="fourcol">
 			<img src="assets/images/about/magnus.jpg" alt="Magnus Janson" title="Magnus Janson" width="100%" style="margin-bottom:10px;" />
 			<h3>Magnus Janson</h3>
-			<p>Originated in Lysekil, Sweden now lives in Gothenurg. Magnus is passionated about stories, every person has something to share, and his way of telling stories is thru photography, he is also a frequent blood donor.</p>
+			<p>Born in Lysekil, Sweden, but lives in Gothenburg since many years. Magnus has a big passion for stories, he thinks that every person has something to share, and his way of telling stories is thru photography. He is also a frequent blood donor.</p>
 			<p><a href="mailto:otis@bloodbankafrica.com">magnus@bloodbankafrica.com</a><br />
 			<a href="http://twitter.com/magnus_janson">@magnus_janson</a>
 			</p>
