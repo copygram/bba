@@ -28,13 +28,13 @@
 			<h2>We have a macro reason for doing this</h2>
 			<div class="line"></div>
 			<p style="width:60%; margin:0 auto; margin-bottom: 40px; font-size: 16px;">
-			We want to add value, we think a lot of things in the world is brooken, and can be fixed with technology and we think by doing so other people can start doing really interesting things too and we get to see that play out.  </p>
+			We want to add value, we think a lot of things in the world are brooken, and can be fixed with technology and we think by doing so other people can start doing really interesting things too and we get to see that play out.  </p>
 		</div>
 				
 		<div class="fourcol">
 			<img src="assets/images/about/otis.jpg" alt="Otis Kennedy" title="Otis Kennedy" width="100%" style="margin-bottom:10px;" />
 			<h3>Otis Kennedy</h3>
-			<p>Moved to Sweden from Nairobi, Kenya in the summer of 2012. Backend Engineer that never stops to learn new things. He wants to give back to the society, fluent in Swahili and English and soon Swedish. </p>
+			<p>Moved to Sweden from Nairobi, Kenya in the summer of 2012. Backend Engineer who never stops to learn new things. He wants to give back to the society, fluent in Swahili and English and soon Swedish. </p>
 			<p><a href="mailto:otis@bloodbankafrica.com">otis@bloodbankafrica.com</a><br />
 			<a href="http://twitter.com/kenjox">@Kenjox</a>
 			</p>
@@ -61,7 +61,7 @@
 		<div class="fourcol">
 			<img src="assets/images/about/magnus.jpg" alt="Magnus Janson" title="Magnus Janson" width="100%" style="margin-bottom:10px;" />
 			<h3>Magnus Janson</h3>
-			<p>Born in Lysekil, Sweden, but lives in Gothenburg since many years. Magnus has a big passion for stories, he thinks that every person has something to share, and his way of telling stories is thru photography. He is also a frequent blood donor.</p>
+			<p>Born in Lysekil, Sweden, but lives in Gothenburg since many years. Magnus has a big passion for stories, he thinks that every person has something to share, and his way of telling stories is through photography. He is also a frequent blood donor.</p>
 			<p><a href="mailto:otis@bloodbankafrica.com">magnus@bloodbankafrica.com</a><br />
 			<a href="http://twitter.com/magnus_janson">@magnus_janson</a>
 			</p>
@@ -79,7 +79,7 @@
 		<div class="fourcol last">
 			<img src="assets/images/about/andreas.jpg" alt="Andreas Winter" title="Andreas Winter" width="100%" style="margin-bottom:10px;"/>
 			<h3>Andreas Winter</h3>
-			<p>From Glommen, Sweden - with over 25 years of work with media, print, digital, an senior strategist with loads of sweat behind him, he is no determined that the lack of blood can be solved with technology, it's just a matter of how fast.</p>
+			<p>From Glommen, Sweden - with over 25 years of work with media, print, digital, and senior strategist with loads of sweat behind him, he is no determined that the lack of blood can be solved with technology, it's just a matter of how fast.</p>
 			<p><a href="mailto:linus@bloodbankafrica.com">andreas@bloodbankafrica.com</a></p>
 		</div>
 	</div>
