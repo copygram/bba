@@ -30,7 +30,7 @@
     </div>
     <div class="sevencol">
         <article>
-            <h4>Why donate blood?</h4>
+            <h4>This is how it all began.</h4>
             <p>There have been many discoveries made in the medical sector on how to save someone’s life, but there is still no substitute for blood. Blood is very vital in a medical emergency. Blood donations can help a variety of individuals: trauma victims, surgery patients, premature babies, individuals with anemia, cancer patients and many more.Your single unit of blood can help save the lives of up to three separate patients.</p>
         </article>
     </div>
