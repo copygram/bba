@@ -1,44 +1,97 @@
 @extends('frontend.base')
 
 @section('topcontent')
+<div class="row" id="whatwedo">
+    <div class="twelvecol center">
+        <spand class="lead">Get in touch</spand>
+        <h2>Contact details</h2>
+        <div class="line"></div>
+    </div>
 
-		<div class="container" id="bigPhoto">
-			    
-			    <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="margin-top:48px;" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=en&amp;geocode=&amp;q=Nairobi,+Kenya&amp;aq=0&amp;oq=Nairobi&amp;sll=1.58183,19.511719&amp;sspn=88.40559,91.669922&amp;ie=UTF8&amp;hq=&amp;hnear=Nairobi,+Nairobi+Province,+Kenya&amp;t=m&amp;ll=7.362467,18.457031&amp;spn=92.643978,74.707031&amp;z=3&amp;iwloc=A&amp;output=embed"></iframe>
-				<!-- <iframe width="100%" height="600" frameborder="0" scrolling="no" marginheight="0" marginwidth="0" style="margin-top:48px;" src="https://maps.google.com/maps?f=q&amp;source=s_q&amp;hl=sv&amp;geocode=&amp;q=T%C3%A5ngv%C3%A4gen+11,+Falkenberg,+Sverige&amp;aq=1&amp;oq=t%C3%A5ngv%C3%A4gen+11&amp;sll=56.902733,12.488801&amp;sspn=0.227407,0.326843&amp;t=m&amp;g=Falkenberg,+Sverige&amp;ie=UTF8&amp;hq=&amp;hnear=T%C3%A5ngv%C3%A4gen+11,+311+32+Falkenberg,+Sverige&amp;ll=56.926243,12.472916&amp;spn=0.224829,0.411301&amp;z=11&amp;iwloc=A&amp;output=embed"></iframe> -->
-			
-		</div>
+    <div class="fourcol">
+        <h3>Facebook.</h3>
+        <p>We are available on Facebook, and easiest thing to do is to either write there or ping us on Twitter. We'll make sure we get back quickly.<br /><br />
+            <a href="http://www.facebook.com/pages/Blood-Bank-Africa/346943998742803?sid=0.13846731185913086" target="_new">Blood Bank Africa on Facebook</a></p>
+    </div>
 
+    <div class="fourcol">
+        <h3>Twitter.</h3>
+        <p>The fastest way to communicate on the planet & fully transparent, by using Twitter we can manage to pull of qucik and ease of use communications.<br /><br />
+            <a href="https://twitter.com/bloodbankafrica" target="_new">Blood Bank Africa on Twitter</a>
+        </p>
+    </div>
+
+    <div class="fourcol last">
+        <h3>Email.</h3>
+        <p>Ofcourse we are also available on email and phone. <br /><br />
+            <a href="mailto:hello@bloodbankafrica.com">hello@bloodbankafrica.com</a><br />
+            0046(0)346-92302
+        </p>
+    </div>
+</div>
 @stop
 
 
 @section('content')
-	<div class="row" id="whatwedo">	
-		<div class="twelvecol center">
-			<spand class="lead">Get in touch</spand>
-			<h2>Contact details</h2>
-			<div class="line"></div>
-		</div>
-					
-		<div class="fourcol">
-			<h3>Facebook.</h3>
-			<p>We are available on Facebook, and easiest thing to do is to either write there or ping us on Twitter. We'll make sure we get back quickly.<br /><br />
-				<a href="http://www.facebook.com/pages/Blood-Bank-Africa/346943998742803?sid=0.13846731185913086" target="_new">Blood Bank Africa on Facebook</a></p>
-		</div>
-					
-		<div class="fourcol">
-			<h3>Twitter.</h3>
-			<p>The fastest way to communicate on the planet & fully transparent, by using Twitter we can manage to pull of qucik and ease of use communications.<br /><br />
-				<a href="https://twitter.com/bloodbankafrica" target="_new">Blood Bank Africa on Twitter</a>
-				</p>
-		</div>
-					
-		<div class="fourcol last">
-			<h3>Email.</h3>
-			<p>Ofcourse we are also available on email and phone. <br /><br />
-				<a href="mailto:hello@bloodbankafrica.com">hello@bloodbankafrica.com</a><br />
-				0046(0)346-92302
-			</p>
-		</div>
-	</div>
+<div class="row" id="whoweare">
+    <div class="twelvecol center">
+        <spand class="lead">Meet the people behind this</spand>
+        <h2>We have a macro reason for doing this</h2>
+        <div class="line"></div>
+        <p style="width:60%; margin:0 auto; margin-bottom: 40px; font-size: 16px;">
+            We want to add value, we think a lot of things in the world are brooken, and can be fixed with technology and we think by doing so other people can start doing really interesting things too and we get to see that play out.  </p>
+    </div>
+
+    <div class="fourcol">
+        <img src="assets/images/about/otis.jpg" alt="Otis Kennedy" title="Otis Kennedy" width="100%" style="margin-bottom:10px;" />
+        <h3>Otis Kennedy</h3>
+        <p>Moved to Sweden from Nairobi, Kenya in the summer of 2012. Backend Engineer who never stops to learn new things. He wants to give back to the society, fluent in Swahili and English and soon Swedish. </p>
+        <p><a href="mailto:otis@bloodbankafrica.com">otis@bloodbankafrica.com</a><br />
+            <a href="http://twitter.com/kenjox">@Kenjox</a>
+        </p>
+    </div>
+
+    <div class="fourcol">
+        <img src="assets/images/about/oskar.jpg" alt="Oskar Adin" title="Oskar Adin" width="100%" style="margin-bottom:10px;" />
+        <h3>Oskar Adin</h3>
+        <p>Lives in Gothenburg, Sweden and builds window farms, code in blind and loves to ride his bike. The world is a better place with him in it, he always lends a helping hand and is also a frequent blood donor. </p>
+        <p><a href="mailto:oskar@bloodbankafrica.com">oskar@bloodbankafrica.com</a><br />
+
+        </p>
+    </div>
+
+    <div class="fourcol last">
+        <img src="assets/images/about/linus.jpg" alt="Linus Ekenstam" title="Linus Ekenstam" width="100%" style="margin-bottom:10px;"/>
+        <h3>Linus Ekenstam</h3>
+        <p>From Falkenberg, Sweden - driven by large thinking and small scale, an serial entrepreneur with focus on people rather than products. Wants to help the world step by step, the first is to eliminate the lack of blood.</p>
+        <p><a href="mailto:linus@bloodbankafrica.com">linus@bloodbankafrica.com</a><br />
+            <a href="http://twitter.com/linusekenstam">@LinusEkenstam</a>
+        </p>
+    </div>
+
+    <div class="fourcol">
+        <img src="assets/images/about/magnus.jpg" alt="Magnus Janson" title="Magnus Janson" width="100%" style="margin-bottom:10px;" />
+        <h3>Magnus Janson</h3>
+        <p>Born in Lysekil, Sweden, but lives in Gothenburg since many years. Magnus has a big passion for stories, he thinks that every person has something to share, and his way of telling stories is through photography. He is also a frequent blood donor.</p>
+        <p><a href="mailto:otis@bloodbankafrica.com">magnus@bloodbankafrica.com</a><br />
+            <a href="http://twitter.com/magnus_janson">@magnus_janson</a>
+        </p>
+    </div>
+
+    <div class="fourcol">
+        <img src="assets/images/about/anna.jpg" alt="Anna-Lena Winter" title="Anna-Lena Winter" width="100%" style="margin-bottom:10px;" />
+        <h3>Anna-Lena Winter</h3>
+        <p>From Glommen, Sweden - Started out her web carrier at a really early stage, before the 1999 crash, and survived. Now she operates an Web Agency and put extra energy into social profit projects, BBA being one of them.</p>
+        <p><a href="mailto:anna@bloodbankafrica.com">anna@bloodbankafrica.com</a><br />
+
+        </p>
+    </div>
+
+    <div class="fourcol last">
+        <img src="assets/images/about/andreas.jpg" alt="Andreas Winter" title="Andreas Winter" width="100%" style="margin-bottom:10px;"/>
+        <h3>Andreas Winter</h3>
+        <p>From Glommen, Sweden - with over 25 years of work with media, print, digital, and senior strategist with loads of sweat behind him, he is no determined that the lack of blood can be solved with technology, it's just a matter of how fast.</p>
+        <p><a href="mailto:linus@bloodbankafrica.com">andreas@bloodbankafrica.com</a></p>
+    </div>
+</div>
 @stop
