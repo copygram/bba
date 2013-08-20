@@ -58,13 +58,15 @@ class DonorsController extends BaseController {
                 'email_hash'    => md5(Input::get('email').$salt),
             ));
 
-			 $sms = new services\SMSHandler\SMSProcessor;
-			 $show = $sms->sendSMS($donor);
-
 			
+			 	 $sms = new services\SMSHandler\SMSProcessor;
+			 	 $show = $sms->sendSMS($donor);
 
-			 $email = new services\EmailHandler\EmailProcessor;
-			 $email->sendEmail($donor);
+				 $email = new services\EmailHandler\EmailProcessor;
+				 $email->sendEmail($donor);
+
+				 return Redirect::route('success-signup')->with('donors',$donor);
+			 
 
 		}
 		else
@@ -74,48 +76,10 @@ class DonorsController extends BaseController {
 
 	}
 
-	/**
-	 * Display the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function show($id)
+	
+	public function getSuccessPage()
 	{
-		//
-	}
-
-	/**
-	 * Show the form for editing the specified resource.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function edit($id)
-	{
-		//
-	}
-
-	/**
-	 * Update the specified resource in storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function update($id)
-	{
-		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function destroy($id)
-	{
-		//
+		return View::make('frontEnd.after-register');
 	}
 
 }

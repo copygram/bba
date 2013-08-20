@@ -35,6 +35,7 @@ Route::group( array('prefix'=>'about'), function() {
 });
 
 Route::resource('donors','DonorsController');
+Route::get('signup/success',array('as'=>'success-signup','uses'=>'DonorsController@getSuccessPage'));
 
 
 
