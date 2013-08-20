@@ -1,8 +1,11 @@
 <?php
 
-class Gender extends Eloquent{
+class Gender extends Eloquent {
+	protected $guarded = array();
 
-    public function donors()
+	public static $rules = array();
+
+	public function donors()
     {
         return $this->hasMany('Donor');
     }

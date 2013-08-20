@@ -1,19 +1,19 @@
-<?php  
+<?php
+
 class DonorsTableSeeder extends Seeder {
 
+	private $salt;
 
-    private $salt;
+	public function __construct()
+	{
+		$this->salt = Config::get('app.key');
+	}
 
-    public function __construct() {
-        $this->salt = Config::get('app.key');
-    }
+	public function run()
+	{
+		// Uncomment the below to wipe the table clean before populating
+		// DB::table('donors')->truncate();
 
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
-	public function run() {
 		$donors = array(
 			array(
 				'fname'=>'Kennedy',
@@ -63,41 +63,12 @@ class DonorsTableSeeder extends Seeder {
 				'updated_at' => new DateTime,
                 'email_verified' => 0,
                 'email_hash' => md5('linus@copygr.am' . $this->salt),
-			), array(
-				'fname'=>'Jane',
-				'lname'=>'Doe',
-				'email'=>'jane@doe.am',
-				'gender_id'=>2,
-				'bloodtype_id'=>3,
-				'countrycode'=>'+46',
-				'mobile'=>'07255045856652',
-				'address'=>'Falkenberg,Sweden',
-				'lastDonated'=>'2013-03-01',
-				'lat'=>'57.70887',
-				'lng'=>'11.974559999999997',
-				'created_at'=> new DateTime,
-				'updated_at'=> new DateTime,
-                'email_verified' => 1,
-                'email_hash' => md5('jane@doe.am' . $this->salt),
-			), array(
-				'fname'=>'Mary',
-				'lname'=>'Doe',
-				'email'=>'mary@doe.am',
-				'gender_id'=>2,
-				'bloodtype_id'=>4,
-				'countrycode'=>'+46',
-				'mobile'=>'07255045856652',
-				'address'=>'Falkenberg,Sweden',
-				'lastDonated'=>'2012-03-25',
-				'lat'=>'56.90273329999999',
-				'lng'=>'12.488801299999977',
-				'created_at'=> new DateTime,
-				'updated_at'=> new DateTime,
-                'email_verified' => 1,
-                'email_hash' => md5('mary@doe.am' . $this->salt),
 			)
+
 		);
 
-		DB::table('donors')->insert($donors);
+		// Uncomment the below to run the seeder
+		 DB::table('donors')->insert($donors);
 	}
+
 }

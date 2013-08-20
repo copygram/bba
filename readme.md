@@ -1,22 +1,21 @@
-### Blood Bank Africa Project
+## Laravel PHP Framework
 
-To get up and running with BBA project you just need to clone this repo and use [composer][1] to install all dependencies.
+[![Latest Stable Version](https://poser.pugx.org/laravel/framework/version.png)](https://packagist.org/packages/laravel/framework) [![Total Downloads](https://poser.pugx.org/laravel/framework/d/total.png)](https://packagist.org/packages/laravel/framework) [![Build Status](https://travis-ci.org/laravel/framework.png)](https://travis-ci.org/laravel/framework)
 
----
+Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable, creative experience to be truly fulfilling. Laravel attempts to take the pain out of development by easing common tasks used in the majority of web projects, such as authentication, routing, sessions, and caching.
 
-#### Local development environment
-How to set up you local devenv is covered here: [Copygram Devenv][2]
+Laravel aims to make the development process a pleasing one for the developer without sacrificing application functionality. Happy developers make the best code. To this end, we've attempted to combine the very best of what we have seen in other web frameworks, including frameworks implemented in other languages, such as Ruby on Rails, ASP.NET MVC, and Sinatra.
 
-#### Project setup
-If you are (and you should) using the local devenv:
-* Clone the bba repo to ```./sites/bba```.
-* ```composer install```
+Laravel is accessible, yet powerful, providing powerful tools needed for large, robust applications. A superb inversion of control container, expressive migration system, and tightly integrated unit testing support give you the tools you need to build any application with which you are tasked.
 
-Once it is done you can try it out with:
-http://bba.local:8080/
+## Official Documentation
 
+Documentation for the entire framework can be found on the [Laravel website](http://laravel.com/docs).
 
-###BBA database setup:
+### Contributing To Laravel
 
-[1]: http://getcomposer.org/
-[2]: https://github.com/copygram/devenv/blob/master/README.md
+**All issues and pull requests should be filed on the [laravel/framework](http://github.com/laravel/framework) repository.**
+
+### License
+
+The Laravel framework is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)

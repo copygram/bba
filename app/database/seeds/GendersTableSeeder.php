@@ -1,24 +1,23 @@
-<?php  
+<?php
+
 class GendersTableSeeder extends Seeder {
 
-	/**
-	 * Run the database seeds.
-	 *
-	 * @return void
-	 */
 	public function run()
 	{
-		$gender = array(
+		// Uncomment the below to wipe the table clean before populating
+		// DB::table('genders')->truncate();
 
-			array(
-				'description'=>'Male'
-			),
-			array(
-				'description'=>'Female'
-			)
+		$genders = array(
+				array(
+				'type'=>'Male'
+				),
+				array(
+					'type'=>'Female'
+				)
 		);
 
-		DB::table('genders')->insert($gender);
+		// Uncomment the below to run the seeder
+		 DB::table('genders')->insert($genders);
 	}
 
 }

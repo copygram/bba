@@ -2,28 +2,33 @@
 
 return array(
 
-    /*
-    |--------------------------------------------------------------------------
-    | Mandrill Mail Settings
-    |--------------------------------------------------------------------------
-    |
-    | Set all default values for mails here.
-    | All user properties are available as merge vars with: *|VAR|*
-    */
-    'welcome_subject' => '*|FNAME|*, Welcome to Blood Bank Africa',
+	/*
+	|--------------------------------------------------------------------------
+	| Mail Driver
+	|--------------------------------------------------------------------------
+	|
+	| Laravel supports both SMTP and PHP's "mail" function as drivers for the
+	| sending of e-mail. You may specify which one you're using throughout
+	| your application here. By default, Laravel is setup for SMTP mail.
+	|
+	| Supported: "smtp", "mail", "sendmail"
+	|
+	*/
 
-    /*
-    |--------------------------------------------------------------------------
-    | SMTP Host Address
-    |--------------------------------------------------------------------------
-    |
-    | Here you may provide the host address of the SMTP server used by your
-    | applications. A default option is provided that is compatible with
-    | the Postmark mail service, which will provide reliable delivery.
-    |
-    */
+	'driver' => 'smtp',
 
-	'host' => 'smtp.postmarkapp.com',
+	/*
+	|--------------------------------------------------------------------------
+	| SMTP Host Address
+	|--------------------------------------------------------------------------
+	|
+	| Here you may provide the host address of the SMTP server used by your
+	| applications. A default option is provided that is compatible with
+	| the Postmark mail service, which will provide reliable delivery.
+	|
+	*/
+
+	'host' => 'smtp.mailgun.org',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -36,7 +41,7 @@ return array(
 	|
 	*/
 
-	'port' => 2525,
+	'port' => 587,
 
 	/*
 	|--------------------------------------------------------------------------
@@ -89,5 +94,31 @@ return array(
 	*/
 
 	'password' => null,
+
+	/*
+	|--------------------------------------------------------------------------
+	| Sendmail System Path
+	|--------------------------------------------------------------------------
+	|
+	| When using the "sendmail" driver to send e-mails, we will need to know
+	| the path to where Sendmail lives on this server. A default path has
+	| been provided here, which will work well on most of your systems.
+	|
+	*/
+
+	'sendmail' => '/usr/sbin/sendmail -bs',
+
+	/*
+	|--------------------------------------------------------------------------
+	| Mail "Pretend"
+	|--------------------------------------------------------------------------
+	|
+	| When this option is enabled, e-mail will not actually be sent over the
+	| web and will instead be written to your application's logs files so
+	| you may inspect the message. This is great for local development.
+	|
+	*/
+
+	'pretend' => false,
 
 );

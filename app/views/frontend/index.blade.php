@@ -1,4 +1,4 @@
-@extends('frontend.base')
+@extends('master')
 
 @section('topcontent')
 
@@ -173,5 +173,4 @@
 -->
 </div>
 @stop
-
 

@@ -2,9 +2,8 @@
 
 use Illuminate\Auth\UserInterface;
 use Illuminate\Auth\Reminders\RemindableInterface;
-use LaravelBook\Ardent\Ardent;
 
-class User extends Basemodel implements UserInterface, RemindableInterface {
+class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	/**
 	 * The database table used by the model.
@@ -12,34 +11,6 @@ class User extends Basemodel implements UserInterface, RemindableInterface {
 	 * @var string
 	 */
 	protected $table = 'users';
-
-
-
-	/**
-	 * Validation rules.
-	 *
-	 * 
-	 */
-
-	public static $rules = array(
-
-		'fname'  => 'required|between:4,16',
-		'lname'  => 'required|between:4,16',
-		'mobile'  => 'required',
-    	'email' => 'required|email',
-    	'role'  => 'required',
-
-	);
-
-	public function role()
-	{
-		return $this->hasOne('Role');
-	}
-
-	public function hospital()
-	{
-		return $this->belongsTo('Hospital');
-	}
 
 	/**
 	 * The attributes excluded from the model's JSON form.
@@ -77,21 +48,5 @@ class User extends Basemodel implements UserInterface, RemindableInterface {
 	{
 		return $this->email;
 	}
-
-
-
-
-	public static function userList()
-	{
-		$hospital_id = Auth::user()->hospital_id;
-
-
-		$results = static::where('hospital_id',$hospital_id)->where('status','1')->where('id','!=',Auth::user()->id)->paginate(5);
-
-
-		return $results;
-
-	}
-
 
 }

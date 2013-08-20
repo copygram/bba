@@ -2,76 +2,43 @@
 
 /*
 |--------------------------------------------------------------------------
-                          FRONT END  ROUTES
+| Application Routes
 |--------------------------------------------------------------------------
 |
+| Here is where you can register all of the routes for an application.
+| It's a breeze. Simply tell Laravel the URIs it should respond to
+| and give it the Closure to execute when that URI is requested.
 |
 */
 
+Route::get('/', function()
+{
+	$donors = Donor::list();
 
-Route::get('/base', function() {
+	dd($donors);
 
-	
+	return View::make('frontEnd.index');
 });
 
-Route::get( '/', function() {
-	return View::make('frontend.index');
+Route::get('/about', function() {
+	return View::make('frontEnd.about', array());
 });
 
-Route::get( 'about', function() {
-	return View::make('frontend.about', array());
+Route::get('/contact', function() {
+	return View::make('frontEnd.contact', array());
 });
 
-Route::get( '/about/blood-donation', function() {
-	return View::make('frontend.bloodDonation', array());
+Route::group( array('prefix'=>'about'), function() {
+
+	Route::get('blood-donation', function(){ return View::make('frontend.blood-donation', array()); });
+	Route::get('10-facts', function() { return View::make('frontend.blood-donation-facts', array()); });
+	Route::get('misconceptions', function(){ return View::make('frontend.misconceptions', array()); });
+	Route::get('lists-of-hospital', function(){ return View::make('frontend.list-of-hospitals', array()); });
 });
 
-Route::get( '/about/10-facts', function() {
-	return View::make('frontend.facts', array());
-});
-
-Route::get( '/about/misconceptions', function() {
-	return View::make('frontend.misconceptions', array());
-});
-
-Route::get( '/about/lists-of-hospital', function() {
-	return View::make('frontend.listHospitals', array());
-});
-
-Route::get( 'contact', function() {
-	return View::make('frontend.contact');
-});
-
-Route::get( 'hospital', function() {
-	return View::make( 'frontend.hospitals' );
-});
-
-//This is just a test route to view the generated mail from mandrillapp.
-Route::get( '/mail', array( 'as'=>'mail', 'uses'=> 'MailController@render' ) );
-Route::get( '/mail/verify/{hash}', array( 'as' => 'verifyMail', 'uses' => 'MailController@verifyMail' ) );
-
-// Here be donors
-Route::controller( 'donor', 'DonorController' );
+Route::resource('donors','DonorsController');
 
 
-/*
-|--------------------------------------------------------------------------
-                          BACK END  ROUTES
-|--------------------------------------------------------------------------
-*/
-Route::group(array('prefix' => 'admin'), function() {
 
-	Route::group(array('before'=>'auth'), function() {
 
-		Route::get('/',array('as'=>'home','uses'=>'HomeController@dashboard'));
-		Route::get('logout',array('as'=>'logout','uses'=>'UsersController@getLogout'));
-		Route::get('search', array('as'=>'donorSearch','uses'=>'DonorSearchController@index'));
-		Route::get('search/mapview', array('as'=>'donorSearchOnMap','uses'=>'DonorSearchController@searchDonorsOnMap'));
 
-	});
-
-    Route::get('login', array('as' => 'login', 'uses' => 'UsersController@getLogin'))->before('guest');
-    Route::post('login','UsersController@postLogin');
-    Route::post('search','DonorSearchController@searchDonors');
-    
-});

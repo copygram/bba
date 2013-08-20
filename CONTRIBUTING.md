@@ -1,1 +1,3 @@
-Just a change to test the webhook.
+# Contribution Guidelines
+
+Please submit all issues and pull requests to the [laravel/framework](http://github.com/laravel/framework) repository!

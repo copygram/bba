@@ -1,10 +1,14 @@
 <?php
 
-class Bloodtype extends Basemodel {
+class Bloodtype extends Eloquent {
+	protected $guarded = array();
 
-    public static $rules = array('bloodtype_id' =>'exists:bloodtypes,id');
+	public static $rules = array();
 
-    public function donors() {
+	public $timestamp = false;
+
+	public function donors() {
         return $this->hasMany('Donor');
     }
+	
 }

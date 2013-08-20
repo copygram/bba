@@ -1,22 +1,20 @@
 <?php
 
-class Donor extends Basemodel{
+class Donor extends Eloquent {
+	protected $guarded = array();
 
-	public static $rules = array(
-			'fname'=>'required',
-			'email'=>'required|unique:donors,email',
-			'lname'=>'required',
-			'area'=>'required',
-			'mobile' => 'required|numeric|unique:donors,mobile',
-			'bloodtype_id' =>'exists:bloodtypes,id',
-            'gender_id' => 'exists:genders,id',
-	);
+	public static $rules = array();
 
-    public function gender() {
+	public function gender() {
         return $this->belongsTo('Gender');
     }
 
     public function bloodtype() {
         return $this->belongsTo('Bloodtype');
+    }
+
+    public function scopeList($query)
+    {
+    	return $query->all();
     }
 }

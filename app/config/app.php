@@ -17,6 +17,19 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
+	| Application URL
+	|--------------------------------------------------------------------------
+	|
+	| This URL is used by the console to properly generate URLs when using
+	| the Artisan command line tool. You should set this to the root of
+	| your application so that it is used when running Artisan tasks.
+	|
+	*/
+
+	'url' => 'http://localhost',
+
+	/*
+	|--------------------------------------------------------------------------
 	| Application Timezone
 	|--------------------------------------------------------------------------
 	|
@@ -43,41 +56,23 @@ return array(
 
 	/*
 	|--------------------------------------------------------------------------
-	| Application Fallback Locale
-	|--------------------------------------------------------------------------
-	|
-	| The fallback locale determines the locale to use when the current one
-	| is not available. You may change the value to correspond to any of
-	| the language folders that are provided through your application.
-	|
-	*/
-
-	'fallback_locale' => 'en',
-
-	/*
-	|--------------------------------------------------------------------------
 	| Encryption Key
 	|--------------------------------------------------------------------------
 	|
 	| This key is used by the Illuminate encrypter service and should be set
-	| to a random, long string, otherwise these encrypted values will not
-	| be safe. Make sure to change it before deploying any application!
+	| to a random, 32 character string, otherwise these encrypted strings
+	| will not be safe. Please do this before deploying an application!
 	|
 	*/
 
-	'key'               => 'd=-n)m|/M|HIlx8-<E[[,p^S',
+	'key' => 'YiHFWXmlZU25CxJmpNdSFJqqP5kMaVQ4',
 
-    // API Keys
+	 // API Keys
 	'mandrill_key'      => 'D0M4hfjLBAV5A8eL8E9gJw',
 	'twilio_account'    => 'ACe8fddabb94827cc5c73bcfb50acb08b5',
 	'twilio_auth_token' => '462d7dd89fb5bb82a9c4c1acc9f7edfb',
 	'twilio_number'     => '657-999-5090',
 	'google_maps'       => 'AIzaSyCS7TbH7HgqB2kVU6gO_QJo2JcviDAoVys',
-
-	//Donor search variables in km and days respectively
-	'search_radius'		=> 5, 
-	'date_difference'	=> 56,
-
 
 
 	/*
@@ -92,6 +87,7 @@ return array(
 	*/
 
 	'providers' => array(
+
 		'Illuminate\Foundation\Providers\ArtisanServiceProvider',
 		'Illuminate\Auth\AuthServiceProvider',
 		'Illuminate\Cache\CacheServiceProvider',
@@ -104,15 +100,19 @@ return array(
 		'Illuminate\Encryption\EncryptionServiceProvider',
 		'Illuminate\Filesystem\FilesystemServiceProvider',
 		'Illuminate\Hashing\HashServiceProvider',
+		'Illuminate\Html\HtmlServiceProvider',
 		'Illuminate\Foundation\Providers\KeyGeneratorServiceProvider',
 		'Illuminate\Log\LogServiceProvider',
 		'Illuminate\Mail\MailServiceProvider',
+		'Illuminate\Foundation\Providers\MaintenanceServiceProvider',
 		'Illuminate\Database\MigrationServiceProvider',
+		'Illuminate\Foundation\Providers\OptimizeServiceProvider',
 		'Illuminate\Pagination\PaginationServiceProvider',
 		'Illuminate\Foundation\Providers\PublisherServiceProvider',
 		'Illuminate\Queue\QueueServiceProvider',
 		'Illuminate\Redis\RedisServiceProvider',
 		'Illuminate\Auth\Reminders\ReminderServiceProvider',
+		'Illuminate\Foundation\Providers\RouteListServiceProvider',
 		'Illuminate\Database\SeedServiceProvider',
 		'Illuminate\Foundation\Providers\ServerServiceProvider',
 		'Illuminate\Session\SessionServiceProvider',
@@ -121,7 +121,8 @@ return array(
 		'Illuminate\Validation\ValidationServiceProvider',
 		'Illuminate\View\ViewServiceProvider',
 		'Illuminate\Workbench\WorkbenchServiceProvider',
-		'LaravelBook\Laravel4Powerpack\Providers\PowerpackServiceProvider'
+		'Way\Generators\GeneratorsServiceProvider',
+
 	),
 
 	/*
@@ -135,7 +136,7 @@ return array(
 	|
 	*/
 
-	'manifest' => __DIR__.'/../storage/meta',
+	'manifest' => storage_path().'/meta',
 
 	/*
 	|--------------------------------------------------------------------------
@@ -149,6 +150,7 @@ return array(
 	*/
 
 	'aliases' => array(
+
 		'App'             => 'Illuminate\Support\Facades\App',
 		'Artisan'         => 'Illuminate\Support\Facades\Artisan',
 		'Auth'            => 'Illuminate\Support\Facades\Auth',
@@ -163,7 +165,9 @@ return array(
 		'Eloquent'        => 'Illuminate\Database\Eloquent\Model',
 		'Event'           => 'Illuminate\Support\Facades\Event',
 		'File'            => 'Illuminate\Support\Facades\File',
+		'Form'            => 'Illuminate\Support\Facades\Form',
 		'Hash'            => 'Illuminate\Support\Facades\Hash',
+		'HTML'            => 'Illuminate\Support\Facades\HTML',
 		'Input'           => 'Illuminate\Support\Facades\Input',
 		'Lang'            => 'Illuminate\Support\Facades\Lang',
 		'Log'             => 'Illuminate\Support\Facades\Log',
@@ -179,11 +183,12 @@ return array(
 		'Schema'          => 'Illuminate\Support\Facades\Schema',
 		'Seeder'          => 'Illuminate\Database\Seeder',
 		'Session'         => 'Illuminate\Support\Facades\Session',
+		'Str'             => 'Illuminate\Support\Str',
 		'URL'             => 'Illuminate\Support\Facades\URL',
 		'Validator'       => 'Illuminate\Support\Facades\Validator',
 		'View'            => 'Illuminate\Support\Facades\View',
-		'HTML'            => 'LaravelBook\Laravel4Powerpack\Facades\HTMLFacade',
-		'Form'            => 'LaravelBook\Laravel4Powerpack\Facades\FormFacade',
-		'Str'             => 'LaravelBook\Laravel4Powerpack\Facades\StrFacade',
+
+
 	),
+
 );

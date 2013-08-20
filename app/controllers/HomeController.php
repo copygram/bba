@@ -15,9 +15,9 @@ class HomeController extends BaseController {
 	|
 	*/
 
-	public function dashboard()
+	public function showWelcome()
 	{
-		return View::make('backend.index');
+		return View::make('hello');
 	}
 
 }
