@@ -76,7 +76,7 @@
                 </div>
                 <div class="threecol">
                     <p><strong>Are you a donor?</strong><br />
-                    <a href="{{ URL::to('/donor/register') }}">Sign up today</a></p>
+                    <a href="{{ route('donors.create') }}">Sign up today</a></p>
 
                     <p><strong>Hospitals or clinics?</strong><br />
                     Not available yet</p>

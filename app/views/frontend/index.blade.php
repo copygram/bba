@@ -21,7 +21,7 @@
 
 						<iframe width="480" height="270" src="http://www.youtube.com/embed/D4Tcp15O5dE" frameborder="0" allowfullscreen></iframe>
 						<br /><small>60 seconds on why you should donate blood</small><br />
-						<a href="{{ URL::to('/donor/register') }}" class="bigbtn">start by register as a Donor</a>
+						<a href="{{ route('donors.create') }}" class="bigbtn">start by register as a Donor</a>
 					</div>
         			
         			<!-- <div class="sixcol last frontMsg">

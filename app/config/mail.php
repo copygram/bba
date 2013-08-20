@@ -2,6 +2,16 @@
 
 return array(
 
+	 /*
+    |--------------------------------------------------------------------------
+    | Mandrill Mail Settings
+    |--------------------------------------------------------------------------
+    |
+    | Set all default values for mails here.
+    | All user properties are available as merge vars with: *|VAR|*
+    */
+    'welcome_subject' => '*|FNAME|*, Welcome to Blood Bank Africa',
+
 	/*
 	|--------------------------------------------------------------------------
 	| Mail Driver

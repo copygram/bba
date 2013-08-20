@@ -6,12 +6,14 @@ class EmailProcessor {
 	private $mandrillkey;
 	
 
-	public $template = 'fluid-welcome-email';
-	public $subject = 'Welcome email';
+	protected $template;
+	protected $subject; 
 
 	public function __construct()
 	{
 		$this->mandrillkey = \Config::get('app.mandrill_key');
+        $this->subject = \Config::get('mail.welcome_subject');
+        $this->template =  \Config::get('app.template_name');
 	}
 
 

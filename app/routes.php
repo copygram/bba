@@ -13,9 +13,7 @@
 
 Route::get('/', function()
 {
-	$donors = Donor::list();
 
-	dd($donors);
 
 	return View::make('frontEnd.index');
 });

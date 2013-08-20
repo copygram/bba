@@ -1,0 +1,60 @@
+<?php 
+namespace services\SMSHandler;
+
+class SMSProcessor {
+
+	private $account;
+    private $token;
+    private $twilio_number;
+    private $mandrillKey;
+   
+
+    public function __construct() {
+        $this->account       =    \Config::get('app.twilio_account');
+        $this->token         =    \Config::get('app.twilio_auth_token');
+        $this->twilio_number =    \Config::get('app.twilio_number');
+        $this->mandrillKey   =    \Config::get('app.mandrill_key'); 
+
+
+    }
+    
+    public function getMessageTemplate($recipientObject)
+    {
+    	$mandrill = new \Mandrill($this->mandrillKey);
+
+    	$global_merge_vars = array('global_merge_vars' =>
+    						 array(
+    						 		'name'    => 'FULLNAME',
+    						 		'content' =>  $recipientObject->fname .' '.$recipientObject->lname
+    						 	  )
+    	); 
+    	$welcomeMessage = $mandrill->templates->render('sms-welcome',null,$global_merge_vars); // return an array of string with html as key
+    	$welcomeMessage = $welcomeMessage['html'];
+    	
+    	return $welcomeMessage;
+    }
+
+    public function sendSMS($recipientObject) {
+        $client = new \Services_Twilio($this->account, $this->token);
+        $number = $this->phoneNumber($recipientObject);
+        $messageBody = $this->getMessageTemplate($recipientObject);
+        $sms = $client->account->sms_messages->create($this->twilio_number, $number, $messageBody);
+    }
+
+    // Getting away the first zero and concat with country code
+    public function phoneNumber($recipientObject) {
+        if(isset($recipientObject)) {
+            try {
+                $mobile = (substr($recipientObject->mobile, 0, 1) == 0) ? substr($recipientObject->mobile, 1) : $recipientObject->mobile;
+                $mobile = $recipientObject->countrycode.$mobile;
+
+                return $mobile;
+
+            } catch (\Exception $e) {
+                throw $e;
+            }
+        }
+
+        return false;
+    }
+}
