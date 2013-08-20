@@ -58,6 +58,7 @@ class DonorsController extends BaseController {
                 'email_hash'    => md5(Input::get('email').$salt),
             ));
 
+			 dd($donor);
 			
 			 	 $sms = new services\SMSHandler\SMSProcessor;
 			 	 $show = $sms->sendSMS($donor);

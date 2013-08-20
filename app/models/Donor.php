@@ -13,8 +13,4 @@ class Donor extends Eloquent {
         return $this->belongsTo('Bloodtype');
     }
 
-    public function scopeList($query)
-    {
-    	return $query->all();
-    }
 }
