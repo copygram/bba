@@ -8,20 +8,9 @@
 */
 
 
-Route::get('/', function()
-{
-
-
-	return View::make('frontEnd.index');
-});
-
-Route::get('/about', function() {
-	return View::make('frontEnd.about', array());
-});
-
-Route::get('/contact', function() {
-	return View::make('frontEnd.contact', array());
-});
+Route::get('/', function() { return View::make('frontEnd.index'); });
+Route::get('/about', function() { return View::make('frontEnd.about', array()); });
+Route::get('/contact', function() { return View::make('frontEnd.contact', array()); });
 
 Route::group( array('prefix'=>'about'), function() {
 
@@ -33,6 +22,8 @@ Route::group( array('prefix'=>'about'), function() {
 
 Route::resource('donors','DonorsController');
 Route::get('signup/success',array('as'=>'success-signup','uses'=>'DonorsController@getSuccessPage'));
+
+Route::resource('hospitals','HospitalsController');
 
 
 
@@ -47,13 +38,25 @@ Route::group( array('prefix'=>'admin'), function() {
 	Route::get('login',array('as'=>'login','uses'=>'UsersController@getLogin'));
 	Route::post('login','UsersController@postLogin');
 	Route::get('logout', array('as'=>'logout','uses'=>'UsersController@logout'));
-
 	Route::get('dashboard',array('as'=>'dashboard','uses'=>'UsersController@getDashboard'))->before('auth');
 });
 
 Route::get('/admin/login', function() {
 
 	return View::make('backEnd.login');
+
+});
+
+
+Route::get('test', function() {
+	
+	
+	
+	$Hash = Hash::make('kennedy.otis@gmail.com');
+	$enc = Crypt::encrypt($Hash);
+
+	$d = Crypt::decrypt($enc);
+	dd($d);
 
 });
 
