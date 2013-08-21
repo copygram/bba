@@ -1,8 +1,8 @@
-@extends('master')
+@extends('frontEnd.layout.master')
 
 @section('topcontent')
 	
-	@include('_includes.topContent')
+	@include('frontEnd._includes.topContent')
 
 @stop
 

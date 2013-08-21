@@ -1,15 +1,12 @@
 <?php
 
+
 /*
 |--------------------------------------------------------------------------
-| Application Routes
+| FRONT-END ROUTES
 |--------------------------------------------------------------------------
-|
-| Here is where you can register all of the routes for an application.
-| It's a breeze. Simply tell Laravel the URIs it should respond to
-| and give it the Closure to execute when that URI is requested.
-|
 */
+
 
 Route::get('/', function()
 {
@@ -38,6 +35,27 @@ Route::resource('donors','DonorsController');
 Route::get('signup/success',array('as'=>'success-signup','uses'=>'DonorsController@getSuccessPage'));
 
 
+
+/*
+|--------------------------------------------------------------------------
+| BACK-END ROUTES
+|--------------------------------------------------------------------------
+*/
+
+Route::group( array('prefix'=>'admin'), function() {
+	
+	Route::get('login',array('as'=>'login','uses'=>'UsersController@getLogin'));
+	Route::post('login','UsersController@postLogin');
+	Route::get('logout', array('as'=>'logout','uses'=>'UsersController@logout'));
+
+	Route::get('dashboard',array('as'=>'dashboard','uses'=>'UsersController@getDashboard'))->before('auth');
+});
+
+Route::get('/admin/login', function() {
+
+	return View::make('backEnd.login');
+
+});
 
 
 
