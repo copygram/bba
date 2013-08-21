@@ -50,10 +50,7 @@ Route::get('/admin/login', function() {
 
 Route::get('test', function() {
 	
-	
-	$hospital = User::find(2)->hospital()->first()->email;
-
-	dd($hospital);
+	return View::make('backEnd.staff');
 
 });
 
