@@ -19,6 +19,9 @@
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
+            @if( Auth::check())
+              <li id="user-logged"><a href="#">Logged in as:  {{ Auth::user()->fname .' '.Auth::user()->lname }} </a></li>
+            @endif
             <li><a href="#">Settings</a></li>
             <li><a href="{{ route('logout') }}">Logout</a></li>
           </ul>

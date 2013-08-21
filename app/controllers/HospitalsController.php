@@ -30,9 +30,6 @@ class HospitalsController extends BaseController {
 	 */
 	public function store()
 	{
-		
-		
-
 		$validation = new services\ValidatorHandler\HospitalValidation;
 
 		if( $validation->passes() )

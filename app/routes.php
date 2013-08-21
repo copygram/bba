@@ -51,12 +51,9 @@ Route::get('/admin/login', function() {
 Route::get('test', function() {
 	
 	
-	
-	$Hash = Hash::make('kennedy.otis@gmail.com');
-	$enc = Crypt::encrypt($Hash);
+	$hospital = User::find(2)->hospital()->first()->email;
 
-	$d = Crypt::decrypt($enc);
-	dd($d);
+	dd($hospital);
 
 });
 

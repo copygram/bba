@@ -38,4 +38,8 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+#user-logged a {
+  color: #3276b1;
+  font-weight: bold;
+}
 
