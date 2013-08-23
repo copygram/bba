@@ -4,6 +4,7 @@ body {
   background-color: #eee;
 }
 
+/***Login form *******/
 .form-signin {
   max-width: 330px;
   padding: 15px;
@@ -38,8 +39,39 @@ body {
   border-top-left-radius: 0;
   border-top-right-radius: 0;
 }
+
 #user-logged a {
   color: #3276b1;
   font-weight: bold;
 }
 
+/****** Staff  form **********/
+.form-staff {
+  max-width: 330px;
+  padding: 5px;
+ 
+}
+.form-staff .form-staff-heading,
+.form-staff .checkbox {
+  margin-bottom: 10px;
+}
+.form-staff .checkbox {
+  font-weight: normal;
+}
+.form-staff .form-control {
+  position: relative;
+  font-size: 14px;
+  height: auto;
+  padding: 8px;
+  -webkit-box-sizing: border-box;
+     -moz-box-sizing: border-box;
+          box-sizing: border-box;
+}
+.form-staff .form-control:focus {
+  z-index: 2;
+}
+.form-staff input[type="text"] {
+  margin-bottom: -1px;
+  border-bottom-left-radius: 0;
+  border-bottom-right-radius: 0;
+}

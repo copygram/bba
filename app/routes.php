@@ -39,18 +39,25 @@ Route::group( array('prefix'=>'admin'), function() {
 	Route::post('login','UsersController@postLogin');
 	Route::get('logout', array('as'=>'logout','uses'=>'UsersController@logout'));
 	Route::get('dashboard',array('as'=>'dashboard','uses'=>'UsersController@getDashboard'))->before('auth');
+	Route::get('staff/new',array('as'=>'newStaff','uses'=>'UsersController@getNewStaff'))->before('auth');
+	Route::post('staff/new','UsersController@createUser');
 });
 
-Route::get('/admin/login', function() {
 
-	return View::make('backEnd.login');
-
-});
 
 
 Route::get('test', function() {
 	
-	return View::make('backEnd.staff');
+	$alphabet = "abcdefghijklmnopqrstuwxyzABCDEFGHIJKLMNOPQRSTUWXYZ0123456789";
+    $pass = array(); //remember to declare $pass as an array
+    $alphaLength = strlen($alphabet) - 1; //put the length -1 in cache
+    for ($i = 0; $i < 8; $i++) {
+        $n = rand(0, $alphaLength);
+        $pass[] = $alphabet[$n];
+    }
+    return implode($pass); //turn the array into a string
+    	
+
 
 });
 

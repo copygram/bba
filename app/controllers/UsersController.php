@@ -65,14 +65,10 @@ class UsersController extends BaseController {
 	}
 
 
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
+
+	public function getNewStaff()
 	{
-		//
+		return View::make('backEnd.staff');
 	}
 
 	/**
@@ -80,9 +76,44 @@ class UsersController extends BaseController {
 	 *
 	 * @return Response
 	 */
-	public function create()
+	public function createUser()
 	{
-		//
+		
+		$hospital_id = Auth::user()->hospital_id;
+		$hospital = Hospital::find($hospital_id);
+		$salt = Config::get( 'app.key' );
+
+
+
+		$password = new services\Helpers\PasswordGenerator;
+		$password = $password->getPassword();
+
+		$validation = new services\ValidatorHandler\StaffValidation;
+
+		if( $validation->passes() )
+		{
+			$user = User::create( array(
+				'hospital_id' => Auth::user()->hospital_id,
+				'fname' => Input::get('fname'),
+				'lname' => Input::get('lname'),
+				'email' => Input::get('email'),
+				'mobile' => Input::get('mobile'),
+				'gender_id' => Input::get('gender_id'),
+				'role_id' => Input::get('role_id'),
+				'password'=> Hash::make($password),
+				'countrycode' => $hospital->countrycode,
+				'status'	=> 0,
+				'email_hash' => md5(Input::get('email').$salt)
+			));
+
+			return Redirect::route('newStaff')->with('success','Created');
+		}
+		else
+		{
+			return Redirect::back()->withInput()->withErrors( $validation->getErrors());
+		}
+
+		
 	}
 
 	/**

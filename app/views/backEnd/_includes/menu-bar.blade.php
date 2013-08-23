@@ -15,7 +15,7 @@
         <div class="navbar-collapse collapse">
           <ul class="nav navbar-nav">
             <li class="active"><a href="#">Search</a></li>
-            <li><a href="#">Users</a></li>
+            <li><a href="{{ route('newStaff') }}">Users</a></li>
           </ul>
 
           <ul class="nav navbar-nav navbar-right">
