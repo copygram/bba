@@ -68,7 +68,9 @@ class UsersController extends BaseController {
 
 	public function getNewStaff()
 	{
-		return View::make('backEnd.staff');
+		$users = User::all();
+
+		return View::make('backEnd.staff')->with('users',$users);
 	}
 
 	/**

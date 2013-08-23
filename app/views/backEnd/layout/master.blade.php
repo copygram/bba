@@ -30,6 +30,7 @@
             @yield('content')
 
        </div> <!-- End of container div -->
-       {{ HTML::script('/js/vendor/bootstrap.min.js') }}
+       <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+       {{ HTML::script('js/main.js') }}
     </body>
 </html>

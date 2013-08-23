@@ -23,12 +23,25 @@
 
 // Place any jQuery/helper plugins in here.
 
-$(document).ready( function() {
+// $(document).ready( function() {
+
+//     $('.buttonAdd').html('<button id="addStaff" class="btn btn-primary">Add user</button>');
+//     $('.form-staff').hide();
+
+//     $('#addStaff').on('click', function() {
+//         $('.form-staff').slideDown('slow');
+
+//     });
+
+//     $('.form-staff').submit( function(e) {
+        
+//         return false;
+//     });
 
 
+    
 
-
-});
+// });
 
 
 

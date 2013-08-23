@@ -16,6 +16,7 @@ class DatabaseSeeder extends Seeder {
 		$this->call('BloodtypesTableSeeder');
 		$this->call('GendersTableSeeder');
 		$this->call('UsersTableSeeder');
+		$this->call('RolesTableSeeder');
 	}
 
 }

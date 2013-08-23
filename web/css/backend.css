@@ -49,6 +49,7 @@ body {
 .form-staff {
   max-width: 330px;
   padding: 5px;
+
  
 }
 .form-staff .form-staff-heading,
@@ -74,4 +75,11 @@ body {
   margin-bottom: -1px;
   border-bottom-left-radius: 0;
   border-bottom-right-radius: 0;
+}
+
+.hide {
+   display: none;
+}
+.buttonAdd {
+  margin-top: 20px;
 }
