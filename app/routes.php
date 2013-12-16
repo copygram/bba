@@ -41,6 +41,8 @@ Route::group( array('prefix'=>'admin'), function() {
 	Route::get('dashboard',array('as'=>'dashboard','uses'=>'UsersController@getDashboard'))->before('auth');
 	Route::get('staff/new',array('as'=>'newStaff','uses'=>'UsersController@getNewStaff'))->before('auth');
 	Route::post('staff/new','UsersController@createUser');
+	Route::get('donor/search',array('as'=>'searchForm','uses'=>'AdminController@donorSearchForm'))->before('auth');
+	Route::post('donor/search','AdminController@search');
 });
 
 

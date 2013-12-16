@@ -1,7 +1,9 @@
 <?php
 
+
 class DonorsController extends BaseController {
 
+	
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -58,7 +60,6 @@ class DonorsController extends BaseController {
                 'email_hash'    => md5(Input::get('email').$salt),
             ));
 
-			 dd($donor);
 			
 			 	 $sms = new services\SMSHandler\SMSProcessor;
 			 	 $show = $sms->sendSMS($donor);
@@ -82,5 +83,7 @@ class DonorsController extends BaseController {
 	{
 		return View::make('frontEnd.after-register');
 	}
+
+	
 
 }

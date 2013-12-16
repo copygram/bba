@@ -24,7 +24,7 @@ class UsersTableSeeder extends Seeder {
 				'countrycode'=>'+46',
 				'mobile'=>'0725504592',
 				'role_id'=>1,
-				'status'=>0,
+				'status'=>1,
 				 'email_hash' => md5('kennedy.otis@gmail.com' . $this->salt),
 				'created_at'=> new DateTime,
 				'updated_at'=> new DateTime
