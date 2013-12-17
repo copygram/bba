@@ -112,7 +112,7 @@
 					<div class="line"></div>
 					
 					<div class="twelvecol" style="margin-bottom: 60px;">
-					<a href="{{ URL::to('/donor/register') }}" class="bigbtn" style="margin: 0 auto;">start by register as a Donor</a>
+					<a href="{{ route('donors.create') }}" class="bigbtn" style="margin: 0 auto;">start by register as a Donor</a>
 					</div>
 					
 					</div>
