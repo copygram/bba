@@ -3,7 +3,7 @@
 class Bloodtype extends Eloquent {
 	protected $guarded = array();
 
-	public static $rules = array();
+	public static $rules = array('bloodtype_id' =>'exists:bloodtypes,id');
 
 	public $timestamp = false;
 

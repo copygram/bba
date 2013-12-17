@@ -75,6 +75,11 @@ return array(
 	'twilio_number'     => '657-999-5090',
 	'google_maps'       => 'AIzaSyCS7TbH7HgqB2kVU6gO_QJo2JcviDAoVys',
 
+	//Donor search variables in km and days respectively
+    'search_radius'          => 5, 
+    'date_difference'        => 56,
+
+
 
 	/*
 	|--------------------------------------------------------------------------

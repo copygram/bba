@@ -36,13 +36,21 @@ Route::resource('hospitals','HospitalsController');
 Route::group( array('prefix'=>'admin'), function() {
 	
 	Route::get('login',array('as'=>'login','uses'=>'UsersController@getLogin'));
-	Route::post('login','UsersController@postLogin');
 	Route::get('logout', array('as'=>'logout','uses'=>'UsersController@logout'));
 	Route::get('dashboard',array('as'=>'dashboard','uses'=>'UsersController@getDashboard'))->before('auth');
-	Route::get('staff/new',array('as'=>'newStaff','uses'=>'UsersController@getNewStaff'))->before('auth');
-	Route::post('staff/new','UsersController@createUser');
 	Route::get('donor/search',array('as'=>'searchForm','uses'=>'AdminController@donorSearchForm'))->before('auth');
+    Route::get('staff/new',array('as'=>'newStaff','uses'=>'UsersController@getNewStaff'))->before('auth');
+    Route::get('donor/search/mapview', array('as'=>'donorSearchOnMap','uses'=>'AdminController@searchDonorsOnMap'));
+    Route::get('donor/sendSMS/{id}',array('as'=>'sendSMS','uses'=>'AdminController@getSMSForm'));
+
+
+
+	Route::post('login','UsersController@postLogin');
+	Route::post('staff/new','UsersController@createUser');	
 	Route::post('donor/search','AdminController@search');
+	Route::post('donor/contact','AdminController@sendSMS');
+	Route::post('donor/sendSMS/','AdminController@sendSMS');
+
 });
 
 
@@ -50,9 +58,9 @@ Route::group( array('prefix'=>'admin'), function() {
 
 Route::get('test', function() {
 	
-	$userRole = User::find(1)->role;
+	$userRole = Hospital::find(Auth::user()->hospital_id);
 
-	dd($userRole);
+	dd($userRole->lng);
     	
 
 

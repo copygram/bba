@@ -41,6 +41,7 @@ class SMSProcessor {
         $sms = $client->account->sms_messages->create($this->twilio_number, $number, $messageBody);
     }
 
+
     // Getting away the first zero and concat with country code
     public function phoneNumber($recipientObject) {
         if(isset($recipientObject)) {

@@ -31,6 +31,9 @@
 
        </div> <!-- End of container div -->
        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+       {{ HTML::script('js/vendor/bootstrap.min.js') }}
        {{ HTML::script('js/main.js') }}
+
+       @yield('scripts')
     </body>
 </html>

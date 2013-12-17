@@ -86,3 +86,7 @@ body {
 .search {
   margin-top:40px;
 }
+
+.error {
+  color: red;
+}

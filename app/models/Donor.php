@@ -1,9 +1,7 @@
 <?php
 
-class Donor extends Eloquent {
+class Donor extends Basemodel {
 	protected $guarded = array();
-
-	public static $rules = array();
 
 	public function gender() {
         return $this->belongsTo('Gender');

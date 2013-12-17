@@ -10,6 +10,7 @@
 	    <label for="bloodType" class="col-sm-2 control-label">Blood Type</label>
 	    <div class="col-sm-4">
 	        {{ Form::select('bloodtype_id', $bloodtypes, Input::old('bloodtype_id'),array('class'=>'form-control')) }}
+	        {{ $errors->first('bloodtype_id','<span class="error">:message</span>')}} 
 	    </div>
 	  </div>
 	 
