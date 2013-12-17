@@ -58,12 +58,6 @@ Route::group( array('prefix'=>'admin'), function() {
 
 Route::get('test', function() {
 	
-	$userRole = Hospital::find(Auth::user()->hospital_id);
-
-	dd($userRole->lng);
-    	
-
-
 });
 
 
