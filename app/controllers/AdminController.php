@@ -2,6 +2,19 @@
 
 class AdminController extends BaseController {
 
+	private $account;
+    private $token;
+    private $twilio_number;
+    private $mandrillKey;
+   
+
+    public function __construct() {
+        $this->account       =    \Config::get('app.twilio_account');
+        $this->token         =    \Config::get('app.twilio_auth_token');
+        $this->twilio_number =    \Config::get('app.twilio_number');
+      
+    }
+
 	public function donorSearchForm()
 	{
         $bloodtypes = services\Helpers\ObjectFormArray::flatten(Bloodtype::all());                
@@ -74,11 +87,42 @@ class AdminController extends BaseController {
 
     }
 
+     public function phoneNumber($recipientNumber,$countrycode) {
+        if(isset($recipientNumber)) {
+            try {
+                $mobile = (substr($recipientNumber, 0, 1) == 0) ? substr($recipientNumber, 1) : $recipientNumber;
+                $mobile = $countrycode.$mobile;
+
+                return $mobile;
+
+            } catch (\Exception $e) {
+                throw $e;
+            }
+        }
+
+        return false;
+    }
+
+    public function SMS($recipienNumber, $messageBody ) {
+        
+        $client = new \Services_Twilio($this->account, $this->token);
+
+        $sms = $client->account->sms_messages->create($this->twilio_number, $recipienNumber, $messageBody);
+    }
+
+
     public function getSMSForm($id)
     {
     	$donor = Donor::find($id);
 
-    	return View::make('backEnd/sendSMSForm',compact('donor'));
+    	$countrycode = $donor->countrycode;
+
+    	$phonenumber =  $donor->mobile;
+
+    	$phonenumber = $this->phoneNumber($phonenumber,$countrycode);
+
+
+    	return View::make('backEnd/sendSMSForm')->withPhonenumber($phonenumber);
     }
     
     
@@ -86,8 +130,13 @@ class AdminController extends BaseController {
     {
 
     	//Fetch the donor number and send sms
-    	
+    	$number = Input::get('recipient');
+    	$messageBody = Input::get('message');
 
+    	$this->SMS($number,$messageBody);
+
+    	return Redirect::back()->withSuccess("Message sent.");
+  
 	
     }
 

@@ -13,7 +13,7 @@
 		          
 			<p>
 				{{ Form::label('recipient','Recipient(s)') }}
-			    {{ Form::text('recipient',$donor->mobile,array('class'=>'form-control')) }}
+			    {{ Form::text('recipient',$phonenumber,array('class'=>'form-control')) }}
 		    </p>
 		
 			<p>
