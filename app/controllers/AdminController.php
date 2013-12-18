@@ -143,7 +143,7 @@ class AdminController extends BaseController {
     {
     	
         $donation = new Donation();
-        $donation->message = $_REQUEST['From'];
+        $donation->message = 'yes';
 
         $donation->save();
 
