@@ -8,9 +8,9 @@
 */
 
 
-Route::get('/', function() { return View::make('frontEnd.index'); });
-Route::get('/about', function() { return View::make('frontEnd.about', array()); });
-Route::get('/contact', function() { return View::make('frontEnd.contact', array()); });
+Route::get('/', function() { return View::make('frontend.index'); });
+Route::get('/about', function() { return View::make('frontend.about', array()); });
+Route::get('/contact', function() { return View::make('frontend.contact', array()); });
 
 Route::group( array('prefix'=>'about'), function() {
 
