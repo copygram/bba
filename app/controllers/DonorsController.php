@@ -83,6 +83,7 @@ class DonorsController extends BaseController {
 	{
 		return View::make('frontEnd.after-register');
 	}
+	
 
 	
 

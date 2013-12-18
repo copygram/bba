@@ -8,7 +8,7 @@
     <div class="row" style="padding-top:60px;">
         <div class="col-md-12">
 
-            <a href="javascript:history.back()" class="btn btn-default">Back</a>
+            <a href="javascript:history.back()-2" class="btn btn-default">Back</a>
                 @if($donors)
                 <div id="map_canvas"></div>
                 @else

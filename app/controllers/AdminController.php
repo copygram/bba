@@ -136,8 +136,17 @@ class AdminController extends BaseController {
     	$this->SMS($number,$messageBody);
 
     	return Redirect::back()->withSuccess("Message sent.");
-  
 	
     }
+
+    public function getDonorResponse($any)
+    {
+    	
+        $name = "Kennedy";
+       dd($any);
+       
+        return View::make('backEnd/smsResponse',compact('name'));
+    }
+
 
 }
