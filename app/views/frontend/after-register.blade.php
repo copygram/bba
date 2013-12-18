@@ -11,6 +11,16 @@
 	<div class="row" id="whatwedo">
 
         <div class="twelvecol center">
+           
+            @if(Session::has('verified'))
+            
+                <div class="alert alert-success alert-dismissable">
+                  <button type="button" class="close" data-dismiss="alert" aria-hidden="true">&times;</button>
+                  <p>{{ Session::get('verified') }}</p>
+                </div>
+            
+            @endif
+            
             <spand class="lead">Thank you so much</spand>
             <h2>By donating blood, you are saving other peoples lifes</h2>
             <div class="line"></div>

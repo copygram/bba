@@ -83,6 +83,21 @@ class DonorsController extends BaseController {
 	{
 		return View::make('frontend.after-register');
 	}
+
+	public function verifyMail($token)
+	{
+		$donor = Donor::where('email_hash','=',$token)->first();
+
+		if( $donor )
+		{
+			$donor->email_verified = 1;
+
+			$donor->save();
+
+			return View::make('frontend.after-register')->with('verified','Your email address has been successfully verified');
+		}
+		
+	}
 	
 
 	

@@ -22,6 +22,7 @@ Route::group( array('prefix'=>'about'), function() {
 
 Route::resource('donors','DonorsController');
 Route::get('signup/success',array('as'=>'success-signup','uses'=>'DonorsController@getSuccessPage'));
+Route::get('mail/verify/{token}','DonorsController@verifyMail');
 
 Route::resource('hospitals','HospitalsController');
 
@@ -32,6 +33,8 @@ Route::resource('hospitals','HospitalsController');
 | BACK-END ROUTES
 |--------------------------------------------------------------------------
 */
+
+
 
 Route::group( array('prefix'=>'admin'), function() {
 	
@@ -50,7 +53,5 @@ Route::group( array('prefix'=>'admin'), function() {
 	Route::post('donor/search','AdminController@search');
 	Route::post('donor/contact','AdminController@sendSMS');
 	Route::post('donor/sendSMS/','AdminController@sendSMS');
-
-	
 
 });

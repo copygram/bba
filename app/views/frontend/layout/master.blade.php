@@ -12,8 +12,9 @@
         <meta name="apple-mobile-web-app-capable" content="yes" />
 
         <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-
         {{ HTML::style('css/normalize.css') }}
+
+
         {{ HTML::style('css/main.css') }}
         {{ HTML::style('css/lib/1140.css') }}
         {{ HTML::script('js/vendor/modernizr-2.6.2.min.js') }}
