@@ -143,7 +143,9 @@ class AdminController extends BaseController {
     {
     	
         $name = "Kennedy";
-       dd($any);
+
+        dd($any);
+       
        
         return View::make('backend/smsResponse',compact('name'));
     }
