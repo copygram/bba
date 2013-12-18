@@ -6,4 +6,4 @@ composer.lock
 *.idea
 *.log
 web/hubgit.php
-app/config/database.php
+/app/config/database.php
