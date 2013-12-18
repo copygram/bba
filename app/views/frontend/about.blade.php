@@ -2,7 +2,7 @@
 
 @section('topcontent')
 	
-	@include('frontEnd._includes.topContent')
+	@include('frontend._includes.topContent')
 
 @stop
 
