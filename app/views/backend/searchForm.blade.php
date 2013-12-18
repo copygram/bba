@@ -1,6 +1,6 @@
 @extends('backend.layout.master')
 
-@include('backEnd._includes.menu-bar')
+@include('backend._includes.menu-bar')
 
 @section('content')
 
