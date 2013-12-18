@@ -1,4 +1,4 @@
-@extends('backEnd.layout.master')
+@extends('backend.layout.master')
 
 @include('backEnd._includes.menu-bar')
 

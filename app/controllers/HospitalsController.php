@@ -20,7 +20,7 @@ class HospitalsController extends BaseController {
 	public function create()
 	{
 		$genders = services\Helpers\ObjectFormArray::flatten(Gender::all());
-		return View::make('frontEnd.hospital-signup', array('genders'=>$genders));
+		return View::make('frontend.hospital-signup', array('genders'=>$genders));
 	}
 
 	/**

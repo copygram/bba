@@ -10,7 +10,7 @@ class UsersController extends BaseController {
 
 	public function getLogin()
 	{
-		return View::make('backEnd.login', array());
+		return View::make('backend.login', array());
 	}
 
 	/**
@@ -61,7 +61,7 @@ class UsersController extends BaseController {
 
 	public function getDashboard()
 	{
-		return View::make('backEnd.dashboard', array());
+		return View::make('backend.dashboard', array());
 	}
 
 
@@ -70,7 +70,7 @@ class UsersController extends BaseController {
 	{
 		$users = User::all();
 
-		return View::make('backEnd.staff')->with('users',$users);
+		return View::make('backend.staff')->with('users',$users);
 	}
 
 	/**

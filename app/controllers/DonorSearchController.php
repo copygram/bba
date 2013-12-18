@@ -9,7 +9,7 @@ class DonorSearchController extends BaseController {
 	 */
 	public function index() {
         $bloodtypes = objectFormArray::flatten( Bloodtype::all() );
-		return View::make( 'backEnd/searchForm', array( 'bloodtypes' => $bloodtypes ) );
+		return View::make( 'backend/searchForm', array( 'bloodtypes' => $bloodtypes ) );
 	}
 
     private static function getDonorsList() {

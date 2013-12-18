@@ -24,7 +24,7 @@ class DonorsController extends BaseController {
 		$bloodtypes = services\Helpers\ObjectFormArray::flatten(Bloodtype::all());
 		$genders = services\Helpers\ObjectFormArray::flatten(Gender::all());
 		
-		return View::make('frontEnd.donors-signup', 
+		return View::make('frontend.donors-signup', 
 					array(
 						'bloodtypes' => $bloodtypes,
 						'genders'	 => $genders
@@ -81,7 +81,7 @@ class DonorsController extends BaseController {
 	
 	public function getSuccessPage()
 	{
-		return View::make('frontEnd.after-register');
+		return View::make('frontend.after-register');
 	}
 	
 

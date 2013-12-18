@@ -1,4 +1,4 @@
-@extends('frontEnd.layout.master')
+@extends('frontend.layout.master')
 
 @section('topcontent')
 	

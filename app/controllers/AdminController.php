@@ -18,7 +18,7 @@ class AdminController extends BaseController {
 	public function donorSearchForm()
 	{
         $bloodtypes = services\Helpers\ObjectFormArray::flatten(Bloodtype::all());                
-		return View::make('backEnd/searchForm',compact('bloodtypes'));
+		return View::make('backend/searchForm',compact('bloodtypes'));
 	}
 
 	public function search()
@@ -29,7 +29,7 @@ class AdminController extends BaseController {
 		{
 		  $donors = self::getDonorsList();
 		  
-		  return View::make('backEnd/searchResults',compact('donors'));
+		  return View::make('backend/searchResults',compact('donors'));
 
 		}else{
 			return Redirect::route('searchForm')->withErrors($validation->getErrors());
@@ -81,7 +81,7 @@ class AdminController extends BaseController {
                         $result[] = $donor->toArray();
                 }
 
-        return View::make( 'backEnd/searchResultsOnMap' )
+        return View::make( 'backend/searchResultsOnMap' )
                 ->with( 'donors', json_encode($result) )
                 ->with( 'hospital', Hospital::find(Auth::user()->hospital_id) );
 
@@ -122,7 +122,7 @@ class AdminController extends BaseController {
     	$phonenumber = $this->phoneNumber($phonenumber,$countrycode);
 
 
-    	return View::make('backEnd/sendSMSForm')->withPhonenumber($phonenumber);
+    	return View::make('backend/sendSMSForm')->withPhonenumber($phonenumber);
     }
     
     
@@ -145,7 +145,7 @@ class AdminController extends BaseController {
         $name = "Kennedy";
        dd($any);
        
-        return View::make('backEnd/smsResponse',compact('name'));
+        return View::make('backend/smsResponse',compact('name'));
     }
 
 
