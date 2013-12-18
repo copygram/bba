@@ -105,7 +105,7 @@
         
         {{ HTML::script('js/main.js') }}
         
-        @include('frontEnd._includes/analytics')
+        @include('frontend._includes/analytics')
 
         <script src="https://maps.googleapis.com/maps/api/js?v=3.exp&sensor=false&libraries=places"></script>
 
