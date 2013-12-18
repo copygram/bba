@@ -10,7 +10,7 @@ class UsersController extends BaseController {
 
 	public function getLogin()
 	{
-		return View::make('backend/login', array());
+		return View::make('backend.login');
 	}
 
 	/**
