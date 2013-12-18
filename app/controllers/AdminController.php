@@ -139,15 +139,26 @@ class AdminController extends BaseController {
 	
     }
 
-    public function getDonorResponse($any)
+    public function getDonorResponse()
     {
     	
-        $name = "Kennedy";
+        $donors = array(
+            '+46733282340' => 'Otis'
+        );
 
-        dd($any);
+        if( !$name = $donors[Request::get('From')])
+        {
+            $name = "Monkey";
+        }
+
+        
        
-       
-        return View::make('backend/smsResponse',compact('name'));
+        return Response::make('
+            <?xml version="1.0" encoding="UTF-8"?>
+            <Response>
+                <Message>Thanks <?php echo $name; ?>for the message!</Message>
+            </Response>'
+        );
     }
 
 
