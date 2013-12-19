@@ -141,10 +141,11 @@ class AdminController extends BaseController {
 
     public function getDonorResponse()
     {
-    	
-        
+    	$donate = new Donation();
 
-        return View::make('backend/smsResponse');
+        $donate->message = "Yes";
+
+        $donate->save();
     }
 
 

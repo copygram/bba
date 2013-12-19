@@ -26,13 +26,23 @@ Route::get('mail/verify/{token}','DonorsController@verifyMail');
 
 Route::resource('hospitals','HospitalsController');
 
-
-
 /*
 |--------------------------------------------------------------------------
 | BACK-END ROUTES
 |--------------------------------------------------------------------------
 */
+
+Route::get('test', function(){
+	
+	$donate = new Donation();
+
+	$donate->message = "Yes";
+
+	$donate->save();
+	
+
+	 return "done";
+});
 
 
 
@@ -45,7 +55,6 @@ Route::group( array('prefix'=>'admin'), function() {
     Route::get('staff/new',array('as'=>'newStaff','uses'=>'UsersController@getNewStaff'))->before('auth');
     Route::get('donor/search/mapview', array('as'=>'donorSearchOnMap','uses'=>'AdminController@searchDonorsOnMap'));
     Route::get('donor/sendSMS/{id}',array('as'=>'sendSMS','uses'=>'AdminController@getSMSForm'));
-
     Route::post('donor/sms_reply','AdminController@getDonorResponse');
 
 	Route::post('login','UsersController@postLogin');
