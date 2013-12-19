@@ -34,14 +34,8 @@ Route::resource('hospitals','HospitalsController');
 
 Route::get('test', function(){
 	
-	$donate = new Donation();
-
-	$donate->message = "Yes";
-
-	$donate->save();
-
-
-	 return "done";
+	$donation = Donation::all()->toArray();
+	dd($donation);
 });
 
 Route::get('admin',function(){
