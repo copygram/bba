@@ -153,11 +153,14 @@ class AdminController extends BaseController {
 
     public function getDonorResponse()
     {
-    	$donate = new Donation();
+    	//Check if the reply number exist in the donations table
+        // if so fetch the body and update status column accordingly
 
-        $donate->message = Request::get('Body');
+        
 
-        $donate->save();
+        // $donate->status = Request::get('Body');
+
+        // $donate->save();
     }
 
 
