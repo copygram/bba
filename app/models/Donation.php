@@ -7,6 +7,6 @@ class Donation extends Eloquent {
 
 	public function donor()
 	{
-		return $this->hasMnay('Donor');
+		return $this->hasMany('Donor');
 	}
 }
