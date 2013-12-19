@@ -122,21 +122,33 @@ class AdminController extends BaseController {
     	$phonenumber = $this->phoneNumber($phonenumber,$countrycode);
 
 
-    	return View::make('backend/sendSMSForm')->withPhonenumber($phonenumber);
+    	return View::make('backend/sendSMSForm')->withPhonenumber($phonenumber)->with('donorID',$donor->id);
     }
     
     
     public function sendSMS()
     {
 
-    	//Fetch the donor number and send sms
-    	$number = Input::get('recipient');
-    	$messageBody = Input::get('message');
+    	//Fetch the admin id, donor id, number,patient no and message
+    	$adminID     = Auth::user()->id;
+        $donorID     = Input::get('donor_id');
+        $number      = Input::get('recipient');
+        $patientNo   = Input::get('patient_no');
+        $messageBody = Input::get('message');
+    	
+        $sent = $this->SMS($number,$messageBody);
 
-    	$this->SMS($number,$messageBody);
+       
+            $event = Donation::create([
 
-    	return Redirect::back()->withSuccess("Message sent.");
-	
+            'patient_no' => $patientNo,
+            'user_id'    => $adminID,
+            'donor_id'   => $donorID,
+            'status'     => 'sent'
+           ]);
+
+          return Redirect::back()->withSuccess("Message sent.");
+        
     }
 
     public function getDonorResponse()
@@ -147,6 +159,38 @@ class AdminController extends BaseController {
 
         $donate->save();
     }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 }

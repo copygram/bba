@@ -19,10 +19,16 @@
 		@endif
 		
 		 {{ Form::open(array('action'=>'AdminController@sendSMS','method'=>'POST','class'=>'form-horizontal','role'=>'form')) }}
-		          
+		    
+		    {{ Form::hidden('donor_id',$donorID) }}
 			<p>
 				{{ Form::label('recipient','Recipient(s)') }}
 			    {{ Form::text('recipient',$phonenumber,array('class'=>'form-control')) }}
+		    </p>
+
+		    <p>
+		    	{{ Form::label('patient_no','Patient Number') }}
+			    {{ Form::text('patient_no','',array('class'=>'form-control')) }}
 		    </p>
 		
 			<p>

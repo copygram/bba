@@ -39,15 +39,18 @@ Route::get('test', function(){
 	$donate->message = "Yes";
 
 	$donate->save();
-	
+
 
 	 return "done";
 });
 
-
+Route::get('admin',function(){
+	return Redirect::route('dashboard');
+});
 
 Route::group( array('prefix'=>'admin'), function() {
 	
+
 	Route::get('login',array('as'=>'login','uses'=>'UsersController@getLogin'));
 	Route::get('logout', array('as'=>'logout','uses'=>'UsersController@logout'));
 	Route::get('dashboard',array('as'=>'dashboard','uses'=>'UsersController@getDashboard'))->before('auth');

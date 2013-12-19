@@ -22,7 +22,7 @@ class DonorsTableSeeder extends Seeder {
 				'gender_id'=>1,
 				'bloodtype_id'=>1,
 				'countrycode'=>'+46',
-				'mobile'=>'0725504592',
+				'mobile'=>'0733282340',
 				'address'=>'Falkenberg,Sweden',
 				'lastDonated'=>'2013-01-15',
 				'lat'=>'56.90273329999999',

@@ -1,7 +1,7 @@
 <?php
 
 class Donation extends Eloquent {
-	protected $guarded = array();
+	protected $fillable = array('patient_no','user_id','donor_id','status');
 
 	public static $rules = array();
 }
