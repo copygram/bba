@@ -9,7 +9,7 @@ class HospitalTableSeeder extends Seeder {
 
 		$hospital = array(
 
-			[
+			array(
 				'name' => 'Nairobi Hospital',
 				'countrycode' => '+254',
 				'mobile' => '07334567',
@@ -18,7 +18,7 @@ class HospitalTableSeeder extends Seeder {
 				'address'=>'67923 Huligam',
 				'lat' => '56.90273329999999',
 				'lng' => '12.488801299999977'
-			]
+			)
 		);
 
 		// Uncomment the below to run the seeder
