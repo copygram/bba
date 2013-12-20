@@ -14,8 +14,6 @@ class SMSProcessor {
         $this->token         =    \Config::get('app.twilio_auth_token');
         $this->twilio_number =    \Config::get('app.twilio_number');
         $this->mandrillKey   =    \Config::get('app.mandrill_key'); 
-
-
     }
     
     public function getMessageTemplate($recipientObject)
