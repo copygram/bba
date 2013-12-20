@@ -98,13 +98,13 @@ class AdminController extends BaseController {
         $send->SMS($number,$messageBody);
 
        
-            $event = Donation::create([
+            $event = Donation::create(array(
 
             'patient_no' => $patientNo,
             'user_id'    => $adminID,
             'donor_id'   => $donorID,
             'status'     => 'sent'
-           ]);
+           ));
 
           return Redirect::back()->withSuccess("Message sent.");
         
