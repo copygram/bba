@@ -53,7 +53,7 @@ class DonorSearchController extends BaseController {
         if($validation->passes()) {
             $donors = self::getDonorsList();
 
-            return View::make( 'backend.searchResults' )->with( 'results', $donors );
+           return View::make( 'backend.searchResults' )->with( 'results', $donors );
 
         }
 		else {

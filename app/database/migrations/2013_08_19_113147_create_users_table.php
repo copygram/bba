@@ -22,7 +22,6 @@ class CreateUsersTable extends Migration {
 			$table->integer('gender_id');
 			$table->integer('role_id');
 			$table->string('password');
-			$table->string('countrycode');
 			$table->boolean('status')->default(0);
 			$table->text('email_hash');
 			$table->timestamps();

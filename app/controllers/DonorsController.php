@@ -3,16 +3,6 @@
 
 class DonorsController extends BaseController {
 
-	
-	/**
-	 * Display a listing of the resource.
-	 *
-	 * @return Response
-	 */
-	public function index()
-	{
-		//
-	}
 
 	/**
 	 * Show the form for creating a new resource.
@@ -42,6 +32,10 @@ class DonorsController extends BaseController {
 		$validation = new services\ValidatorHandler\DonorValidation();
 		$salt = Config::get( 'app.key' );
 
+		$com     = new services\Helpers\Communicate();
+		$mobile  = $com->phoneNumber( Input::get('mobile'), Input::get('countrycode'));
+
+
 
 		if( $validation->passes() )
 		{
@@ -51,8 +45,7 @@ class DonorsController extends BaseController {
                 'address'		=> Input::get('area'),
                 'lat'			=> Input::get('lat'),
                 'lng'			=> Input::get('lng'),
-                'countrycode' 	=> Input::get('countrycode'),
-                'mobile'		=> Input::get('mobile'),
+                'mobile'		=> $mobile,
                 'email'			=> Input::get('email'),
                 'bloodtype_id'	=> Input::get('bloodtype_id'),
                 'gender_id'		=> Input::get('gender_id'),
@@ -61,13 +54,13 @@ class DonorsController extends BaseController {
             ));
 
 			
-			 	 $sms = new services\SMSHandler\SMSProcessor;
-			 	 $show = $sms->sendSMS($donor);
+	 	    $sms = new services\SMSHandler\SMSProcessor;
+	 	    $show = $sms->sendSMS($donor);
 
-				 $email = new services\EmailHandler\EmailProcessor;
-				 $email->sendEmail($donor);
+		    $email = new services\EmailHandler\EmailProcessor;
+		    $email->sendEmail($donor);
 
-				 return Redirect::route('success-signup')->with('donors',$donor);
+		    return Redirect::route('success-signup')->with('donors',$donor);
 			 
 
 		}

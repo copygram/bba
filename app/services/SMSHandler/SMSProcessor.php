@@ -34,20 +34,19 @@ class SMSProcessor {
     	return $welcomeMessage;
     }
 
+    //Accepts donor object
     public function sendSMS($recipientObject) {
         $client = new \Services_Twilio($this->account, $this->token);
-        $number = $this->phoneNumber($recipientObject);
+        $number = $recipientObject->mobile;
         $messageBody = $this->getMessageTemplate($recipientObject);
         $sms = $client->account->sms_messages->create($this->twilio_number, $number, $messageBody);
     }
-     
 
-    // Getting away the first zero and concat with country code
-    public function phoneNumber($recipientObject) {
-        if(isset($recipientObject)) {
+    public function phoneNumber($recipientNumber,$countrycode) {
+        if(isset($recipientNumber)) {
             try {
-                $mobile = (substr($recipientObject->mobile, 0, 1) == 0) ? substr($recipientObject->mobile, 1) : $recipientObject->mobile;
-                $mobile = $recipientObject->countrycode.$mobile;
+                $mobile = (substr($recipientNumber, 0, 1) == 0) ? substr($recipientNumber, 1) : $recipientNumber;
+                $mobile = $countrycode.$mobile;
 
                 return $mobile;
 
@@ -58,4 +57,13 @@ class SMSProcessor {
 
         return false;
     }
+
+    //General message sender
+    public function SMS($recipienNumber, $messageBody ) {
+        
+        $client = new \Services_Twilio($this->account, $this->token);
+
+        $sms = $client->account->sms_messages->create($this->twilio_number, $recipienNumber, $messageBody);
+    }
+
 }

@@ -2,19 +2,6 @@
 
 class AdminController extends BaseController {
 
-	private $account;
-    private $token;
-    private $twilio_number;
-    private $mandrillKey;
-   
-
-    public function __construct() {
-        $this->account       =    \Config::get('app.twilio_account');
-        $this->token         =    \Config::get('app.twilio_auth_token');
-        $this->twilio_number =    \Config::get('app.twilio_number');
-      
-    }
-
 	public function donorSearchForm()
 	{
         $bloodtypes = services\Helpers\ObjectFormArray::flatten(Bloodtype::all());                
@@ -36,7 +23,6 @@ class AdminController extends BaseController {
 		}
 		  
 	}
-
 
 	private static function getDonorsList() {
 		$hospital = Hospital::find(Auth::user()->hospital_id);
@@ -87,44 +73,15 @@ class AdminController extends BaseController {
 
     }
 
-     public function phoneNumber($recipientNumber,$countrycode) {
-        if(isset($recipientNumber)) {
-            try {
-                $mobile = (substr($recipientNumber, 0, 1) == 0) ? substr($recipientNumber, 1) : $recipientNumber;
-                $mobile = $countrycode.$mobile;
-
-                return $mobile;
-
-            } catch (\Exception $e) {
-                throw $e;
-            }
-        }
-
-        return false;
-    }
-
-    public function SMS($recipienNumber, $messageBody ) {
-        
-        $client = new \Services_Twilio($this->account, $this->token);
-
-        $sms = $client->account->sms_messages->create($this->twilio_number, $recipienNumber, $messageBody);
-    }
-
 
     public function getSMSForm($id)
     {
     	$donor = Donor::find($id);
 
-    	$countrycode = $donor->countrycode;
-
     	$phonenumber =  $donor->mobile;
-
-    	$phonenumber = $this->phoneNumber($phonenumber,$countrycode);
-
 
     	return View::make('backend/sendSMSForm')->withPhonenumber($phonenumber)->with('donorID',$donor->id);
     }
-    
     
     public function sendSMS()
     {
@@ -136,7 +93,9 @@ class AdminController extends BaseController {
         $patientNo   = Input::get('patient_no');
         $messageBody = Input::get('message');
     	
-        $sent = $this->SMS($number,$messageBody);
+        $send = new services\SMSHandler\SMSProcessor;
+        
+        $send->SMS($number,$messageBody);
 
        
             $event = Donation::create([
@@ -156,7 +115,7 @@ class AdminController extends BaseController {
     	//Check if the reply number exist in the donations table
         // if so fetch the body and update status column accordingly
 
-        
+
 
         // $donate->status = Request::get('Body');
 

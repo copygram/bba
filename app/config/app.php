@@ -80,7 +80,6 @@ return array(
     'date_difference'        => 56,
 
 
-
 	/*
 	|--------------------------------------------------------------------------
 	| Autoloaded Service Providers

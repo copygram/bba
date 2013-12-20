@@ -34,8 +34,10 @@ Route::resource('hospitals','HospitalsController');
 
 Route::get('test', function(){
 	
-	$donation = Donation::all()->toArray();
-	dd($donation);
+	dd(Config::get('app.welcome_message'));
+
+	
+
 });
 
 Route::get('admin',function(){

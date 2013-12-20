@@ -11,7 +11,7 @@ class Donor extends Basemodel {
         return $this->belongsTo('Bloodtype');
     }
 
-    public function donations()
+    public function donation()
 	{
 		return $this->belongsTo('Donation');
 	}

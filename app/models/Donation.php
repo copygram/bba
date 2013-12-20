@@ -5,7 +5,7 @@ class Donation extends Eloquent {
 
 	public static $rules = array();
 
-	public function donor()
+	public function donors()
 	{
 		return $this->hasMany('Donor');
 	}

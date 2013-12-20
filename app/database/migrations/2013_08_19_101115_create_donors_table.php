@@ -18,7 +18,6 @@ class CreateDonorsTable extends Migration {
 			$table->string('lname');
 			$table->integer('gender_id');
 			$table->integer('bloodtype_id');
-			$table->text('countrycode');
 			$table->text('mobile');
 			$table->string('email');
 			$table->text('address');
