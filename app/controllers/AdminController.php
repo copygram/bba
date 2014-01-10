@@ -97,22 +97,16 @@ class AdminController extends BaseController {
         
         $send->SMS($number,$messageBody);
 
-        $donor = Donor::findOrFail($donorID);
+        $event = Donation::create(array(
 
-        if(! $donor )
-        {
-            $event = Donation::create(array(
+                'patient_no' => $patientNo,
+                'user_id'    => $adminID,
+                'donor_id'   => $donorID,
+                'status'     => 'sent'
+       ));
 
-            'patient_no' => $patientNo,
-            'user_id'    => $adminID,
-            'donor_id'   => $donorID,
-            'status'     => 'sent'
-           ));
-
-          return Redirect::back()->withSuccess("Message sent.");
-        }
-          
-        
+       return Redirect::back()->withSuccess("Message sent.");
+         
     }
 
     public function getDonorResponse()
