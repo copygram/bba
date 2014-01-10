@@ -34,11 +34,8 @@ Route::resource('hospitals','HospitalsController');
 
 Route::get('test', function(){
 	
-	$donor = Donor::where('mobile','+46733282340')->first();
-
-	$event = Donation::where('donor_id',$donor->id)->first();
-
-	dd($event->status);
+	return String::trim("         KJDHSADHSAKJDHKJAHSDKJHASKKASHK       ");
+	
 
 	
 
