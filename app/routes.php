@@ -34,7 +34,11 @@ Route::resource('hospitals','HospitalsController');
 
 Route::get('test', function(){
 	
-	dd(Config::get('app.welcome_message'));
+	$donor = Donor::where('mobile','+46733282340')->first();
+
+	$event = Donation::where('donor_id',$donor->id)->first();
+
+	dd($event->status);
 
 	
 

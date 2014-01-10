@@ -114,6 +114,25 @@ class AdminController extends BaseController {
     {
     	//Check if the reply number exist in the donations table
         // if so fetch the body and update status column accordingly
+        $replyNumber   = Request::get('From');
+        $replyResponse = Request::get('Body');
+
+        $donor = Donor::where('mobile',$replyNumber)->first();
+
+        $event = Donation::where('donor_id',$donor->id)->first();
+
+        if( $replyResponse == 'yes' || $replyResponse == 'YES' )
+        {
+            $event->status = "YES";
+
+            $event->save();
+        }
+        else
+        {
+            $event->status = "NO";
+
+            $event->save();
+        }
 
 
 
