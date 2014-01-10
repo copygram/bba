@@ -7,7 +7,6 @@ class SMSProcessor {
     private $token;
     private $twilio_number;
     private $mandrillKey;
-   
 
     public function __construct() {
         $this->account       =    \Config::get('app.twilio_account');

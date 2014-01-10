@@ -97,7 +97,10 @@ class AdminController extends BaseController {
         
         $send->SMS($number,$messageBody);
 
-       
+        $donor = Donor::findOrFail($donorID);
+
+        if(! $donor )
+        {
             $event = Donation::create(array(
 
             'patient_no' => $patientNo,
@@ -107,6 +110,8 @@ class AdminController extends BaseController {
            ));
 
           return Redirect::back()->withSuccess("Message sent.");
+        }
+          
         
     }
 
@@ -114,64 +119,31 @@ class AdminController extends BaseController {
     {
     	//Check if the reply number exist in the donations table
         // if so fetch the body and update status column accordingly
+
+
         $replyNumber   = Request::get('From');
         $replyResponse = Request::get('Body');
+
+        $replyResponse = String::trim($replyResponse); // removes whitespace and convert to lowercase
 
         $donor = Donor::where('mobile',$replyNumber)->first();
 
         $event = Donation::where('donor_id',$donor->id)->first();
 
-        if( $replyResponse == 'yes' || $replyResponse == 'YES' )
+        if( $replyResponse == 'yes')
         {
-            $event->status = "YES";
+            $event->status = "yes";
 
             $event->save();
         }
-        else
+        else if( $replyResponse == 'no' )
         {
-            $event->status = "NO";
+            $event->status = "no";
 
             $event->save();
         }
 
-
-
-        // $donate->status = Request::get('Body');
-
-        // $donate->save();
     }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 }
